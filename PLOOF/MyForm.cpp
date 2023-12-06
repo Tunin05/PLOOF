@@ -1,3 +1,4 @@
+#include "gestionPersonnel.h"
 #include "MyForm.h"
 #include "CAD.h"
 

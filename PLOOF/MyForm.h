@@ -82,6 +82,7 @@ namespace PLOOF {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Gestion du personnel";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// button2
 			// 
@@ -137,5 +138,11 @@ namespace PLOOF {
 		}
 #pragma endregion
 
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	PLOOF::gestionPersonnel^ gestionPersonnel = gcnew PLOOF::gestionPersonnel();
+	gestionPersonnel->ShowDialog();
+	this->Show();
+}
 };
 }
