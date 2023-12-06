@@ -11,6 +11,7 @@ namespace NS_Comp_Data
 		System::Data::SqlClient::SqlCommand^ oCmd;
 		System::Data::SqlClient::SqlDataAdapter^ oDA;
 		System::Data::DataSet^ oDs;
+		
 	public:
 		CLcad(void);
 		System::Data::DataSet^ getRows(System::String^, System::String^);
