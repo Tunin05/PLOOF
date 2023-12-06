@@ -136,5 +136,6 @@ namespace PLOOF {
 
 		}
 #pragma endregion
-	};
+
+};
 }
