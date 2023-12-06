@@ -1,5 +1,4 @@
 #include "MyForm.h"
-#include "CAD.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -10,5 +9,4 @@ void main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	PLOOF::MyForm mainForm;
 	Application::Run(% mainForm);
-
 }

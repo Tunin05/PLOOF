@@ -120,13 +120,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLDB.cpp" />
     <ClCompile Include="Gestion.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="CAD.cpp" />
     <ClCompile Include="Personnel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CAD.h" />
+    <ClInclude Include="CLDB.h" />
     <ClInclude Include="Gestion.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>

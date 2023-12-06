@@ -8,6 +8,8 @@ namespace PLOOF {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
+
 
 	/// <summary>
 	/// Description résumée de MyForm

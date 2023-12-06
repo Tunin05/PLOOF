@@ -1,5 +1,6 @@
 #pragma once
 #include "Gestion.h"
+#include <string>
 
 class Personnel : public Gestion {
 private:
@@ -11,19 +12,15 @@ private:
 
 public:
     Personnel();
-    // Add constructors and other necessary methods
+    Personnel(int id_personal, std::string firstname, std::string name, int superior, std::string address);
 
-    // Override Gestion virtual functions
     void insert() override;
-    void select() const override;
     void update() override;
     void remove() override;
+    void select() override;
 
-    // Override Gestion virtual getters and setters
-    int getId() const override;
-    void setId(int id) override;
-
-    // Add getters and setters for other attributes
+    int getId() const;
+    void setId(int id);
     std::string getFirstname() const;
     void setFirstname(std::string firstname);
     std::string getName() const;
