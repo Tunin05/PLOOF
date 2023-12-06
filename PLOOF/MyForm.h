@@ -68,9 +68,9 @@ namespace PLOOF {
 			// 
 			// logo
 			// 
-			this->logo->Location = System::Drawing::Point(168, 23);
+			this->logo->Location = System::Drawing::Point(64, 23);
 			this->logo->Name = L"logo";
-			this->logo->Size = System::Drawing::Size(171, 158);
+			this->logo->Size = System::Drawing::Size(379, 158);
 			this->logo->TabIndex = 0;
 			this->logo->TabStop = false;
 			// 
