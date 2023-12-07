@@ -119,7 +119,8 @@ namespace PLOOF {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(571, 240);
 			this->dataGridView1->TabIndex = 2;
-			this->dataGridView1->CellContentDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionPersonnel::dataGridView1_CellContentClick);
+			this->dataGridView1->CellContentDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionPersonnel::SelectRow);
+			this->dataGridView1->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionPersonnel::SelectRow);
 			// 
 			// label1
 			// 
@@ -173,18 +174,18 @@ namespace PLOOF {
 			// 
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(407, 345);
+			this->textBox3->Location = System::Drawing::Point(386, 345);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(156, 26);
+			this->textBox3->Size = System::Drawing::Size(199, 26);
 			this->textBox3->TabIndex = 8;
 			// 
 			// textBox4
 			// 
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(407, 377);
+			this->textBox4->Location = System::Drawing::Point(357, 377);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(156, 26);
+			this->textBox4->Size = System::Drawing::Size(228, 26);
 			this->textBox4->TabIndex = 9;
 			// 
 			// label2
@@ -225,7 +226,7 @@ namespace PLOOF {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(296, 345);
+			this->label5->Location = System::Drawing::Point(275, 345);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(107, 20);
 			this->label5->TabIndex = 13;
@@ -236,7 +237,7 @@ namespace PLOOF {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(327, 380);
+			this->label6->Location = System::Drawing::Point(275, 377);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(76, 20);
 			this->label6->TabIndex = 14;
@@ -316,13 +317,13 @@ namespace PLOOF {
 	}
 	private: System::Void gestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		int i = e->RowIndex;
-		numericUpDown1->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value);
-		textBox1->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[1]->Value);
-		textBox2->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[2]->Value);
-		textBox3->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[3]->Value);
-		textBox4->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[4]->Value);
+	private: System::Void SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+			int i = e->RowIndex;
+			numericUpDown1->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value);
+			textBox1->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[1]->Value);
+			textBox2->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[2]->Value);
+			textBox3->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[3]->Value);
+			textBox4->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[4]->Value);
 	}
 };
 }
