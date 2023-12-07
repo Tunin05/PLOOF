@@ -61,7 +61,7 @@ namespace PLOOF {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -254,7 +254,6 @@ namespace PLOOF {
 			this->button4->TabIndex = 16;
 			this->button4->Text = L"Modifier";
 			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &gestionPersonnel::button4_Click);
 			// 
 			// button5
 			// 
@@ -325,6 +324,6 @@ namespace PLOOF {
 	private: System::Void SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) 
-};
+
+	};
 }
