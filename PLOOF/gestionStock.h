@@ -61,6 +61,7 @@ namespace PLOOF {
 	private: System::Windows::Forms::Button^ valider_bouton;
 	private: System::Windows::Forms::NumericUpDown^ input_quantite;
 	private: System::Windows::Forms::Label^ label_quantite;
+	private: System::Windows::Forms::Button^ clear_button;
 
 
 
@@ -103,6 +104,7 @@ namespace PLOOF {
 			this->valider_bouton = (gcnew System::Windows::Forms::Button());
 			this->input_quantite = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_quantite = (gcnew System::Windows::Forms::Label());
+			this->clear_button = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
@@ -176,7 +178,7 @@ namespace PLOOF {
 			// 
 			// name_article
 			// 
-			this->name_article->Location = System::Drawing::Point(209, 431);
+			this->name_article->Location = System::Drawing::Point(219, 486);
 			this->name_article->Name = L"name_article";
 			this->name_article->Size = System::Drawing::Size(159, 22);
 			this->name_article->TabIndex = 7;
@@ -184,7 +186,7 @@ namespace PLOOF {
 			// 
 			// nature_article
 			// 
-			this->nature_article->Location = System::Drawing::Point(209, 487);
+			this->nature_article->Location = System::Drawing::Point(219, 542);
 			this->nature_article->Name = L"nature_article";
 			this->nature_article->Size = System::Drawing::Size(159, 22);
 			this->nature_article->TabIndex = 9;
@@ -195,7 +197,7 @@ namespace PLOOF {
 			this->label_article->AutoSize = true;
 			this->label_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_article->Location = System::Drawing::Point(235, 382);
+			this->label_article->Location = System::Drawing::Point(245, 437);
 			this->label_article->Name = L"label_article";
 			this->label_article->Size = System::Drawing::Size(104, 26);
 			this->label_article->TabIndex = 10;
@@ -207,7 +209,7 @@ namespace PLOOF {
 			this->label_catalog->AutoSize = true;
 			this->label_catalog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_catalog->Location = System::Drawing::Point(654, 378);
+			this->label_catalog->Location = System::Drawing::Point(667, 435);
 			this->label_catalog->Name = L"label_catalog";
 			this->label_catalog->Size = System::Drawing::Size(147, 26);
 			this->label_catalog->TabIndex = 11;
@@ -216,7 +218,7 @@ namespace PLOOF {
 			// 
 			// input_prix_HT
 			// 
-			this->input_prix_HT->Location = System::Drawing::Point(719, 430);
+			this->input_prix_HT->Location = System::Drawing::Point(732, 487);
 			this->input_prix_HT->Name = L"input_prix_HT";
 			this->input_prix_HT->Size = System::Drawing::Size(120, 22);
 			this->input_prix_HT->TabIndex = 12;
@@ -226,7 +228,7 @@ namespace PLOOF {
 			this->label_prix_HT->AutoSize = true;
 			this->label_prix_HT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_prix_HT->Location = System::Drawing::Point(656, 431);
+			this->label_prix_HT->Location = System::Drawing::Point(669, 488);
 			this->label_prix_HT->Name = L"label_prix_HT";
 			this->label_prix_HT->Size = System::Drawing::Size(57, 18);
 			this->label_prix_HT->TabIndex = 13;
@@ -235,7 +237,7 @@ namespace PLOOF {
 			// 
 			// designation
 			// 
-			this->designation->Location = System::Drawing::Point(720, 458);
+			this->designation->Location = System::Drawing::Point(733, 515);
 			this->designation->Name = L"designation";
 			this->designation->Size = System::Drawing::Size(119, 22);
 			this->designation->TabIndex = 14;
@@ -246,7 +248,7 @@ namespace PLOOF {
 			this->label_Stock->AutoSize = true;
 			this->label_Stock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_Stock->Location = System::Drawing::Point(666, 487);
+			this->label_Stock->Location = System::Drawing::Point(679, 544);
 			this->label_Stock->Name = L"label_Stock";
 			this->label_Stock->Size = System::Drawing::Size(47, 18);
 			this->label_Stock->TabIndex = 15;
@@ -255,7 +257,7 @@ namespace PLOOF {
 			// 
 			// input_Stock
 			// 
-			this->input_Stock->Location = System::Drawing::Point(719, 487);
+			this->input_Stock->Location = System::Drawing::Point(732, 544);
 			this->input_Stock->Name = L"input_Stock";
 			this->input_Stock->Size = System::Drawing::Size(120, 22);
 			this->input_Stock->TabIndex = 16;
@@ -265,7 +267,7 @@ namespace PLOOF {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(502, 530);
+			this->label2->Location = System::Drawing::Point(515, 587);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(211, 18);
 			this->label2->TabIndex = 17;
@@ -274,14 +276,14 @@ namespace PLOOF {
 			// 
 			// input_reapro
 			// 
-			this->input_reapro->Location = System::Drawing::Point(720, 530);
+			this->input_reapro->Location = System::Drawing::Point(733, 587);
 			this->input_reapro->Name = L"input_reapro";
 			this->input_reapro->Size = System::Drawing::Size(120, 22);
 			this->input_reapro->TabIndex = 18;
 			// 
 			// input_TVA
 			// 
-			this->input_TVA->Location = System::Drawing::Point(720, 569);
+			this->input_TVA->Location = System::Drawing::Point(733, 626);
 			this->input_TVA->Name = L"input_TVA";
 			this->input_TVA->Size = System::Drawing::Size(120, 22);
 			this->input_TVA->TabIndex = 19;
@@ -291,7 +293,7 @@ namespace PLOOF {
 			this->label_TVA->AutoSize = true;
 			this->label_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_TVA->Location = System::Drawing::Point(666, 569);
+			this->label_TVA->Location = System::Drawing::Point(679, 626);
 			this->label_TVA->Name = L"label_TVA";
 			this->label_TVA->Size = System::Drawing::Size(35, 18);
 			this->label_TVA->TabIndex = 20;
@@ -300,7 +302,7 @@ namespace PLOOF {
 			// 
 			// valider_bouton
 			// 
-			this->valider_bouton->Location = System::Drawing::Point(14, 406);
+			this->valider_bouton->Location = System::Drawing::Point(14, 395);
 			this->valider_bouton->Name = L"valider_bouton";
 			this->valider_bouton->Size = System::Drawing::Size(143, 25);
 			this->valider_bouton->TabIndex = 21;
@@ -310,7 +312,7 @@ namespace PLOOF {
 			// 
 			// input_quantite
 			// 
-			this->input_quantite->Location = System::Drawing::Point(209, 459);
+			this->input_quantite->Location = System::Drawing::Point(219, 514);
 			this->input_quantite->Name = L"input_quantite";
 			this->input_quantite->Size = System::Drawing::Size(159, 22);
 			this->input_quantite->TabIndex = 22;
@@ -320,17 +322,28 @@ namespace PLOOF {
 			this->label_quantite->AutoSize = true;
 			this->label_quantite->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_quantite->Location = System::Drawing::Point(140, 463);
+			this->label_quantite->Location = System::Drawing::Point(150, 518);
 			this->label_quantite->Name = L"label_quantite";
 			this->label_quantite->Size = System::Drawing::Size(63, 18);
 			this->label_quantite->TabIndex = 23;
 			this->label_quantite->Text = L"Quantite";
 			this->label_quantite->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// clear_button
+			// 
+			this->clear_button->Location = System::Drawing::Point(17, 426);
+			this->clear_button->Name = L"clear_button";
+			this->clear_button->Size = System::Drawing::Size(143, 25);
+			this->clear_button->TabIndex = 24;
+			this->clear_button->Text = L"Vider les champs";
+			this->clear_button->UseVisualStyleBackColor = true;
+			this->clear_button->Click += gcnew System::EventHandler(this, &gestionStock::clear_button_Click);
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->clear_button);
 			this->Controls->Add(this->label_quantite);
 			this->Controls->Add(this->input_quantite);
 			this->Controls->Add(this->valider_bouton);
@@ -397,12 +410,13 @@ namespace PLOOF {
 	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void refresh_button_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void deny_Click(System::Object^ sender, System::EventArgs^ e);
-
+	private: System::Void clear_button_Click(System::Object^ sender, System::EventArgs^ e);
 
 
 		   //Champs ajouter un article
 
 	private: System::Void valider_bouton_Click(System::Object^ sender, System::EventArgs^ e);
+
 
 	};
 }

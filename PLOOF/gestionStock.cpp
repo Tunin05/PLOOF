@@ -16,8 +16,9 @@ System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, Syst
 	this->deny->Visible = false;
 	this->Add_an_article->Visible = true;
 	this->valider_bouton->Visible = false;
+	this->clear_button->Visible = false;
 	//Champs et labels de l'ajout d'un article
-	//appel de la fonction afficher de la classe stock
+	gestionStock::SetVisibility(false);
 
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Stock* stock = new Stock();
@@ -28,29 +29,13 @@ System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, Syst
 System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	mode = 1;
-	//faire apparaitre le bouton "deny"
-	this->deny->Visible = true;
-	//faire disparaitre le bouton "add an article"
 	this->Add_an_article->Visible = false;
-	//faire apparaitre le bouton "valider"
+	this->deny->Visible = true;
 	this->valider_bouton->Visible = true;
+	this->clear_button->Visible = true;
 
 	//Champs et labels de l'ajout d'un article
-	this->name_article->Visible = true;
-	this->input_quantite->Visible = true;
-	this->label_quantite->Visible = true;
-	this->nature_article->Visible = true;
-	this->label_article->Visible = true;
-	this->label_catalog->Visible = true;
-	this->label_prix_HT->Visible = true;
-	this->input_prix_HT->Visible = true;
-	this->designation->Visible = true;
-	this->label_Stock->Visible = true;
-	this->input_Stock->Visible = true;
-	this->label2->Visible = true;
-	this->input_reapro->Visible = true;
-	this->input_TVA->Visible = true;
-	this->label_TVA->Visible = true;
+	gestionStock::SetVisibility(true);
 }
 
 System::Void PLOOF::gestionStock::refresh_button_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -61,29 +46,29 @@ System::Void PLOOF::gestionStock::refresh_button_Click(System::Object^ sender, S
 
 System::Void PLOOF::gestionStock::deny_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//faire disparaitre le bouton "deny"
-	this->deny->Visible = false;
-	//faire apparaitre le bouton "add an article"
 	this->Add_an_article->Visible = true;
-	//faire disparaitre le bouton "valider"
+	this->deny->Visible = false;
 	this->valider_bouton->Visible = false;
+	this->clear_button->Visible = false;
+
 
 	//Champs et labels de l'ajout d'un article
-	this->name_article->Visible = false;
-	this->label_quantite->Visible = false;
-	this->input_quantite->Visible = false;
-	this->nature_article->Visible = false;
-	this->label_article->Visible = false;
-	this->label_catalog->Visible = false;
-	this->label_prix_HT->Visible = false;
-	this->input_prix_HT->Visible = false;
-	this->designation->Visible = false;
-	this->label_Stock->Visible = false;
-	this->input_Stock->Visible = false;
-	this->label2->Visible = false;
-	this->input_reapro->Visible = false;
-	this->input_TVA->Visible = false;
-	this->label_TVA->Visible = false;
+	gestionStock::SetVisibility(false);
+}
+
+System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	//remettre les champs à leurs valeurs par défaut
+	if (mode == 1) {
+		this->name_article->Text = "";
+		this->input_quantite->Text = "0";
+		this->nature_article->Text = "";
+		this->input_prix_HT->Text = "0";
+		this->designation->Text = "";
+		this->input_Stock->Text = "0";
+		this->input_reapro->Text = "0";
+		this->input_TVA->Text = "0";
+	}
 }
 
 
