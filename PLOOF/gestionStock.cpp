@@ -10,7 +10,6 @@ int mode = 0;
 
 
 
-
 System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, System::EventArgs^ e) {
 
 	this->deny->Visible = false;
@@ -75,19 +74,19 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 System::Void PLOOF::gestionStock::valider_bouton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (mode == 1) {
-		//récuperer les données des champs
-		String^ name = this->name_article->Text;
-		String^ q = this->input_quantite->Text;
-		String^ nature = this->nature_article->Text;
-		String^ prix_HT = this->input_prix_HT->Text;
+		//récuperer les données des champs. name est un string, q est un int, nature est un string, prix_HT est un float, designation est un string, stock est un int, reapro est un int, TVA est un int
+		int q = Convert::ToInt32(this->input_quantite->Text);
+		float prix_HT = Convert::ToSingle(this->input_prix_HT->Text);
 		String^ designation = this->designation->Text;
-		String^ stock = this->input_Stock->Text;
-		String^ reapro = this->input_reapro->Text;
-		String^ TVA = this->input_TVA->Text;
+		int stock = Convert::ToInt32(this->input_Stock->Text);
+		int reapro = Convert::ToInt32(this->input_reapro->Text);
+		int TVA = Convert::ToInt32(this->input_TVA->Text);
+		String^ nature = this->nature_article->Text;
+		String^ name = this->name_article->Text;
 
 
 		//check si les champs sont remplis et si les données sont correctes
-		if (name == "" || q == "" || nature == "" || prix_HT == "" || designation == "" || stock == "" || reapro == "" || TVA == "") {
+		/*if (name == "" || q == "" || nature == "" || prix_HT == "" || designation == "" || stock == "" || reapro == "" || TVA == "") {
 			MessageBox::Show("Veuillez remplir tous les champs");
 			return;
 		}
@@ -123,10 +122,17 @@ System::Void PLOOF::gestionStock::valider_bouton_Click(System::Object^ sender, S
 			MessageBox::Show("La TVA ne doit contenir que des chiffres");
 			return;
 		}
+		*/
+
+		//créer un objet stock avec les données récupérées
+		Stock* stock = new Stock(q, prix_HT, designation, reapro, TVA, nature);
+		stock->insert();
+		delete stock;
 
 
-		//message box pour afficher les données récupérées des champs (pour tester)
-		MessageBox::Show("name : " + name + "\nq : " + q + "\nnature : " + nature + "\nprix_HT : " + prix_HT + "\ndesignation : " + designation + "\nstock : " + stock + "\nreapro : " + reapro + "\nTVA : " + TVA);
+
+
+
 	}
 }
 
