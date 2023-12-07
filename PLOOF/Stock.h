@@ -20,11 +20,11 @@ public:
 	//Stock possède name (string), quantite (int), nature (string),
 	//prix_HT (float), designation (string), 
 	//stock (int), reapro (int), TVA (int)
-	Stock(System::String^ name, System::Decimal quantite, System::String^ nature,
+	/*Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature,
 		System::Decimal prix_HT, System::String^ designation,
-		System::Decimal stock, System::Decimal reapro, System::Decimal TVA);
+		System::Decimal stock, System::Decimal reapro, System::Decimal TVA);*/
 
-	//DB related methods
+		//DB related methods
 	void insert() override;
 	void update() override;
 	void remove() override;
@@ -34,7 +34,6 @@ public:
 	void afficher(System::Windows::Forms::DataGridView^ data);
 
 	// Getter functions
-	int getID();
 	float getPrixHT();
 	std::string getDesignation();
 	int getQuantite();
@@ -43,7 +42,6 @@ public:
 	std::string getNature();
 
 	// Setter functions
-	void setID(int id);
 	void setPrixHT(float prixHT);
 	void setDesignation(const std::string& designation);
 	void setQuantite(int quantite);

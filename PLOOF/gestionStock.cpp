@@ -12,12 +12,11 @@ int mode = 0;
 //Fonction au chargement de la page
 System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, System::EventArgs^ e) {
 
-	this->deny->Visible = false;
 	this->Add_an_article->Visible = true;
-	this->valider_bouton->Visible = false;
+	this->delete_article->Visible = true;
 	this->clear_button->Visible = false;
 	//Champs et labels de l'ajout d'un article
-	gestionStock::SetVisibility(false);
+	gestionStock::SetVisibility(true);
 
 	//Affichage du stock
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
@@ -26,17 +25,21 @@ System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, Syst
 	delete stock;
 }
 
-//Fonction lors du clic sur le bouton "Ajouter un article"
-System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	mode = 1;
-	this->Add_an_article->Visible = false;
-	this->deny->Visible = true;
-	this->valider_bouton->Visible = true;
-	this->clear_button->Visible = true;
 
-	//Champs et labels de l'ajout d'un article
-	gestionStock::SetVisibility(true);
+System::Void PLOOF::gestionStock::SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
+{
+	int i = e->RowIndex;
+	input_prix_HT->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[1]->Value);
+
+	/*name_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[]->Value);
+	input_quantite->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[]->Value);
+	nature_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[]->Value);
+	designation->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[]->Value);
+	input_Stock->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[]->Value);
+	input_reapro->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[]->Value);
+	input_TVA->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[]->Value);*/
+
+
 }
 
 System::Void PLOOF::gestionStock::refresh_button_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -45,17 +48,6 @@ System::Void PLOOF::gestionStock::refresh_button_Click(System::Object^ sender, S
 	gestionStock_Load(sender, e);
 }
 
-System::Void PLOOF::gestionStock::deny_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->Add_an_article->Visible = true;
-	this->deny->Visible = false;
-	this->valider_bouton->Visible = false;
-	this->clear_button->Visible = false;
-
-
-	//Champs et labels de l'ajout d'un article
-	gestionStock::SetVisibility(false);
-}
 
 System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -72,25 +64,13 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 	}
 }
 
-
-//Fonction lors du clic sur le bouton "Valider"
-System::Void PLOOF::gestionStock::valider_bouton_Click(System::Object^ sender, System::EventArgs^ e)
+//Fonction lors du clic sur le bouton "Ajouter un article"
+System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (mode == 1) {
-		//récupérer les données des champs
-		System::String^ name = this->name_article->Text;
-		System::Decimal quantite = System::Convert::ToDecimal(this->input_quantite->Text);
-		System::String^ nature = this->nature_article->Text;
-		System::Decimal prix_HT = System::Convert::ToDecimal(this->input_prix_HT->Text);
-		System::String^ designation = this->designation->Text;
-		System::Decimal stock = System::Convert::ToDecimal(this->input_Stock->Text);
-		System::Decimal reapro = System::Convert::ToDecimal(this->input_reapro->Text);
-		System::Decimal TVA = System::Convert::ToDecimal(this->input_TVA->Text);
-
-		//créer un objet stock avec les données récupérées
-		Stock* stock = new Stock(name, quantite, nature, prix_HT, designation, stock, reapro, TVA);
-		stock->insert();
-		delete stock;
-	}
+	mode = 1;
 }
 
+System::Void PLOOF::gestionStock::delete_article_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	mode = 2;
+}

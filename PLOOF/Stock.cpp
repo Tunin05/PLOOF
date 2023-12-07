@@ -1,19 +1,21 @@
 #include "Stock.h"
 #include "CLDB.h"
-#include <msclr\marshal_cppstd.h>
 
 Stock::Stock()
 {
+	this->name = "";
+	this->quantite = 0;
+	this->nature = "";
 	this->prixHT = 0;
 	this->designation = "";
-	this->quantite = 0;
+	this->stock = 0;
 	this->seuilReapprovisionnement = 0;
 	this->tauxTVA = 0;
-	this->nature = "";
 }
 
 
-Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature, System::Decimal prix_HT, System::String^ designation, System::Decimal stock, System::Decimal reapro, System::Decimal TVA)
+
+/*Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature, System::Decimal prix_HT, System::String^ designation, System::Decimal stock, System::Decimal reapro, System::Decimal TVA)
 {
 	this->name = msclr::interop::marshal_as<std::string>(name);
 	this->quantite = System::Convert::ToInt32(quantite);
@@ -23,8 +25,7 @@ Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nat
 	this->stock = System::Convert::ToInt32(stock);
 	this->seuilReapprovisionnement = System::Convert::ToInt32(reapro);
 	this->tauxTVA = System::Convert::ToSingle(TVA);
-}
-
+}*/
 
 //DB related methods
 void Stock::insert()
@@ -56,7 +57,7 @@ void Stock::select(int id)
 //Form related methods
 void Stock::afficher(System::Windows::Forms::DataGridView^ data)
 {
-	System::String^ query = "SELECT * FROM Catalog;";
+	System::String^ query = "SELECT C.*, A.article_ref, A.name, A.quantity, A.nature FROM PLOOF.dbo.Catalog C INNER JOIN PLOOF.dbo.Articles A ON C.id_catalog = A.id_catalog;";
 	CLDB^ db = gcnew CLDB();
 	System::Data::DataSet^ dataset = db->getDataSet(query);
 	data->DataSource = dataset->Tables[0];
