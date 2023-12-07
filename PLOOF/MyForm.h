@@ -71,7 +71,7 @@ namespace PLOOF {
 			// 
 			// logo
 			// 
-			this->logo->Location = System::Drawing::Point(64, 23);
+			this->logo->Location = System::Drawing::Point(99, 12);
 			this->logo->Name = L"logo";
 			this->logo->Size = System::Drawing::Size(379, 158);
 			this->logo->TabIndex = 0;
@@ -79,7 +79,7 @@ namespace PLOOF {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(147, 197);
+			this->button1->Location = System::Drawing::Point(182, 186);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(213, 52);
 			this->button1->TabIndex = 1;
@@ -89,7 +89,7 @@ namespace PLOOF {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(147, 255);
+			this->button2->Location = System::Drawing::Point(182, 244);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(213, 52);
 			this->button2->TabIndex = 2;
@@ -98,7 +98,7 @@ namespace PLOOF {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(147, 313);
+			this->button3->Location = System::Drawing::Point(182, 302);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(213, 52);
 			this->button3->TabIndex = 3;
@@ -107,7 +107,7 @@ namespace PLOOF {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(147, 371);
+			this->button4->Location = System::Drawing::Point(182, 360);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(213, 52);
 			this->button4->TabIndex = 4;
@@ -116,7 +116,7 @@ namespace PLOOF {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(147, 429);
+			this->button5->Location = System::Drawing::Point(182, 418);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(213, 52);
 			this->button5->TabIndex = 5;
@@ -126,7 +126,7 @@ namespace PLOOF {
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
-			this->ClientSize = System::Drawing::Size(519, 511);
+			this->ClientSize = System::Drawing::Size(588, 511);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -148,7 +148,6 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	FgestionPersonnel->Location = Point(0, 0);
 	FgestionPersonnel->Size = this->ClientSize;
 	FgestionPersonnel->Show();
-	FgestionPersonnel->Dispose();
 }
 };
 }

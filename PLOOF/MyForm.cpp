@@ -10,11 +10,5 @@ void main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	PLOOF::MyForm mainForm;
 
-	// Test base de donnees
-	System::String^ query = "SELECT * FROM Personal;";
-	CLDB^ db = gcnew CLDB();
-	DataSet^ ds = db->getDataSet(query);
-
-
 	Application::Run(% mainForm);
 }
