@@ -55,7 +55,11 @@ namespace PLOOF {
 	private: System::Windows::Forms::Label^ label_Stock;
 	private: System::Windows::Forms::NumericUpDown^ input_Stock;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::NumericUpDown^ input_reapro;
+	private: System::Windows::Forms::NumericUpDown^ input_TVA;
+	private: System::Windows::Forms::Label^ label_TVA;
+	private: System::Windows::Forms::Button^ valider_bouton;
+
 
 
 
@@ -92,11 +96,15 @@ namespace PLOOF {
 			this->label_Stock = (gcnew System::Windows::Forms::Label());
 			this->input_Stock = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->input_reapro = (gcnew System::Windows::Forms::NumericUpDown());
+			this->input_TVA = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_TVA = (gcnew System::Windows::Forms::Label());
+			this->valider_bouton = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -197,7 +205,6 @@ namespace PLOOF {
 			this->label_article->TabIndex = 10;
 			this->label_article->Text = L"ARTICLE";
 			this->label_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label_article->Click += gcnew System::EventHandler(this, &gestionStock::label2_Click);
 			// 
 			// label_catalog
 			// 
@@ -269,18 +276,50 @@ namespace PLOOF {
 			this->label2->Text = L"Valeur de réapprovisionnement";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// numericUpDown1
+			// input_reapro
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(720, 530);
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
-			this->numericUpDown1->TabIndex = 18;
+			this->input_reapro->Location = System::Drawing::Point(720, 530);
+			this->input_reapro->Name = L"input_reapro";
+			this->input_reapro->Size = System::Drawing::Size(120, 22);
+			this->input_reapro->TabIndex = 18;
+			// 
+			// input_TVA
+			// 
+			this->input_TVA->Location = System::Drawing::Point(720, 569);
+			this->input_TVA->Name = L"input_TVA";
+			this->input_TVA->Size = System::Drawing::Size(120, 22);
+			this->input_TVA->TabIndex = 19;
+			// 
+			// label_TVA
+			// 
+			this->label_TVA->AutoSize = true;
+			this->label_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_TVA->Location = System::Drawing::Point(666, 569);
+			this->label_TVA->Name = L"label_TVA";
+			this->label_TVA->Size = System::Drawing::Size(35, 18);
+			this->label_TVA->TabIndex = 20;
+			this->label_TVA->Text = L"TVA";
+			this->label_TVA->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// valider_bouton
+			// 
+			this->valider_bouton->Location = System::Drawing::Point(14, 406);
+			this->valider_bouton->Name = L"valider_bouton";
+			this->valider_bouton->Size = System::Drawing::Size(143, 25);
+			this->valider_bouton->TabIndex = 21;
+			this->valider_bouton->Text = L"Valider";
+			this->valider_bouton->UseVisualStyleBackColor = true;
+			this->valider_bouton->Click += gcnew System::EventHandler(this, &gestionStock::valider_bouton_Click);
 			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->numericUpDown1);
+			this->Controls->Add(this->valider_bouton);
+			this->Controls->Add(this->label_TVA);
+			this->Controls->Add(this->input_TVA);
+			this->Controls->Add(this->input_reapro);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->input_Stock);
 			this->Controls->Add(this->label_Stock);
@@ -304,12 +343,13 @@ namespace PLOOF {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
-#pragma endregion
+
 		//retour
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
@@ -320,8 +360,12 @@ namespace PLOOF {
 	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void refresh_button_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void deny_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
-}
 
+
+
+		   //Champs ajouter un article
+
+	private: System::Void valider_bouton_Click(System::Object^ sender, System::EventArgs^ e);
+
+	};
+}
