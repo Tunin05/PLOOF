@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="CLDB.cpp" />
     <ClCompile Include="Gestion.cpp" />
+    <ClCompile Include="gestionStock.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="gestionPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
@@ -130,6 +131,9 @@
   <ItemGroup>
     <ClInclude Include="CLDB.h" />
     <ClInclude Include="Gestion.h" />
+    <ClInclude Include="gestionStock.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
