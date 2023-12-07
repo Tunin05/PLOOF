@@ -9,7 +9,7 @@ int mode = 0;
 //mode = 3 : mode modification d'un article
 
 
-
+//Fonction au chargement de la page
 System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, System::EventArgs^ e) {
 
 	this->deny->Visible = false;
@@ -19,12 +19,14 @@ System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, Syst
 	//Champs et labels de l'ajout d'un article
 	gestionStock::SetVisibility(false);
 
+	//Affichage du stock
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Stock* stock = new Stock();
 	stock->afficher(dataGrid);
 	delete stock;
 }
 
+//Fonction lors du clic sur le bouton "Ajouter un article"
 System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	mode = 1;
@@ -71,11 +73,22 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 }
 
 
+//Fonction lors du clic sur le bouton "Valider"
 System::Void PLOOF::gestionStock::valider_bouton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (mode == 1) {
+		//récupérer les données des champs
+		System::String^ name = this->name_article->Text;
+		System::Decimal quantite = System::Convert::ToDecimal(this->input_quantite->Text);
+		System::String^ nature = this->nature_article->Text;
+		System::Decimal prix_HT = System::Convert::ToDecimal(this->input_prix_HT->Text);
+		System::String^ designation = this->designation->Text;
+		System::Decimal stock = System::Convert::ToDecimal(this->input_Stock->Text);
+		System::Decimal reapro = System::Convert::ToDecimal(this->input_reapro->Text);
+		System::Decimal TVA = System::Convert::ToDecimal(this->input_TVA->Text);
+
 		//créer un objet stock avec les données récupérées
-		Stock* stock = new Stock(this->name_article->Text, System::Convert::ToDecimal(this->input_quantite->Text), msclr::interop::marshal_as<std::string>(this->nature_article->Text), System::Convert::ToDecimal(this->input_prix_HT->Text), msclr::interop::marshal_as<std::string>(this->designation->Text), System::Convert::ToDecimal(this->input_Stock->Text), System::Convert::ToDecimal(this->input_reapro->Text), System::Convert::ToDecimal(this->input_TVA->Text);
+		Stock* stock = new Stock(name, quantite, nature, prix_HT, designation, stock, reapro, TVA);
 		stock->insert();
 		delete stock;
 	}

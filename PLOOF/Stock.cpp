@@ -30,9 +30,9 @@ Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nat
 void Stock::insert()
 {
 	//We firt need to insert the article in the catalog table (price, designation, stock, reappro, tva).
-	System::String^ query = "INSERT INTO Catalog (price_ET, designation, stock, reorder_threshold, VAT) VALUES (" + this->prixHT + ", '" + gcnew System::String(this->designation.c_str()) + "', " + this->quantite + ", " + this->seuilReapprovisionnement + ", " + this->tauxTVA + ");";
+	/*System::String^ query = "INSERT INTO Catalog (price_ET, designation, stock, reorder_threshold, VAT) VALUES (" + this->prixHT + ", '" + gcnew System::String(this->designation.c_str()) + "', " + this->quantite + ", " + this->seuilReapprovisionnement + ", " + this->tauxTVA + ");";
 	CLDB^ db = gcnew CLDB();
-	db->executeQuery(query);
+	db->executeQuery(query);*/
 
 }
 
@@ -63,11 +63,6 @@ void Stock::afficher(System::Windows::Forms::DataGridView^ data)
 }
 
 // Getter functions
-int Stock::getID()
-{
-	return this->id;
-}
-
 float Stock::getPrixHT()
 {
 	return this->prixHT;
@@ -99,10 +94,6 @@ std::string Stock::getNature()
 }
 
 // Setter functions
-void Stock::setID(int id)
-{
-	this->id = id;
-}
 
 void Stock::setPrixHT(float prixHT)
 {
