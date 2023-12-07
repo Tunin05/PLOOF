@@ -114,6 +114,7 @@ namespace PLOOF {
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"Gestion du stock";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -158,5 +159,6 @@ namespace PLOOF {
 		FgestionStock->Size = this->ClientSize;
 		FgestionStock->Show();
 	}
+
 	};
 }
