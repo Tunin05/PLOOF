@@ -3,7 +3,8 @@
 CLDB::CLDB() {
 	try
 	{
-		this->DBconn = gcnew System::Data::SqlClient::SqlConnection("Data Source = desktop-flnbqv7; Initial Catalog = PLOOF; User ID = PLOOF_USR; Password = azerty");
+		//this->DBconn = gcnew System::Data::SqlClient::SqlConnection("Data Source = desktop-flnbqv7; Initial Catalog = PLOOF; User ID = PLOOF_USR; Password = azerty");
+		this->DBconn = gcnew System::Data::SqlClient::SqlConnection("Data Source = PC-STEEVEN-LENO; Initial Catalog = PLOOF; Integrated Security = True");
 		this->DBconn->Open();
 	}
 	catch (System::Exception^ e)
@@ -28,7 +29,7 @@ void CLDB::executeQuery(System::String^ query) {
 	{
 		System::Data::SqlClient::SqlCommand^ command = gcnew System::Data::SqlClient::SqlCommand(query, this->DBconn);
 		int nb_l = command->ExecuteNonQuery();
-		
+
 		if (nb_l > 0)
 		{
 			System::Console::WriteLine("Query executed successfully");
