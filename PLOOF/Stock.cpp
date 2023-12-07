@@ -13,6 +13,19 @@ Stock::Stock()
 }
 
 
+Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature, System::Decimal prix_HT, System::String^ designation, System::Decimal stock, System::Decimal reapro, System::Decimal TVA)
+{
+	this->name = msclr::interop::marshal_as<std::string>(name);
+	this->quantite = System::Convert::ToInt32(quantite);
+	this->nature = msclr::interop::marshal_as<std::string>(nature);
+	this->prixHT = System::Convert::ToSingle(prix_HT);
+	this->designation = msclr::interop::marshal_as<std::string>(designation);
+	this->stock = System::Convert::ToInt32(stock);
+	this->seuilReapprovisionnement = System::Convert::ToInt32(reapro);
+	this->tauxTVA = System::Convert::ToSingle(TVA);
+}
+
+
 //DB related methods
 void Stock::insert()
 {
@@ -120,27 +133,4 @@ void Stock::setNature(const std::string& nature)
 {
 	this->nature = nature;
 }
-
-Stock::Stock(int quantite, float prixHT, const std::string& designation,
-	int seuilReapprovisionnement, float tauxTVA, const std::string& nature)
-{
-	this->quantite = quantite;
-	this->prixHT = prixHT;
-	this->designation = designation;
-	this->seuilReapprovisionnement = seuilReapprovisionnement;
-	this->tauxTVA = tauxTVA;
-	this->nature = nature;
-}
-
-Stock::Stock(System::String^ designation, System::Decimal quantite, System::Decimal prixHT, System::Decimal seuilReapprovisionnement, System::Decimal tauxTVA, System::String^ nature)
-{
-	this->designation = msclr::interop::marshal_as<std::string>(designation);
-	this->quantite = System::Convert::ToInt32(quantite);
-	this->prixHT = System::Convert::ToSingle(prixHT);
-	this->seuilReapprovisionnement = System::Convert::ToInt32(seuilReapprovisionnement);
-	this->tauxTVA = System::Convert::ToSingle(tauxTVA);
-	this->nature = msclr::interop::marshal_as<std::string>(nature);
-}
-
-
 

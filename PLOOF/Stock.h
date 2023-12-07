@@ -5,20 +5,24 @@
 
 class Stock : public Gestion {
 private:
-	int id;
+	std::string name;
+	int quantite;
+	std::string nature;
 	float prixHT;
 	std::string designation;
-	int quantite;
+	int stock;
 	int seuilReapprovisionnement;
 	float tauxTVA;
-	std::string nature;
+
 
 public:
 	Stock();
-	Stock(int quantite, float prixHT, const std::string& designation,
-		int seuilReapprovisionnement, float tauxTVA, const std::string& nature);
-	Stock(System::String^ designation, System::Decimal quantite, System::Decimal prixHT, System::Decimal seuilReapprovisionnement, System::Decimal tauxTVA, System::String^ nature);
-
+	//Stock possède name (string), quantite (int), nature (string),
+	//prix_HT (float), designation (string), 
+	//stock (int), reapro (int), TVA (int)
+	Stock(System::String^ name, System::Decimal quantite, System::String^ nature,
+		System::Decimal prix_HT, System::String^ designation,
+		System::Decimal stock, System::Decimal reapro, System::Decimal TVA);
 
 	//DB related methods
 	void insert() override;

@@ -74,65 +74,10 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 System::Void PLOOF::gestionStock::valider_bouton_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (mode == 1) {
-		//récuperer les données des champs. name est un string, q est un int, nature est un string, prix_HT est un float, designation est un string, stock est un int, reapro est un int, TVA est un int
-		int q = Convert::ToInt32(this->input_quantite->Text);
-		float prix_HT = Convert::ToSingle(this->input_prix_HT->Text);
-		String^ designation = this->designation->Text;
-		int stock = Convert::ToInt32(this->input_Stock->Text);
-		int reapro = Convert::ToInt32(this->input_reapro->Text);
-		int TVA = Convert::ToInt32(this->input_TVA->Text);
-		String^ nature = this->nature_article->Text;
-		String^ name = this->name_article->Text;
-
-
-		//check si les champs sont remplis et si les données sont correctes
-		/*if (name == "" || q == "" || nature == "" || prix_HT == "" || designation == "" || stock == "" || reapro == "" || TVA == "") {
-			MessageBox::Show("Veuillez remplir tous les champs");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(name, "[^a-zA-Z0-9 ]")) {
-			MessageBox::Show("Le nom de l'article ne doit contenir que des lettres, des chiffres ou des espaces");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(q, "[^0-9]")) {
-			MessageBox::Show("La quantité ne doit contenir que des chiffres");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(nature, "[^a-zA-Z0-9 ]")) {
-			MessageBox::Show("La nature ne doit contenir que des lettres, des chiffres ou des espaces");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(prix_HT, "[^0-9.]")) {
-			MessageBox::Show("Le prix HT ne doit contenir que des chiffres ou des points");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(designation, "[^a-zA-Z0-9 ]")) {
-			MessageBox::Show("La désignation ne doit contenir que des lettres, des chiffres ou des espaces");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(stock, "[^0-9]")) {
-			MessageBox::Show("Le stock ne doit contenir que des chiffres");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(reapro, "[^0-9]")) {
-			MessageBox::Show("Le réapprovisionnement ne doit contenir que des chiffres");
-			return;
-		}
-		if (System::Text::RegularExpressions::Regex::IsMatch(TVA, "[^0-9]")) {
-			MessageBox::Show("La TVA ne doit contenir que des chiffres");
-			return;
-		}
-		*/
-
 		//créer un objet stock avec les données récupérées
-		Stock* stock = new Stock(q, prix_HT, designation, reapro, TVA, nature);
+		Stock* stock = new Stock(this->name_article->Text, System::Convert::ToDecimal(this->input_quantite->Text), msclr::interop::marshal_as<std::string>(this->nature_article->Text), System::Convert::ToDecimal(this->input_prix_HT->Text), msclr::interop::marshal_as<std::string>(this->designation->Text), System::Convert::ToDecimal(this->input_Stock->Text), System::Convert::ToDecimal(this->input_reapro->Text), System::Convert::ToDecimal(this->input_TVA->Text);
 		stock->insert();
 		delete stock;
-
-
-
-
-
 	}
 }
 
