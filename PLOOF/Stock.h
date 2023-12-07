@@ -6,6 +6,7 @@
 class Stock : public Gestion {
 private:
 	int id_article;
+	int id_catalog;
 	std::string name;
 	int quantite;
 	std::string nature;

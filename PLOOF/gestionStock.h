@@ -68,6 +68,8 @@ namespace PLOOF {
 	private: System::Windows::Forms::Label^ label_Designation_article;
 	private: System::Windows::Forms::NumericUpDown^ id_article_input;
 	private: System::Windows::Forms::Label^ label_id_article;
+	private: System::Windows::Forms::NumericUpDown^ id_catalog_input;
+	private: System::Windows::Forms::Label^ label_id_catalog;
 
 
 
@@ -116,6 +118,8 @@ namespace PLOOF {
 			this->label_Designation_article = (gcnew System::Windows::Forms::Label());
 			this->id_article_input = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_id_article = (gcnew System::Windows::Forms::Label());
+			this->id_catalog_input = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_id_catalog = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
@@ -123,6 +127,7 @@ namespace PLOOF {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_article_input))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_catalog_input))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -396,10 +401,32 @@ namespace PLOOF {
 			this->label_id_article->Text = L"ID article";
 			this->label_id_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// id_catalog_input
+			// 
+			this->id_catalog_input->Location = System::Drawing::Point(733, 654);
+			this->id_catalog_input->Name = L"id_catalog_input";
+			this->id_catalog_input->ReadOnly = true;
+			this->id_catalog_input->Size = System::Drawing::Size(119, 22);
+			this->id_catalog_input->TabIndex = 31;
+			// 
+			// label_id_catalog
+			// 
+			this->label_id_catalog->AutoSize = true;
+			this->label_id_catalog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_id_catalog->Location = System::Drawing::Point(621, 654);
+			this->label_id_catalog->Name = L"label_id_catalog";
+			this->label_id_catalog->Size = System::Drawing::Size(93, 18);
+			this->label_id_catalog->TabIndex = 32;
+			this->label_id_catalog->Text = L"ID Catalogue";
+			this->label_id_catalog->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label_id_catalog);
+			this->Controls->Add(this->id_catalog_input);
 			this->Controls->Add(this->label_id_article);
 			this->Controls->Add(this->id_article_input);
 			this->Controls->Add(this->label_Designation_article);
@@ -437,6 +464,7 @@ namespace PLOOF {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_article_input))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_catalog_input))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -453,6 +481,8 @@ namespace PLOOF {
 			//champs ajouter un article
 			this->label_nom_article->Visible = isVisible;
 			this->label_nature_article->Visible = isVisible;
+			this->id_catalog_input->Visible = isVisible;
+			this->label_id_catalog->Visible = isVisible;
 			this->label_Designation_article->Visible = isVisible;
 			this->id_article_input->Visible = isVisible;
 			this->name_article->Visible = isVisible;

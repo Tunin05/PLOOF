@@ -23,6 +23,7 @@ System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, Syst
 System::Void PLOOF::gestionStock::SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
 {
 	int i = e->RowIndex;
+	id_catalog_input->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value);
 	input_prix_HT->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[1]->Value);
 	designation->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[2]->Value);
 	input_Stock->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[3]->Value);
@@ -47,6 +48,7 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 {
 	this->id_article_input->Text = "0";
 	this->name_article->Text = "";
+	this->id_catalog_input->Text = "0";
 	this->input_quantite->Text = "0";
 	this->nature_article->Text = "";
 	this->input_prix_HT->Text = "0";
@@ -66,10 +68,8 @@ System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, S
 System::Void PLOOF::gestionStock::delete_article_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	//Suppression d'un article
-	/*System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
+	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Stock* stock = new Stock();
 	stock->remove();
-
-	delete stock;*/
-
+	delete stock;
 }
