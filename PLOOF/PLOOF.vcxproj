@@ -125,6 +125,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="gestionPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLDB.h" />
@@ -136,6 +137,7 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Personnel.h" />
+    <ClInclude Include="Stock.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
