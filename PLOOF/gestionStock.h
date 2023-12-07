@@ -39,7 +39,10 @@ namespace PLOOF {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ refresh_button;
+
+	private: System::Windows::Forms::Button^ Add_an_article;
+	private: System::Windows::Forms::Button^ deny;
 
 	private:
 		/// <summary>
@@ -57,7 +60,9 @@ namespace PLOOF {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->refresh_button = (gcnew System::Windows::Forms::Button());
+			this->Add_an_article = (gcnew System::Windows::Forms::Button());
+			this->deny = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -90,25 +95,46 @@ namespace PLOOF {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(15, 44);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(157, 20);
+			this->label1->Size = System::Drawing::Size(145, 25);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Liste du stock";
 			// 
-			// button2
+			// refresh_button
 			// 
-			this->button2->Location = System::Drawing::Point(510, 312);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 4;
-			this->button2->Text = L"Actualiser";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &gestionStock::button2_Click);
+			this->refresh_button->Location = System::Drawing::Point(510, 312);
+			this->refresh_button->Name = L"refresh_button";
+			this->refresh_button->Size = System::Drawing::Size(75, 23);
+			this->refresh_button->TabIndex = 4;
+			this->refresh_button->Text = L"Actualiser";
+			this->refresh_button->UseVisualStyleBackColor = true;
+			this->refresh_button->Click += gcnew System::EventHandler(this, &gestionStock::refresh_button_Click);
+			// 
+			// Add_an_article
+			// 
+			this->Add_an_article->Location = System::Drawing::Point(14, 362);
+			this->Add_an_article->Name = L"Add_an_article";
+			this->Add_an_article->Size = System::Drawing::Size(143, 27);
+			this->Add_an_article->TabIndex = 5;
+			this->Add_an_article->Text = L"Ajouter un article";
+			this->Add_an_article->UseVisualStyleBackColor = true;
+			this->Add_an_article->Click += gcnew System::EventHandler(this, &gestionStock::Add_an_article_Click);
+			// 
+			// deny
+			// 
+			this->deny->Location = System::Drawing::Point(251, 366);
+			this->deny->Name = L"deny";
+			this->deny->Size = System::Drawing::Size(143, 23);
+			this->deny->TabIndex = 6;
+			this->deny->Text = L"Annuler";
+			this->deny->UseVisualStyleBackColor = true;
 			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->deny);
+			this->Controls->Add(this->Add_an_article);
+			this->Controls->Add(this->refresh_button);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
@@ -125,11 +151,11 @@ namespace PLOOF {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 	}
-		   //actualiser
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	}
+
 	private: System::Void gestionStock_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void refresh_button_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
 
