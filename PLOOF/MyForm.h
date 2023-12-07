@@ -14,7 +14,7 @@ namespace PLOOF {
 
 
 	/// <summary>
-	/// Description résumée de MyForm
+	/// Description rÃ©sumÃ©e de MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -29,7 +29,7 @@ namespace PLOOF {
 
 	protected:
 		/// <summary>
-		/// Nettoyage des ressources utilisées.
+		/// Nettoyage des ressources utilisÃ©es.
 		/// </summary>
 		~MyForm()
 		{
@@ -50,14 +50,14 @@ namespace PLOOF {
 
 	private:
 		/// <summary>
-		/// Variable nécessaire au concepteur.
+		/// Variable nÃ©cessaire au concepteur.
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
+		/// MÃ©thode requise pour la prise en charge du concepteur - ne modifiez pas
+		/// le contenu de cette mÃ©thode avec l'Ã©diteur de code.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -72,7 +72,7 @@ namespace PLOOF {
 			// 
 			// logo
 			// 
-			this->logo->Location = System::Drawing::Point(64, 23);
+			this->logo->Location = System::Drawing::Point(99, 12);
 			this->logo->Name = L"logo";
 			this->logo->Size = System::Drawing::Size(379, 158);
 			this->logo->TabIndex = 0;
@@ -80,7 +80,7 @@ namespace PLOOF {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(147, 197);
+			this->button1->Location = System::Drawing::Point(182, 186);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(213, 52);
 			this->button1->TabIndex = 1;
@@ -90,7 +90,7 @@ namespace PLOOF {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(147, 255);
+			this->button2->Location = System::Drawing::Point(182, 244);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(213, 52);
 			this->button2->TabIndex = 2;
@@ -99,7 +99,7 @@ namespace PLOOF {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(147, 313);
+			this->button3->Location = System::Drawing::Point(182, 302);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(213, 52);
 			this->button3->TabIndex = 3;
@@ -108,7 +108,7 @@ namespace PLOOF {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(147, 371);
+			this->button4->Location = System::Drawing::Point(182, 360);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(213, 52);
 			this->button4->TabIndex = 4;
@@ -118,7 +118,7 @@ namespace PLOOF {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(147, 429);
+			this->button5->Location = System::Drawing::Point(182, 418);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(213, 52);
 			this->button5->TabIndex = 5;
@@ -128,7 +128,7 @@ namespace PLOOF {
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
-			this->ClientSize = System::Drawing::Size(519, 511);
+			this->ClientSize = System::Drawing::Size(588, 511);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -143,21 +143,13 @@ namespace PLOOF {
 		}
 #pragma endregion
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		gestionPersonnel^ FgestionPersonnel = gcnew gestionPersonnel();
-		this->Controls->Add(FgestionPersonnel);
-		FgestionPersonnel->BringToFront();
-		FgestionPersonnel->Location = Point(0, 0);
-		FgestionPersonnel->Size = this->ClientSize;
-		FgestionPersonnel->Show();
-	}
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		gestionStock^ FgestionStock = gcnew gestionStock();
-		this->Controls->Add(FgestionStock);
-		FgestionStock->BringToFront();
-		FgestionStock->Location = Point(0, 0);
-		FgestionStock->Size = this->ClientSize;
-		FgestionStock->Show();
-	}
-	};
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	gestionPersonnel^ FgestionPersonnel = gcnew gestionPersonnel();
+	this->Controls->Add(FgestionPersonnel);
+	FgestionPersonnel->BringToFront();
+	FgestionPersonnel->Location = Point(0, 0);
+	FgestionPersonnel->Size = this->ClientSize;
+	FgestionPersonnel->Show();
+}
+};
 }
