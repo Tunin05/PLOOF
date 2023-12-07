@@ -1,5 +1,6 @@
 #pragma once
 #include "gestionPersonnel.h"
+#include "gestionStock.h"
 
 namespace PLOOF {
 
@@ -113,6 +114,7 @@ namespace PLOOF {
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"Gestion du stock";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -148,6 +150,14 @@ namespace PLOOF {
 		FgestionPersonnel->Location = Point(0, 0);
 		FgestionPersonnel->Size = this->ClientSize;
 		FgestionPersonnel->Show();
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		gestionStock^ FgestionStock = gcnew gestionStock();
+		this->Controls->Add(FgestionStock);
+		FgestionStock->BringToFront();
+		FgestionStock->Location = Point(0, 0);
+		FgestionStock->Size = this->ClientSize;
+		FgestionStock->Show();
 	}
 	};
 }
