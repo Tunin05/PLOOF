@@ -43,6 +43,15 @@ namespace PLOOF {
 
 	private: System::Windows::Forms::Button^ Add_an_article;
 	private: System::Windows::Forms::Button^ deny;
+	private: System::Windows::Forms::TextBox^ name_article;
+	private: System::Windows::Forms::TextBox^ q_article;
+	private: System::Windows::Forms::TextBox^ nature_article;
+	private: System::Windows::Forms::Label^ label_article;
+	private: System::Windows::Forms::Label^ label_catalog;
+
+
+
+
 
 	private:
 		/// <summary>
@@ -63,6 +72,11 @@ namespace PLOOF {
 			this->refresh_button = (gcnew System::Windows::Forms::Button());
 			this->Add_an_article = (gcnew System::Windows::Forms::Button());
 			this->deny = (gcnew System::Windows::Forms::Button());
+			this->name_article = (gcnew System::Windows::Forms::TextBox());
+			this->q_article = (gcnew System::Windows::Forms::TextBox());
+			this->nature_article = (gcnew System::Windows::Forms::TextBox());
+			this->label_article = (gcnew System::Windows::Forms::Label());
+			this->label_catalog = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -121,17 +135,72 @@ namespace PLOOF {
 			// 
 			// deny
 			// 
-			this->deny->Location = System::Drawing::Point(251, 366);
+			this->deny->Location = System::Drawing::Point(14, 364);
 			this->deny->Name = L"deny";
 			this->deny->Size = System::Drawing::Size(143, 23);
 			this->deny->TabIndex = 6;
 			this->deny->Text = L"Annuler";
 			this->deny->UseVisualStyleBackColor = true;
+			this->deny->Click += gcnew System::EventHandler(this, &gestionStock::deny_Click);
+			// 
+			// name_article
+			// 
+			this->name_article->Location = System::Drawing::Point(189, 413);
+			this->name_article->Name = L"name_article";
+			this->name_article->Size = System::Drawing::Size(159, 22);
+			this->name_article->TabIndex = 7;
+			this->name_article->Text = L"Nom de l\'article";
+			// 
+			// q_article
+			// 
+			this->q_article->Location = System::Drawing::Point(189, 441);
+			this->q_article->Name = L"q_article";
+			this->q_article->Size = System::Drawing::Size(159, 22);
+			this->q_article->TabIndex = 8;
+			this->q_article->Text = L"Quantite de l\'article";
+			// 
+			// nature_article
+			// 
+			this->nature_article->Location = System::Drawing::Point(189, 469);
+			this->nature_article->Name = L"nature_article";
+			this->nature_article->Size = System::Drawing::Size(159, 22);
+			this->nature_article->TabIndex = 9;
+			this->nature_article->Text = L"Nature de l\'article";
+			// 
+			// label_article
+			// 
+			this->label_article->AutoSize = true;
+			this->label_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_article->Location = System::Drawing::Point(215, 364);
+			this->label_article->Name = L"label_article";
+			this->label_article->Size = System::Drawing::Size(104, 26);
+			this->label_article->TabIndex = 10;
+			this->label_article->Text = L"ARTICLE";
+			this->label_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label_article->Click += gcnew System::EventHandler(this, &gestionStock::label2_Click);
+			// 
+			// label_catalog
+			// 
+			this->label_catalog->AutoSize = true;
+			this->label_catalog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_catalog->Location = System::Drawing::Point(401, 361);
+			this->label_catalog->Name = L"label_catalog";
+			this->label_catalog->Size = System::Drawing::Size(147, 26);
+			this->label_catalog->TabIndex = 11;
+			this->label_catalog->Text = L"CATALOGUE";
+			this->label_catalog->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label_catalog);
+			this->Controls->Add(this->label_article);
+			this->Controls->Add(this->nature_article);
+			this->Controls->Add(this->q_article);
+			this->Controls->Add(this->name_article);
 			this->Controls->Add(this->deny);
 			this->Controls->Add(this->Add_an_article);
 			this->Controls->Add(this->refresh_button);
@@ -156,6 +225,9 @@ namespace PLOOF {
 	private: System::Void gestionStock_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void refresh_button_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+	private: System::Void deny_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
 
