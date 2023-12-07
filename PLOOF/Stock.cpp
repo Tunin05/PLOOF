@@ -4,7 +4,6 @@
 
 Stock::Stock()
 {
-	this->id = 0;
 	this->prixHT = 0;
 	this->designation = "";
 	this->quantite = 0;

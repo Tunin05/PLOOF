@@ -86,20 +86,23 @@ namespace PLOOF {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(11, 48);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(15, 44);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(116, 16);
+			this->label1->Size = System::Drawing::Size(157, 20);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Liste du stock";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(510, 38);
+			this->button2->Location = System::Drawing::Point(510, 312);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"Actualiser";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &gestionStock::button2_Click);
 			// 
 			// gestionStock
 			// 
@@ -121,6 +124,10 @@ namespace PLOOF {
 		//retour
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
+	}
+		   //actualiser
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 	private: System::Void gestionStock_Load(System::Object^ sender, System::EventArgs^ e);
 	};
