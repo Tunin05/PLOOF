@@ -122,13 +122,18 @@
   <ItemGroup>
     <ClCompile Include="CLDB.cpp" />
     <ClCompile Include="Gestion.cpp" />
+    <ClCompile Include="gestionStock.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="gestionPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLDB.h" />
     <ClInclude Include="Gestion.h" />
+    <ClInclude Include="gestionStock.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -136,8 +141,12 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Personnel.h" />
+    <ClInclude Include="Stock.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="gestionStock.resx">
+      <DependentUpon>gestionStock.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

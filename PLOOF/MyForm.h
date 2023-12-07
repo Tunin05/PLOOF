@@ -1,5 +1,6 @@
 #pragma once
 #include "gestionPersonnel.h"
+#include "gestionStock.h"
 
 namespace PLOOF {
 
@@ -13,7 +14,7 @@ namespace PLOOF {
 
 
 	/// <summary>
-	/// Description résumée de MyForm
+	/// Description rÃ©sumÃ©e de MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -28,7 +29,7 @@ namespace PLOOF {
 
 	protected:
 		/// <summary>
-		/// Nettoyage des ressources utilisées.
+		/// Nettoyage des ressources utilisÃ©es.
 		/// </summary>
 		~MyForm()
 		{
@@ -49,14 +50,14 @@ namespace PLOOF {
 
 	private:
 		/// <summary>
-		/// Variable nécessaire au concepteur.
+		/// Variable nÃ©cessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
+		/// MÃ©thode requise pour la prise en charge du concepteur - ne modifiez pas
+		/// le contenu de cette mÃ©thode avec l'Ã©diteur de code.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -113,6 +114,7 @@ namespace PLOOF {
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"Gestion du stock";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
