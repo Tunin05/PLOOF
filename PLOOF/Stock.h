@@ -3,7 +3,7 @@
 #include <string>
 
 
-
+//test
 class Stock : public Gestion {
 public:
 	Stock();
