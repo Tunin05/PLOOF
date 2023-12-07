@@ -150,5 +150,13 @@ namespace PLOOF {
 		FgestionPersonnel->Size = this->ClientSize;
 		FgestionPersonnel->Show();
 	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		gestionStock^ FgestionStock = gcnew gestionStock();
+		this->Controls->Add(FgestionStock);
+		FgestionStock->BringToFront();
+		FgestionStock->Location = Point(0, 0);
+		FgestionStock->Size = this->ClientSize;
+		FgestionStock->Show();
+	}
 	};
 }

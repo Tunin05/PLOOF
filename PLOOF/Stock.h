@@ -3,8 +3,16 @@
 #include <string>
 
 
-//test
 class Stock : public Gestion {
+private:
+	int id;
+	float prixHT;
+	std::string designation;
+	int quantite;
+	int seuilReapprovisionnement;
+	float tauxTVA;
+	std::string nature;
+
 public:
 	Stock();
 
@@ -15,12 +23,5 @@ public:
 	void select(int id);
 	void afficher(System::Windows::Forms::DataGridView^ data);
 
-private:
-	int id;
-	float prixHT;
-	std::string designation;
-	int quantite;
-	int seuilReapprovisionnement;
-	float tauxTVA;
-	std::string nature;
+
 };
