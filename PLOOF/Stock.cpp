@@ -3,6 +3,7 @@
 
 Stock::Stock()
 {
+	this->id_article = 0;
 	this->name = "";
 	this->quantite = 0;
 	this->nature = "";
@@ -43,6 +44,7 @@ void Stock::update()
 
 void Stock::remove()
 {
+
 }
 
 void Stock::select()

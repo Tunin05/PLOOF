@@ -66,6 +66,8 @@ namespace PLOOF {
 	private: System::Windows::Forms::Label^ label_nom_article;
 	private: System::Windows::Forms::Label^ label_nature_article;
 	private: System::Windows::Forms::Label^ label_Designation_article;
+	private: System::Windows::Forms::NumericUpDown^ id_article_input;
+	private: System::Windows::Forms::Label^ label_id_article;
 
 
 
@@ -112,12 +114,15 @@ namespace PLOOF {
 			this->label_nom_article = (gcnew System::Windows::Forms::Label());
 			this->label_nature_article = (gcnew System::Windows::Forms::Label());
 			this->label_Designation_article = (gcnew System::Windows::Forms::Label());
+			this->id_article_input = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_id_article = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_article_input))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -371,10 +376,32 @@ namespace PLOOF {
 			this->label_Designation_article->Text = L"Designation";
 			this->label_Designation_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// id_article_input
+			// 
+			this->id_article_input->Location = System::Drawing::Point(305, 583);
+			this->id_article_input->Name = L"id_article_input";
+			this->id_article_input->ReadOnly = true;
+			this->id_article_input->Size = System::Drawing::Size(159, 22);
+			this->id_article_input->TabIndex = 29;
+			// 
+			// label_id_article
+			// 
+			this->label_id_article->AutoSize = true;
+			this->label_id_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_id_article->Location = System::Drawing::Point(234, 583);
+			this->label_id_article->Name = L"label_id_article";
+			this->label_id_article->Size = System::Drawing::Size(65, 18);
+			this->label_id_article->TabIndex = 30;
+			this->label_id_article->Text = L"ID article";
+			this->label_id_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label_id_article);
+			this->Controls->Add(this->id_article_input);
 			this->Controls->Add(this->label_Designation_article);
 			this->Controls->Add(this->label_nature_article);
 			this->Controls->Add(this->label_nom_article);
@@ -409,6 +436,7 @@ namespace PLOOF {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_article_input))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -423,6 +451,10 @@ namespace PLOOF {
 		void SetVisibility(bool isVisible)
 		{
 			//champs ajouter un article
+			this->label_nom_article->Visible = isVisible;
+			this->label_nature_article->Visible = isVisible;
+			this->label_Designation_article->Visible = isVisible;
+			this->id_article_input->Visible = isVisible;
 			this->name_article->Visible = isVisible;
 			this->input_quantite->Visible = isVisible;
 			this->label_quantite->Visible = isVisible;

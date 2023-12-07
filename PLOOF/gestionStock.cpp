@@ -2,12 +2,6 @@
 #include "Gestion.h"
 #include "Stock.h"
 
-int mode = 0;
-//mode = 0 : mode normal (sélection d'un mode)
-//mode = 1 : mode ajout d'un article
-//mode = 2 : mode suppression d'un article
-//mode = 3 : mode modification d'un article
-
 
 //Fonction au chargement de la page
 System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -34,6 +28,7 @@ System::Void PLOOF::gestionStock::SelectRow(System::Object^ sender, System::Wind
 	input_Stock->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[3]->Value);
 	input_reapro->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[4]->Value);
 	input_TVA->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[5]->Value);
+	id_article_input->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[6]->Value);
 	name_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[7]->Value);
 	input_quantite->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[8]->Value);
 	nature_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[9]->Value);
@@ -50,7 +45,7 @@ System::Void PLOOF::gestionStock::refresh_button_Click(System::Object^ sender, S
 
 System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
-
+	this->id_article_input->Text = "0";
 	this->name_article->Text = "";
 	this->input_quantite->Text = "0";
 	this->nature_article->Text = "";
@@ -65,10 +60,16 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 //Fonction lors du clic sur le bouton "Ajouter un article"
 System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	mode = 1;
+
 }
 
 System::Void PLOOF::gestionStock::delete_article_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	mode = 2;
+	//Suppression d'un article
+	/*System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
+	Stock* stock = new Stock();
+	stock->remove();
+
+	delete stock;*/
+
 }
