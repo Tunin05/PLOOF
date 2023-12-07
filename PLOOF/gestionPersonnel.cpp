@@ -42,12 +42,33 @@ System::Void PLOOF::gestionPersonnel::button3_Click(System::Object^ sender, Syst
 	Personnel* perso = new Personnel(numericUpDown1->Value, textBox1->Text, textBox2->Text, numericUpDown2->Value, textBox4->Text);
 	perso->insert();
 	delete perso;
-	//vider les champs
-	numericUpDown1->Value = 0;
-	textBox1->Text = "";
-	textBox2->Text = "";
-	numericUpDown2->Value = 0;
-	textBox4->Text = "";
+	clear_Click(sender, e);
+	//rafraichir le datagridview
+	delete this->dataGridView1->DataSource;
+	GC::Collect();
+	gestionPersonnel_Load(sender, e);
+}
+
+System::Void PLOOF::gestionPersonnel::button4_Click(System::Object^ sender, System::EventArgs^ e) // Modification d'un personnel
+{
+	System::Windows::Forms::DataGridView^  dataGrid = this->dataGridView1;
+	Personnel* perso = new Personnel(numericUpDown1->Value, textBox1->Text, textBox2->Text, numericUpDown2->Value, textBox4->Text);
+	perso->update();
+	delete perso;
+	clear_Click(sender, e);
+	//rafraichir le datagridview
+	delete this->dataGridView1->DataSource;
+	GC::Collect();
+	gestionPersonnel_Load(sender, e);
+}
+
+System::Void PLOOF::gestionPersonnel::button5_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	System::Windows::Forms::DataGridView^  dataGrid = this->dataGridView1;
+	Personnel* perso = new Personnel(numericUpDown1->Value, textBox1->Text, textBox2->Text, numericUpDown2->Value, textBox4->Text);
+	perso->remove();
+	delete perso;
+	clear_Click(sender, e);
 	//rafraichir le datagridview
 	delete this->dataGridView1->DataSource;
 	GC::Collect();

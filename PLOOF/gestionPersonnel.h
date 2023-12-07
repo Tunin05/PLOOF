@@ -55,6 +55,8 @@ namespace PLOOF {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
+	private: System::Windows::Forms::Button^ clear;
+
 	protected:
 
 	private:
@@ -88,6 +90,7 @@ namespace PLOOF {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->clear = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
@@ -238,7 +241,7 @@ namespace PLOOF {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(71, 457);
+			this->button3->Location = System::Drawing::Point(20, 458);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(143, 27);
 			this->button3->TabIndex = 15;
@@ -248,25 +251,27 @@ namespace PLOOF {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(220, 457);
+			this->button4->Location = System::Drawing::Point(169, 458);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(143, 27);
 			this->button4->TabIndex = 16;
 			this->button4->Text = L"Modifier";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &gestionPersonnel::button4_Click);
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(369, 457);
+			this->button5->Location = System::Drawing::Point(318, 458);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(143, 27);
 			this->button5->TabIndex = 17;
 			this->button5->Text = L"Supprimer";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &gestionPersonnel::button5_Click);
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(92, 422);
+			this->button6->Location = System::Drawing::Point(41, 423);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(411, 29);
 			this->button6->TabIndex = 18;
@@ -279,13 +284,24 @@ namespace PLOOF {
 			this->numericUpDown2->Location = System::Drawing::Point(383, 346);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(202, 22);
+			this->numericUpDown2->Size = System::Drawing::Size(202, 20);
 			this->numericUpDown2->TabIndex = 19;
+			// 
+			// clear
+			// 
+			this->clear->Location = System::Drawing::Point(510, 410);
+			this->clear->Name = L"clear";
+			this->clear->Size = System::Drawing::Size(75, 42);
+			this->clear->TabIndex = 20;
+			this->clear->Text = L"Vider les champs";
+			this->clear->UseVisualStyleBackColor = true;
+			this->clear->Click += gcnew System::EventHandler(this, &gestionPersonnel::clear_Click);
 			// 
 			// gestionPersonnel
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->AutoSize = true;
+			this->Controls->Add(this->clear);
 			this->Controls->Add(this->numericUpDown2);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
@@ -319,11 +335,19 @@ namespace PLOOF {
 		this->Hide();
 		GC::Collect();
 	}
+	private: System::Void clear_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->textBox1->Text = "";
+		this->textBox2->Text = "";
+		this->textBox4->Text = "";
+		this->numericUpDown1->Value = 0;
+		this->numericUpDown2->Value = 0;
+	}
 	private: System::Void gestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
-
-	};
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }

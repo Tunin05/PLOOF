@@ -13,6 +13,7 @@ Personnel::Personnel()
 
 Personnel::Personnel(System::Decimal id_personal, System::String^ firstname, System::String^ name, System::Decimal superior, System::String^ address)
 {
+	this->id_personal = System::Convert::ToInt32(id_personal);
 	this->name = msclr::interop::marshal_as<std::string>(name);
 	this->firstname = msclr::interop::marshal_as<std::string>(firstname);
 	this->superior = System::Convert::ToInt32(superior);
@@ -24,7 +25,6 @@ void Personnel::insert()
 {
 	System::String^ query = "INSERT INTO Personal (firstname, name, superior, adress) VALUES ('" + gcnew System::String(this->firstname.c_str()) + "', '" + gcnew System::String(this->name.c_str()) + "', " + this->superior + ", '" + gcnew System::String(this->address.c_str()) + "');";
 	CLDB^ db = gcnew CLDB();
-	System::Windows::Forms::MessageBox::Show(query);
 	db->executeQuery(query);
 }
 
@@ -32,7 +32,7 @@ void Personnel::update()
 {
 	try
 	{
-		System::String^ query = "UPDATE Personal SET firstname = '" + gcnew System::String(this->firstname.c_str()) + "', name = '" + gcnew System::String(this->name.c_str()) + "', superior = " + this->superior + ", address = '" + gcnew System::String(this->address.c_str()) + "' WHERE id_personal = " + this->id_personal + ";";
+		System::String^ query = "UPDATE Personal SET firstname = '" + gcnew System::String(this->firstname.c_str()) + "', name = '" + gcnew System::String(this->name.c_str()) + "', superior = " + this->superior + ", adress = '" + gcnew System::String(this->address.c_str()) + "' WHERE id_personal = " + this->id_personal + ";";
 		CLDB^ db = gcnew CLDB();
 		db->executeQuery(query);
 	}
