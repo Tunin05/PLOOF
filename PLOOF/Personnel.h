@@ -12,7 +12,7 @@ private:
 
 public:
     Personnel();
-    Personnel(int id_personal, std::string firstname, std::string name, int superior, std::string address);
+    Personnel(System::Decimal id_personal, System::String^ firstname, System::String^ name, System::Decimal superior, System::String^ address);
 
     void insert() override;
     void update() override;
@@ -20,6 +20,7 @@ public:
     void select() override;
     void select(int id);
     void afficher(System::Windows::Forms::DataGridView^ data);
+    void rechercher(System::Windows::Forms::DataGridView^ data, System::Decimal id, System::String^ name, System::String^ firstname, System::String^ address, System::Decimal superior);
 
     int getId() const;
     void setId(int id);

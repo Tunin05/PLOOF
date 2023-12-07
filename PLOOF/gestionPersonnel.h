@@ -43,7 +43,7 @@ namespace PLOOF {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
+
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -54,6 +54,7 @@ namespace PLOOF {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
 	protected:
 
 	private:
@@ -76,7 +77,6 @@ namespace PLOOF {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -87,8 +87,10 @@ namespace PLOOF {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -170,15 +172,6 @@ namespace PLOOF {
 			this->textBox2->Size = System::Drawing::Size(156, 26);
 			this->textBox2->TabIndex = 7;
 			// 
-			// textBox3
-			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(386, 345);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(199, 26);
-			this->textBox3->TabIndex = 8;
-			// 
 			// textBox4
 			// 
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -251,6 +244,7 @@ namespace PLOOF {
 			this->button3->TabIndex = 15;
 			this->button3->Text = L"Créer";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &gestionPersonnel::button3_Click);
 			// 
 			// button4
 			// 
@@ -260,6 +254,7 @@ namespace PLOOF {
 			this->button4->TabIndex = 16;
 			this->button4->Text = L"Modifier";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &gestionPersonnel::button4_Click);
 			// 
 			// button5
 			// 
@@ -278,11 +273,21 @@ namespace PLOOF {
 			this->button6->TabIndex = 18;
 			this->button6->Text = L"Rechercher";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &gestionPersonnel::button6_Click);
+			// 
+			// numericUpDown2
+			// 
+			this->numericUpDown2->Location = System::Drawing::Point(383, 346);
+			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->numericUpDown2->Name = L"numericUpDown2";
+			this->numericUpDown2->Size = System::Drawing::Size(202, 22);
+			this->numericUpDown2->TabIndex = 19;
 			// 
 			// gestionPersonnel
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->AutoSize = true;
+			this->Controls->Add(this->numericUpDown2);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
@@ -293,7 +298,6 @@ namespace PLOOF {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->textBox1);
@@ -306,6 +310,7 @@ namespace PLOOF {
 			this->Load += gcnew System::EventHandler(this, &gestionPersonnel::gestionPersonnel_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -317,13 +322,9 @@ namespace PLOOF {
 	}
 	private: System::Void gestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-			int i = e->RowIndex;
-			numericUpDown1->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value);
-			textBox1->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[1]->Value);
-			textBox2->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[2]->Value);
-			textBox3->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[3]->Value);
-			textBox4->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[4]->Value);
-	}
+	private: System::Void SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) 
 };
 }
