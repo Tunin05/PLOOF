@@ -63,6 +63,10 @@ namespace PLOOF {
 	private: System::Windows::Forms::Label^ label_quantite;
 	private: System::Windows::Forms::Button^ clear_button;
 	private: System::Windows::Forms::Button^ delete_article;
+	private: System::Windows::Forms::Label^ label_nom_article;
+	private: System::Windows::Forms::Label^ label_nature_article;
+	private: System::Windows::Forms::Label^ label_Designation_article;
+
 
 
 
@@ -105,6 +109,9 @@ namespace PLOOF {
 			this->label_quantite = (gcnew System::Windows::Forms::Label());
 			this->clear_button = (gcnew System::Windows::Forms::Button());
 			this->delete_article = (gcnew System::Windows::Forms::Button());
+			this->label_nom_article = (gcnew System::Windows::Forms::Label());
+			this->label_nature_article = (gcnew System::Windows::Forms::Label());
+			this->label_Designation_article = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
@@ -174,7 +181,6 @@ namespace PLOOF {
 			this->name_article->Name = L"name_article";
 			this->name_article->Size = System::Drawing::Size(159, 22);
 			this->name_article->TabIndex = 7;
-			this->name_article->Text = L"Nom de l\'article";
 			// 
 			// nature_article
 			// 
@@ -182,7 +188,6 @@ namespace PLOOF {
 			this->nature_article->Name = L"nature_article";
 			this->nature_article->Size = System::Drawing::Size(159, 22);
 			this->nature_article->TabIndex = 9;
-			this->nature_article->Text = L"Nature de l\'article";
 			// 
 			// label_article
 			// 
@@ -233,7 +238,6 @@ namespace PLOOF {
 			this->designation->Name = L"designation";
 			this->designation->Size = System::Drawing::Size(119, 22);
 			this->designation->TabIndex = 14;
-			this->designation->Text = L"Designation";
 			// 
 			// label_Stock
 			// 
@@ -331,10 +335,49 @@ namespace PLOOF {
 			this->delete_article->UseVisualStyleBackColor = true;
 			this->delete_article->Click += gcnew System::EventHandler(this, &gestionStock::delete_article_Click);
 			// 
+			// label_nom_article
+			// 
+			this->label_nom_article->AutoSize = true;
+			this->label_nom_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_nom_article->Location = System::Drawing::Point(248, 488);
+			this->label_nom_article->Name = L"label_nom_article";
+			this->label_nom_article->Size = System::Drawing::Size(41, 18);
+			this->label_nom_article->TabIndex = 26;
+			this->label_nom_article->Text = L"Nom";
+			this->label_nom_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_nature_article
+			// 
+			this->label_nature_article->AutoSize = true;
+			this->label_nature_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_nature_article->Location = System::Drawing::Point(248, 544);
+			this->label_nature_article->Name = L"label_nature_article";
+			this->label_nature_article->Size = System::Drawing::Size(52, 18);
+			this->label_nature_article->TabIndex = 27;
+			this->label_nature_article->Text = L"Nature";
+			this->label_nature_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_Designation_article
+			// 
+			this->label_Designation_article->AutoSize = true;
+			this->label_Designation_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_Designation_article->Location = System::Drawing::Point(641, 519);
+			this->label_Designation_article->Name = L"label_Designation_article";
+			this->label_Designation_article->Size = System::Drawing::Size(86, 18);
+			this->label_Designation_article->TabIndex = 28;
+			this->label_Designation_article->Text = L"Designation";
+			this->label_Designation_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label_Designation_article);
+			this->Controls->Add(this->label_nature_article);
+			this->Controls->Add(this->label_nom_article);
 			this->Controls->Add(this->delete_article);
 			this->Controls->Add(this->clear_button);
 			this->Controls->Add(this->label_quantite);
