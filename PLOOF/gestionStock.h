@@ -48,6 +48,10 @@ namespace PLOOF {
 	private: System::Windows::Forms::TextBox^ nature_article;
 	private: System::Windows::Forms::Label^ label_article;
 	private: System::Windows::Forms::Label^ label_catalog;
+	private: System::Windows::Forms::NumericUpDown^ input_prix_HT;
+
+	private: System::Windows::Forms::Label^ label_prix_HT;
+
 
 
 
@@ -77,7 +81,10 @@ namespace PLOOF {
 			this->nature_article = (gcnew System::Windows::Forms::TextBox());
 			this->label_article = (gcnew System::Windows::Forms::Label());
 			this->label_catalog = (gcnew System::Windows::Forms::Label());
+			this->input_prix_HT = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_prix_HT = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -192,10 +199,31 @@ namespace PLOOF {
 			this->label_catalog->Text = L"CATALOGUE";
 			this->label_catalog->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// input_prix_HT
+			// 
+			this->input_prix_HT->Location = System::Drawing::Point(466, 413);
+			this->input_prix_HT->Name = L"input_prix_HT";
+			this->input_prix_HT->Size = System::Drawing::Size(120, 22);
+			this->input_prix_HT->TabIndex = 12;
+			// 
+			// label_prix_HT
+			// 
+			this->label_prix_HT->AutoSize = true;
+			this->label_prix_HT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_prix_HT->Location = System::Drawing::Point(403, 414);
+			this->label_prix_HT->Name = L"label_prix_HT";
+			this->label_prix_HT->Size = System::Drawing::Size(57, 18);
+			this->label_prix_HT->TabIndex = 13;
+			this->label_prix_HT->Text = L"Prix HT";
+			this->label_prix_HT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label_prix_HT);
+			this->Controls->Add(this->input_prix_HT);
 			this->Controls->Add(this->label_catalog);
 			this->Controls->Add(this->label_article);
 			this->Controls->Add(this->nature_article);
@@ -211,6 +239,7 @@ namespace PLOOF {
 			this->Size = System::Drawing::Size(604, 566);
 			this->Load += gcnew System::EventHandler(this, &gestionStock::gestionStock_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
