@@ -44,7 +44,7 @@ namespace PLOOF {
 	private: System::Windows::Forms::Button^ Add_an_article;
 	private: System::Windows::Forms::Button^ deny;
 	private: System::Windows::Forms::TextBox^ name_article;
-	private: System::Windows::Forms::TextBox^ q_article;
+
 	private: System::Windows::Forms::TextBox^ nature_article;
 	private: System::Windows::Forms::Label^ label_article;
 	private: System::Windows::Forms::Label^ label_catalog;
@@ -59,6 +59,8 @@ namespace PLOOF {
 	private: System::Windows::Forms::NumericUpDown^ input_TVA;
 	private: System::Windows::Forms::Label^ label_TVA;
 	private: System::Windows::Forms::Button^ valider_bouton;
+	private: System::Windows::Forms::NumericUpDown^ input_quantite;
+	private: System::Windows::Forms::Label^ label_quantite;
 
 
 
@@ -86,7 +88,6 @@ namespace PLOOF {
 			this->Add_an_article = (gcnew System::Windows::Forms::Button());
 			this->deny = (gcnew System::Windows::Forms::Button());
 			this->name_article = (gcnew System::Windows::Forms::TextBox());
-			this->q_article = (gcnew System::Windows::Forms::TextBox());
 			this->nature_article = (gcnew System::Windows::Forms::TextBox());
 			this->label_article = (gcnew System::Windows::Forms::Label());
 			this->label_catalog = (gcnew System::Windows::Forms::Label());
@@ -100,11 +101,14 @@ namespace PLOOF {
 			this->input_TVA = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_TVA = (gcnew System::Windows::Forms::Label());
 			this->valider_bouton = (gcnew System::Windows::Forms::Button());
+			this->input_quantite = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_quantite = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -177,14 +181,6 @@ namespace PLOOF {
 			this->name_article->Size = System::Drawing::Size(159, 22);
 			this->name_article->TabIndex = 7;
 			this->name_article->Text = L"Nom de l\'article";
-			// 
-			// q_article
-			// 
-			this->q_article->Location = System::Drawing::Point(209, 459);
-			this->q_article->Name = L"q_article";
-			this->q_article->Size = System::Drawing::Size(159, 22);
-			this->q_article->TabIndex = 8;
-			this->q_article->Text = L"Quantite de l\'article";
 			// 
 			// nature_article
 			// 
@@ -312,10 +308,31 @@ namespace PLOOF {
 			this->valider_bouton->UseVisualStyleBackColor = true;
 			this->valider_bouton->Click += gcnew System::EventHandler(this, &gestionStock::valider_bouton_Click);
 			// 
+			// input_quantite
+			// 
+			this->input_quantite->Location = System::Drawing::Point(209, 459);
+			this->input_quantite->Name = L"input_quantite";
+			this->input_quantite->Size = System::Drawing::Size(159, 22);
+			this->input_quantite->TabIndex = 22;
+			// 
+			// label_quantite
+			// 
+			this->label_quantite->AutoSize = true;
+			this->label_quantite->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_quantite->Location = System::Drawing::Point(140, 463);
+			this->label_quantite->Name = L"label_quantite";
+			this->label_quantite->Size = System::Drawing::Size(63, 18);
+			this->label_quantite->TabIndex = 23;
+			this->label_quantite->Text = L"Quantite";
+			this->label_quantite->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label_quantite);
+			this->Controls->Add(this->input_quantite);
 			this->Controls->Add(this->valider_bouton);
 			this->Controls->Add(this->label_TVA);
 			this->Controls->Add(this->input_TVA);
@@ -329,7 +346,6 @@ namespace PLOOF {
 			this->Controls->Add(this->label_catalog);
 			this->Controls->Add(this->label_article);
 			this->Controls->Add(this->nature_article);
-			this->Controls->Add(this->q_article);
 			this->Controls->Add(this->name_article);
 			this->Controls->Add(this->deny);
 			this->Controls->Add(this->Add_an_article);
@@ -345,6 +361,7 @@ namespace PLOOF {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
