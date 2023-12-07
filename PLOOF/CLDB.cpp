@@ -3,7 +3,7 @@
 CLDB::CLDB() {
 	try
 	{
-		this->DBconn = gcnew System::Data::SqlClient::SqlConnection("desktop-flnbqv7;Initial Catalog=PLOOF;User ID=PLOOF_USR;Password=azerty");
+		this->DBconn = gcnew System::Data::SqlClient::SqlConnection("Data Source = desktop - flnbqv7; Initial Catalog = PLOOF; User ID = PLOOF_USR; Password = azerty");
 		this->DBconn->Open();
 	}
 	catch (System::Exception^ e)
@@ -55,7 +55,8 @@ System::Data::DataSet^ CLDB::getDataSet(System::String^ query)
 	}
 	catch (System::Exception^ e)
 	{
-		System::Console::WriteLine(e->ToString());
+		System::Windows::Forms::MessageBox::Show(e->ToString());
+
 		return nullptr;
 	}
 }

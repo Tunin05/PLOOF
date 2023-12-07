@@ -123,6 +123,7 @@
     <ClCompile Include="CLDB.cpp" />
     <ClCompile Include="Gestion.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="gestionPersonnel.cpp" />
     <ClCompile Include="Personnel.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,11 +132,17 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="gestionPersonnel.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Personnel.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionPersonnel.resx">
+      <DependentUpon>gestionPersonnel.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

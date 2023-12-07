@@ -18,6 +18,8 @@ public:
     void update() override;
     void remove() override;
     void select() override;
+    void select(int id);
+    void afficher(System::Windows::Forms::DataGridView^ data);
 
     int getId() const;
     void setId(int id);

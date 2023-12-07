@@ -59,6 +59,26 @@ void Personnel::select()
 	this->address = msclr::interop::marshal_as<std::string>(data->Tables[0]->Rows[0]->ItemArray[4]->ToString());
 }
 
+void Personnel::select(int id)
+{
+	System::String^ query = "SELECT * FROM personnel WHERE id_personal = " + id + ";";
+	CLDB^ db = gcnew CLDB();
+	System::Data::DataSet^ data = db->getDataSet(query);
+	this->id_personal = System::Convert::ToInt32(data->Tables[0]->Rows[0]->ItemArray[0]->ToString());
+	this->firstname = msclr::interop::marshal_as<std::string>(data->Tables[0]->Rows[0]->ItemArray[1]->ToString());
+	this->name = msclr::interop::marshal_as<std::string>(data->Tables[0]->Rows[0]->ItemArray[2]->ToString());
+	this->superior = System::Convert::ToInt32(data->Tables[0]->Rows[0]->ItemArray[3]->ToString());
+	this->address = msclr::interop::marshal_as<std::string>(data->Tables[0]->Rows[0]->ItemArray[4]->ToString());
+}
+
+void Personnel::afficher(System::Windows::Forms::DataGridView^ data)
+{
+	System::String^ query = "SELECT * FROM personnel;";
+	CLDB^ db = gcnew CLDB();
+	System::Data::DataSet^ dataset = db->getDataSet(query);
+	data->DataSource = dataset->Tables[0];
+}
+
 std::string Personnel::getFirstname() const
 {
 	return this->firstname;
