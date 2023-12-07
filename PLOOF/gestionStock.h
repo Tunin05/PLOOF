@@ -51,6 +51,11 @@ namespace PLOOF {
 	private: System::Windows::Forms::NumericUpDown^ input_prix_HT;
 
 	private: System::Windows::Forms::Label^ label_prix_HT;
+	private: System::Windows::Forms::TextBox^ designation;
+	private: System::Windows::Forms::Label^ label_Stock;
+	private: System::Windows::Forms::NumericUpDown^ input_Stock;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 
 
 
@@ -83,8 +88,15 @@ namespace PLOOF {
 			this->label_catalog = (gcnew System::Windows::Forms::Label());
 			this->input_prix_HT = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_prix_HT = (gcnew System::Windows::Forms::Label());
+			this->designation = (gcnew System::Windows::Forms::TextBox());
+			this->label_Stock = (gcnew System::Windows::Forms::Label());
+			this->input_Stock = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -106,7 +118,7 @@ namespace PLOOF {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(571, 240);
+			this->dataGridView1->Size = System::Drawing::Size(884, 267);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// label1
@@ -122,7 +134,7 @@ namespace PLOOF {
 			// 
 			// refresh_button
 			// 
-			this->refresh_button->Location = System::Drawing::Point(510, 312);
+			this->refresh_button->Location = System::Drawing::Point(823, 340);
 			this->refresh_button->Name = L"refresh_button";
 			this->refresh_button->Size = System::Drawing::Size(75, 23);
 			this->refresh_button->TabIndex = 4;
@@ -152,7 +164,7 @@ namespace PLOOF {
 			// 
 			// name_article
 			// 
-			this->name_article->Location = System::Drawing::Point(189, 413);
+			this->name_article->Location = System::Drawing::Point(209, 431);
 			this->name_article->Name = L"name_article";
 			this->name_article->Size = System::Drawing::Size(159, 22);
 			this->name_article->TabIndex = 7;
@@ -160,7 +172,7 @@ namespace PLOOF {
 			// 
 			// q_article
 			// 
-			this->q_article->Location = System::Drawing::Point(189, 441);
+			this->q_article->Location = System::Drawing::Point(209, 459);
 			this->q_article->Name = L"q_article";
 			this->q_article->Size = System::Drawing::Size(159, 22);
 			this->q_article->TabIndex = 8;
@@ -168,7 +180,7 @@ namespace PLOOF {
 			// 
 			// nature_article
 			// 
-			this->nature_article->Location = System::Drawing::Point(189, 469);
+			this->nature_article->Location = System::Drawing::Point(209, 487);
 			this->nature_article->Name = L"nature_article";
 			this->nature_article->Size = System::Drawing::Size(159, 22);
 			this->nature_article->TabIndex = 9;
@@ -179,7 +191,7 @@ namespace PLOOF {
 			this->label_article->AutoSize = true;
 			this->label_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_article->Location = System::Drawing::Point(215, 364);
+			this->label_article->Location = System::Drawing::Point(235, 382);
 			this->label_article->Name = L"label_article";
 			this->label_article->Size = System::Drawing::Size(104, 26);
 			this->label_article->TabIndex = 10;
@@ -192,7 +204,7 @@ namespace PLOOF {
 			this->label_catalog->AutoSize = true;
 			this->label_catalog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_catalog->Location = System::Drawing::Point(401, 361);
+			this->label_catalog->Location = System::Drawing::Point(654, 378);
 			this->label_catalog->Name = L"label_catalog";
 			this->label_catalog->Size = System::Drawing::Size(147, 26);
 			this->label_catalog->TabIndex = 11;
@@ -201,7 +213,7 @@ namespace PLOOF {
 			// 
 			// input_prix_HT
 			// 
-			this->input_prix_HT->Location = System::Drawing::Point(466, 413);
+			this->input_prix_HT->Location = System::Drawing::Point(719, 430);
 			this->input_prix_HT->Name = L"input_prix_HT";
 			this->input_prix_HT->Size = System::Drawing::Size(120, 22);
 			this->input_prix_HT->TabIndex = 12;
@@ -211,17 +223,68 @@ namespace PLOOF {
 			this->label_prix_HT->AutoSize = true;
 			this->label_prix_HT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_prix_HT->Location = System::Drawing::Point(403, 414);
+			this->label_prix_HT->Location = System::Drawing::Point(656, 431);
 			this->label_prix_HT->Name = L"label_prix_HT";
 			this->label_prix_HT->Size = System::Drawing::Size(57, 18);
 			this->label_prix_HT->TabIndex = 13;
 			this->label_prix_HT->Text = L"Prix HT";
 			this->label_prix_HT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// designation
+			// 
+			this->designation->Location = System::Drawing::Point(720, 458);
+			this->designation->Name = L"designation";
+			this->designation->Size = System::Drawing::Size(119, 22);
+			this->designation->TabIndex = 14;
+			this->designation->Text = L"Designation";
+			// 
+			// label_Stock
+			// 
+			this->label_Stock->AutoSize = true;
+			this->label_Stock->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_Stock->Location = System::Drawing::Point(666, 487);
+			this->label_Stock->Name = L"label_Stock";
+			this->label_Stock->Size = System::Drawing::Size(47, 18);
+			this->label_Stock->TabIndex = 15;
+			this->label_Stock->Text = L"Stock";
+			this->label_Stock->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// input_Stock
+			// 
+			this->input_Stock->Location = System::Drawing::Point(719, 487);
+			this->input_Stock->Name = L"input_Stock";
+			this->input_Stock->Size = System::Drawing::Size(120, 22);
+			this->input_Stock->TabIndex = 16;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(502, 530);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(211, 18);
+			this->label2->TabIndex = 17;
+			this->label2->Text = L"Valeur de réapprovisionnement";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->Location = System::Drawing::Point(720, 530);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown1->TabIndex = 18;
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->numericUpDown1);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->input_Stock);
+			this->Controls->Add(this->label_Stock);
+			this->Controls->Add(this->designation);
 			this->Controls->Add(this->label_prix_HT);
 			this->Controls->Add(this->input_prix_HT);
 			this->Controls->Add(this->label_catalog);
@@ -236,10 +299,12 @@ namespace PLOOF {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
 			this->Name = L"gestionStock";
-			this->Size = System::Drawing::Size(604, 566);
+			this->Size = System::Drawing::Size(928, 744);
 			this->Load += gcnew System::EventHandler(this, &gestionStock::gestionStock_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
