@@ -144,6 +144,9 @@
     <ClInclude Include="Stock.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="gestionStock.resx">
+      <DependentUpon>gestionStock.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

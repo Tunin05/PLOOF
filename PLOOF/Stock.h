@@ -4,10 +4,16 @@
 
 
 
-class Stock : public Gestion
-{
+class Stock : public Gestion {
 public:
 	Stock();
+
+	void insert() override;
+	void update() override;
+	void remove() override;
+	void select() override;
+	void select(int id);
+	void afficher(System::Windows::Forms::DataGridView^ data);
 
 private:
 	int id;
