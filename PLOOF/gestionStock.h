@@ -371,7 +371,27 @@ namespace PLOOF {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 	}
-
+		   //visibilité des champs
+	private:
+		void SetVisibility(bool isVisible)
+		{
+			//champs ajouter un article
+			this->name_article->Visible = isVisible;
+			this->input_quantite->Visible = isVisible;
+			this->label_quantite->Visible = isVisible;
+			this->nature_article->Visible = isVisible;
+			this->label_article->Visible = isVisible;
+			this->label_catalog->Visible = isVisible;
+			this->label_prix_HT->Visible = isVisible;
+			this->input_prix_HT->Visible = isVisible;
+			this->designation->Visible = isVisible;
+			this->label_Stock->Visible = isVisible;
+			this->input_Stock->Visible = isVisible;
+			this->label2->Visible = isVisible;
+			this->input_reapro->Visible = isVisible;
+			this->input_TVA->Visible = isVisible;
+			this->label_TVA->Visible = isVisible;
+		}
 
 	private: System::Void gestionStock_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);

@@ -9,38 +9,6 @@ int mode = 0;
 //mode = 3 : mode modification d'un article
 
 
-static void SetVisibility(bool isVisible) {
-	// Champs et labels de l'ajout d'un article
-	this->name_article->Visible = isVisible;
-	this->input_quantite->Visible = isVisible;
-	this->label_quantite->Visible = isVisible;
-	this->nature_article->Visible = isVisible;
-	this->label_article->Visible = isVisible;
-	this->label_catalog->Visible = isVisible;
-	this->label_prix_HT->Visible = isVisible;
-	this->input_prix_HT->Visible = isVisible;
-	this->designation->Visible = isVisible;
-	this->label_Stock->Visible = isVisible;
-	this->input_Stock->Visible = isVisible;
-	this->label2->Visible = isVisible;
-	this->input_reapro->Visible = isVisible;
-	this->input_TVA->Visible = isVisible;
-	this->label_TVA->Visible = isVisible;
-
-	// Autres éléments à ajouter en fonction des besoins
-
-	// Si isVisible est false, vous pouvez également réinitialiser les valeurs des champs
-	if (!isVisible) {
-		this->name_article->Text = "";
-		this->input_quantite->Text = "";
-		this->nature_article->Text = "";
-		this->input_prix_HT->Text = "";
-		this->designation->Text = "";
-		this->input_Stock->Text = "";
-		this->input_reapro->Text = "";
-		this->input_TVA->Text = "";
-	}
-}
 
 
 System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -48,23 +16,8 @@ System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, Syst
 	this->deny->Visible = false;
 	this->Add_an_article->Visible = true;
 	this->valider_bouton->Visible = false;
-	SetVisibility(true);
 	//Champs et labels de l'ajout d'un article
-	this->name_article->Visible = false;
-	this->input_quantite->Visible = false;
-	this->label_quantite->Visible = false;
-	this->nature_article->Visible = false;
-	this->label_article->Visible = false;
-	this->label_catalog->Visible = false;
-	this->label_prix_HT->Visible = false;
-	this->input_prix_HT->Visible = false;
-	this->designation->Visible = false;
-	this->label_Stock->Visible = false;
-	this->input_Stock->Visible = false;
-	this->label2->Visible = false;
-	this->input_reapro->Visible = false;
-	this->input_TVA->Visible = false;
-	this->label_TVA->Visible = false;
+	//appel de la fonction afficher de la classe stock
 
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Stock* stock = new Stock();
