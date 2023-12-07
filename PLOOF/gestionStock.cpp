@@ -60,11 +60,11 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 {
 	//remettre les champs à leurs valeurs par défaut
 	if (mode == 1) {
-		this->name_article->Text = "";
+		this->name_article->Text = "Nom de l'article";
 		this->input_quantite->Text = "0";
-		this->nature_article->Text = "";
+		this->nature_article->Text = "Nature de l'article";
 		this->input_prix_HT->Text = "0";
-		this->designation->Text = "";
+		this->designation->Text = "Designation";
 		this->input_Stock->Text = "0";
 		this->input_reapro->Text = "0";
 		this->input_TVA->Text = "0";

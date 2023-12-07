@@ -406,16 +406,21 @@ namespace PLOOF {
 			this->label_TVA->Visible = isVisible;
 		}
 
+		//Affichage du formulaire
 	private: System::Void gestionStock_Load(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);
+		   //Actualisation du tableau
 	private: System::Void refresh_button_Click(System::Object^ sender, System::EventArgs^ e);
+		   //Annulation
 	private: System::Void deny_Click(System::Object^ sender, System::EventArgs^ e);
+		   //Vider les champs
 	private: System::Void clear_button_Click(System::Object^ sender, System::EventArgs^ e);
+		   //Validation
+	private: System::Void valider_bouton_Click(System::Object^ sender, System::EventArgs^ e);
 
 
 		   //Champs ajouter un article
+	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void valider_bouton_Click(System::Object^ sender, System::EventArgs^ e);
 
 
 	};
