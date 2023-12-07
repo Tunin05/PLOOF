@@ -11,18 +11,20 @@ Personnel::Personnel()
 	this->address = "";
 }
 
-Personnel::Personnel(int id_personal, std::string firstname, std::string name, int superior, std::string address)
+Personnel::Personnel(System::Decimal id_personal, System::String^ firstname, System::String^ name, System::Decimal superior, System::String^ address)
 {
-	this->name = name;
-	this->firstname = firstname;
-	this->address = address;
-	this->superior = superior;
+	this->name = msclr::interop::marshal_as<std::string>(name);
+	this->firstname = msclr::interop::marshal_as<std::string>(firstname);
+	this->superior = System::Convert::ToInt32(superior);
+	this->address = msclr::interop::marshal_as<std::string>(address);
 }
+
 
 void Personnel::insert()
 {
-	System::String^ query = "INSERT INTO personnel (firstname, name, superior, address) VALUES ('" + gcnew System::String(this->firstname.c_str()) + "', '" + gcnew System::String(this->name.c_str()) + "', " + this->superior + ", '" + gcnew System::String(this->address.c_str()) + "');";
+	System::String^ query = "INSERT INTO Personal (firstname, name, superior, adress) VALUES ('" + gcnew System::String(this->firstname.c_str()) + "', '" + gcnew System::String(this->name.c_str()) + "', " + this->superior + ", '" + gcnew System::String(this->address.c_str()) + "');";
 	CLDB^ db = gcnew CLDB();
+	System::Windows::Forms::MessageBox::Show(query);
 	db->executeQuery(query);
 }
 
@@ -30,7 +32,7 @@ void Personnel::update()
 {
 	try
 	{
-		System::String^ query = "UPDATE personnel SET firstname = '" + gcnew System::String(this->firstname.c_str()) + "', name = '" + gcnew System::String(this->name.c_str()) + "', superior = " + this->superior + ", address = '" + gcnew System::String(this->address.c_str()) + "' WHERE id_personal = " + this->id_personal + ";";
+		System::String^ query = "UPDATE Personal SET firstname = '" + gcnew System::String(this->firstname.c_str()) + "', name = '" + gcnew System::String(this->name.c_str()) + "', superior = " + this->superior + ", address = '" + gcnew System::String(this->address.c_str()) + "' WHERE id_personal = " + this->id_personal + ";";
 		CLDB^ db = gcnew CLDB();
 		db->executeQuery(query);
 	}
@@ -43,14 +45,14 @@ void Personnel::update()
 
 void Personnel::remove()
 {
-	System::String^ query = "DELETE FROM personnel WHERE id_personal = " + this->id_personal + ";";
+	System::String^ query = "DELETE FROM Personal WHERE id_personal = " + this->id_personal + ";";
 	CLDB^ db = gcnew CLDB();
 	db->executeQuery(query);
 }
 
 void Personnel::select()
 {
-	System::String^ query = "SELECT * FROM personnel WHERE id_personal = " + this->id_personal + ";";
+	System::String^ query = "SELECT * FROM Personal WHERE id_personal = " + this->id_personal + ";";
 	CLDB^ db = gcnew CLDB();
 	System::Data::DataSet^ data = db->getDataSet(query);
 	this->firstname = msclr::interop::marshal_as<std::string>(data->Tables[0]->Rows[0]->ItemArray[1]->ToString());
@@ -61,7 +63,7 @@ void Personnel::select()
 
 void Personnel::select(int id)
 {
-	System::String^ query = "SELECT * FROM personnel WHERE id_personal = " + id + ";";
+	System::String^ query = "SELECT * FROM Personal WHERE id_personal = " + id + ";";
 	CLDB^ db = gcnew CLDB();
 	System::Data::DataSet^ data = db->getDataSet(query);
 	this->id_personal = System::Convert::ToInt32(data->Tables[0]->Rows[0]->ItemArray[0]->ToString());
@@ -78,6 +80,36 @@ void Personnel::afficher(System::Windows::Forms::DataGridView^ data)
 	System::Data::DataSet^ dataset = db->getDataSet(query);
 	data->DataSource = dataset->Tables[0];
 }
+
+void Personnel::rechercher(System::Windows::Forms::DataGridView^ data, System::Decimal id, System::String^ name, System::String^ firstname, System::String^ address, System::Decimal superior)
+{
+	System::String^ query = "SELECT * FROM Personal WHERE 1= 1";
+	if (id != 0 + id != NULL)
+	{
+		query += " AND id_personal = " + id;
+	}
+	if (name != "")
+	{
+		query += " AND name = '" + name + "'";
+	}
+	if (firstname != "")
+	{
+		query += " AND firstname = '" + firstname + "'";
+	}
+	if (superior != 0 + superior != NULL)
+	{
+		query += " AND superior = " + superior;
+	}
+	if (address != "")
+	{
+		query += " AND adress = '" + address + "'";
+	}
+	query += ";";
+	CLDB^ db = gcnew CLDB();
+	System::Data::DataSet^ dataset = db->getDataSet(query);
+	data->DataSource = dataset->Tables[0];
+}
+
 
 std::string Personnel::getFirstname() const
 {

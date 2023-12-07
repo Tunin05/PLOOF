@@ -31,11 +31,11 @@ void CLDB::executeQuery(System::String^ query) {
 		
 		if (nb_l > 0)
 		{
-			System::Console::WriteLine("Query executed successfully");
+			System::Windows::Forms::MessageBox::Show("Succès de l'opération \n" + nb_l + " lignes affectées", "Succès", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Information);
 		}
 		else
 		{
-			System::Console::WriteLine("Query failed");
+			System::Windows::Forms::MessageBox::Show("Echec de l'opération", "Echec", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Error);
 		}
 	}
 	catch (System::Exception^ e)
