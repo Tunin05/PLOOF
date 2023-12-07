@@ -3,7 +3,7 @@
 CLDB::CLDB() {
 	try
 	{
-		this->DBconn = gcnew System::Data::SqlClient::SqlConnection("Data Source = desktop - flnbqv7; Initial Catalog = PLOOF; User ID = PLOOF_USR; Password = azerty");
+		this->DBconn = gcnew System::Data::SqlClient::SqlConnection("Data Source = desktop-flnbqv7; Initial Catalog = PLOOF; User ID = PLOOF_USR; Password = azerty");
 		this->DBconn->Open();
 	}
 	catch (System::Exception^ e)

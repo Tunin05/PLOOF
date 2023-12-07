@@ -73,7 +73,7 @@ void Personnel::select(int id)
 
 void Personnel::afficher(System::Windows::Forms::DataGridView^ data)
 {
-	System::String^ query = "SELECT * FROM personnel;";
+	System::String^ query = "SELECT * FROM Personal;";
 	CLDB^ db = gcnew CLDB();
 	System::Data::DataSet^ dataset = db->getDataSet(query);
 	data->DataSource = dataset->Tables[0];

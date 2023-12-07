@@ -11,7 +11,7 @@ void main(array<String^>^ args) {
 	PLOOF::MyForm mainForm;
 
 	// Test base de donnees
-	System::String^ query = "SELECT * FROM personnel;";
+	System::String^ query = "SELECT * FROM Personal;";
 	CLDB^ db = gcnew CLDB();
 	DataSet^ ds = db->getDataSet(query);
 
