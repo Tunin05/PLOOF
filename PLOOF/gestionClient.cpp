@@ -8,9 +8,10 @@ System::Void PLOOF::gestionClient::btn_retourListe_Click(System::Object^ sender,
 	btn_retour->Click -= gcnew System::EventHandler(this, &gestionClient::btn_retourListe_Click);
 	btn_retour->Click += gcnew System::EventHandler(this, &gestionClient::btn_retour_Click);
 
-	// On modifie label 1 par 'Liste des clients'
 	label1->Text = "Liste des clients";
-	// On affiche la liste des clients
+	panel1->Visible = true;
+	panel2->Visible = false;
+
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Client^ client = gcnew Client();
 	client->afficher(dataGrid);
@@ -77,7 +78,8 @@ System::Void PLOOF::gestionClient::adr_client_Click(System::Object^ sender, Syst
 
 		label1->Text = "Liste des adresses de " + nom_client->Text + " " + prenom_client->Text;
 
-
+        panel1->Visible = false;
+		panel2->Visible = true;
 
 		System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 		Client^ client = gcnew Client();
@@ -89,4 +91,9 @@ System::Void PLOOF::gestionClient::adr_client_Click(System::Object^ sender, Syst
 	{
 		MessageBox::Show("Veuillez selectionner un client");
 	}
+}
+
+System::Void PLOOF::gestionClient::creer_adr_Click(System::Object^ sender, System::EventArgs^ e)
+{
+
 }
