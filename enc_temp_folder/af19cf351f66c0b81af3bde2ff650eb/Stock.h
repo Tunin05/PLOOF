@@ -32,6 +32,7 @@ public:
 	void update() override;
 	void remove() override;
 	void select() override;
+	void select(int id);
 	//Form related methods
 	void afficher(System::Windows::Forms::DataGridView^ data);
 
