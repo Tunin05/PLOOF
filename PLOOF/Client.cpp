@@ -1,5 +1,4 @@
 #include "Client.h"
-#include "client.h"
 #include "CLDB.h"
 #include <msclr\marshal_cppstd.h>
 
