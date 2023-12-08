@@ -28,6 +28,8 @@ public:
 	// Display Methods
 	void afficher(System::Windows::Forms::DataGridView^ data);
 
+	void afficherClientCommande(System::Windows::Forms::DataGridView^ data);
+
 	// Getters and Setters
 	int getClientNum();
 	System::String^ getName();

@@ -79,6 +79,14 @@ void Client::afficher(System::Windows::Forms::DataGridView^ data)
 	data->DataSource = dataset->Tables[0];
 }
 
+void Client::afficherClientCommande(System::Windows::Forms::DataGridView^ data)
+{
+	System::String^ query = "SELECT client_num, name, firstname FROM Clients";
+	CLDB^ db = gcnew CLDB();
+	System::Data::DataSet^ dataset = db->getDataSet(query);
+	data->DataSource = dataset->Tables[0];
+}
+
 int Client::getClientNum()
 {
 	return this->client_num;

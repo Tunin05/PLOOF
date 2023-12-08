@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CLDB.cpp" />
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Gestion.cpp" />
     <ClCompile Include="gestionCommande.cpp" />
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLDB.h" />
+    <ClInclude Include="Client.h" />
     <ClInclude Include="Commande.h" />
     <ClInclude Include="Gestion.h" />
     <ClInclude Include="gestionCommande.h">
