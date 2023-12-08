@@ -52,6 +52,29 @@ namespace PLOOF {
 	private: System::Windows::Forms::Label^ labeldetail_commande;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::Label^ label_liste_des_clients;
+	private: System::Windows::Forms::Label^ label_commandes_titre;
+	private: System::Windows::Forms::Label^ label_reference_commande;
+	private: System::Windows::Forms::Label^ label_adresse_de_livraison;
+	private: System::Windows::Forms::Label^ label_date_de_livraison;
+	private: System::Windows::Forms::Label^ label_date_de_commande;
+	private: System::Windows::Forms::Label^ label_date_de_payement;
+	private: System::Windows::Forms::Label^ label_methode_payement;
+	private: System::Windows::Forms::Label^ label_numero_service_commercial;
+	private: System::Windows::Forms::TextBox^ input_reference;
+	private: System::Windows::Forms::TextBox^ input_add_livraison;
+	private: System::Windows::Forms::DateTimePicker^ date_de_commande;
+	private: System::Windows::Forms::DateTimePicker^ date_de_payement;
+	private: System::Windows::Forms::DateTimePicker^ date_de_livraison;
+	private: System::Windows::Forms::TextBox^ input_methode_payement;
+	private: System::Windows::Forms::NumericUpDown^ num_serv_commercial;
+
+
+
+
+
+
+
+
 
 
 
@@ -88,10 +111,26 @@ namespace PLOOF {
 			this->labeldetail_commande = (gcnew System::Windows::Forms::Label());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->label_liste_des_clients = (gcnew System::Windows::Forms::Label());
+			this->label_commandes_titre = (gcnew System::Windows::Forms::Label());
+			this->label_reference_commande = (gcnew System::Windows::Forms::Label());
+			this->label_adresse_de_livraison = (gcnew System::Windows::Forms::Label());
+			this->label_date_de_livraison = (gcnew System::Windows::Forms::Label());
+			this->label_date_de_commande = (gcnew System::Windows::Forms::Label());
+			this->label_date_de_payement = (gcnew System::Windows::Forms::Label());
+			this->label_methode_payement = (gcnew System::Windows::Forms::Label());
+			this->label_numero_service_commercial = (gcnew System::Windows::Forms::Label());
+			this->input_reference = (gcnew System::Windows::Forms::TextBox());
+			this->input_add_livraison = (gcnew System::Windows::Forms::TextBox());
+			this->date_de_commande = (gcnew System::Windows::Forms::DateTimePicker());
+			this->date_de_payement = (gcnew System::Windows::Forms::DateTimePicker());
+			this->date_de_livraison = (gcnew System::Windows::Forms::DateTimePicker());
+			this->input_methode_payement = (gcnew System::Windows::Forms::TextBox());
+			this->num_serv_commercial = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_client))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_serv_commercial))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -109,7 +148,7 @@ namespace PLOOF {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(644, 80);
+			this->dataGridView1->Location = System::Drawing::Point(1051, 63);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
@@ -123,7 +162,7 @@ namespace PLOOF {
 			this->label_liste_commandes->AutoSize = true;
 			this->label_liste_commandes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_liste_commandes->Location = System::Drawing::Point(639, 52);
+			this->label_liste_commandes->Location = System::Drawing::Point(1046, 35);
 			this->label_liste_commandes->Name = L"label_liste_commandes";
 			this->label_liste_commandes->Size = System::Drawing::Size(221, 25);
 			this->label_liste_commandes->TabIndex = 3;
@@ -131,7 +170,7 @@ namespace PLOOF {
 			// 
 			// refresh_button
 			// 
-			this->refresh_button->Location = System::Drawing::Point(608, 14);
+			this->refresh_button->Location = System::Drawing::Point(325, 3);
 			this->refresh_button->Name = L"refresh_button";
 			this->refresh_button->Size = System::Drawing::Size(75, 23);
 			this->refresh_button->TabIndex = 4;
@@ -144,7 +183,7 @@ namespace PLOOF {
 			this->label_client->AutoSize = true;
 			this->label_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_client->Location = System::Drawing::Point(470, 52);
+			this->label_client->Location = System::Drawing::Point(659, 49);
 			this->label_client->Name = L"label_client";
 			this->label_client->Size = System::Drawing::Size(104, 26);
 			this->label_client->TabIndex = 11;
@@ -156,7 +195,7 @@ namespace PLOOF {
 			this->label_nom_client->AutoSize = true;
 			this->label_nom_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_nom_client->Location = System::Drawing::Point(426, 81);
+			this->label_nom_client->Location = System::Drawing::Point(615, 78);
 			this->label_nom_client->Name = L"label_nom_client";
 			this->label_nom_client->Size = System::Drawing::Size(41, 18);
 			this->label_nom_client->TabIndex = 27;
@@ -165,7 +204,7 @@ namespace PLOOF {
 			// 
 			// name_client
 			// 
-			this->name_client->Location = System::Drawing::Point(473, 81);
+			this->name_client->Location = System::Drawing::Point(662, 78);
 			this->name_client->Name = L"name_client";
 			this->name_client->ReadOnly = true;
 			this->name_client->Size = System::Drawing::Size(141, 22);
@@ -173,7 +212,7 @@ namespace PLOOF {
 			// 
 			// prenom_client
 			// 
-			this->prenom_client->Location = System::Drawing::Point(473, 109);
+			this->prenom_client->Location = System::Drawing::Point(662, 106);
 			this->prenom_client->Name = L"prenom_client";
 			this->prenom_client->ReadOnly = true;
 			this->prenom_client->Size = System::Drawing::Size(141, 22);
@@ -184,7 +223,7 @@ namespace PLOOF {
 			this->label_prenom_client->AutoSize = true;
 			this->label_prenom_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_prenom_client->Location = System::Drawing::Point(406, 113);
+			this->label_prenom_client->Location = System::Drawing::Point(595, 110);
 			this->label_prenom_client->Name = L"label_prenom_client";
 			this->label_prenom_client->Size = System::Drawing::Size(61, 18);
 			this->label_prenom_client->TabIndex = 30;
@@ -193,7 +232,7 @@ namespace PLOOF {
 			// 
 			// id_client
 			// 
-			this->id_client->Location = System::Drawing::Point(475, 147);
+			this->id_client->Location = System::Drawing::Point(664, 144);
 			this->id_client->Name = L"id_client";
 			this->id_client->ReadOnly = true;
 			this->id_client->Size = System::Drawing::Size(87, 22);
@@ -204,7 +243,7 @@ namespace PLOOF {
 			this->label_id_client->AutoSize = true;
 			this->label_id_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_id_client->Location = System::Drawing::Point(406, 147);
+			this->label_id_client->Location = System::Drawing::Point(595, 144);
 			this->label_id_client->Name = L"label_id_client";
 			this->label_id_client->Size = System::Drawing::Size(63, 18);
 			this->label_id_client->TabIndex = 33;
@@ -231,7 +270,7 @@ namespace PLOOF {
 			this->labeldetail_commande->AutoSize = true;
 			this->labeldetail_commande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labeldetail_commande->Location = System::Drawing::Point(639, 375);
+			this->labeldetail_commande->Location = System::Drawing::Point(1046, 404);
 			this->labeldetail_commande->Name = L"labeldetail_commande";
 			this->labeldetail_commande->Size = System::Drawing::Size(242, 25);
 			this->labeldetail_commande->TabIndex = 37;
@@ -240,7 +279,7 @@ namespace PLOOF {
 			// dataGridView2
 			// 
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(644, 403);
+			this->dataGridView2->Location = System::Drawing::Point(1051, 432);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
@@ -258,10 +297,174 @@ namespace PLOOF {
 			this->label_liste_des_clients->TabIndex = 39;
 			this->label_liste_des_clients->Text = L"Liste des clients";
 			// 
+			// label_commandes_titre
+			// 
+			this->label_commandes_titre->AutoSize = true;
+			this->label_commandes_titre->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_commandes_titre->Location = System::Drawing::Point(613, 206);
+			this->label_commandes_titre->Name = L"label_commandes_titre";
+			this->label_commandes_titre->Size = System::Drawing::Size(158, 26);
+			this->label_commandes_titre->TabIndex = 40;
+			this->label_commandes_titre->Text = L"COMMANDES";
+			this->label_commandes_titre->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_reference_commande
+			// 
+			this->label_reference_commande->AutoSize = true;
+			this->label_reference_commande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_reference_commande->Location = System::Drawing::Point(556, 270);
+			this->label_reference_commande->Name = L"label_reference_commande";
+			this->label_reference_commande->Size = System::Drawing::Size(76, 18);
+			this->label_reference_commande->TabIndex = 41;
+			this->label_reference_commande->Text = L"Référence";
+			this->label_reference_commande->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_adresse_de_livraison
+			// 
+			this->label_adresse_de_livraison->AutoSize = true;
+			this->label_adresse_de_livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_adresse_de_livraison->Location = System::Drawing::Point(492, 292);
+			this->label_adresse_de_livraison->Name = L"label_adresse_de_livraison";
+			this->label_adresse_de_livraison->Size = System::Drawing::Size(140, 18);
+			this->label_adresse_de_livraison->TabIndex = 42;
+			this->label_adresse_de_livraison->Text = L"Adresse de livraison";
+			this->label_adresse_de_livraison->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_date_de_livraison
+			// 
+			this->label_date_de_livraison->AutoSize = true;
+			this->label_date_de_livraison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_date_de_livraison->Location = System::Drawing::Point(515, 321);
+			this->label_date_de_livraison->Name = L"label_date_de_livraison";
+			this->label_date_de_livraison->Size = System::Drawing::Size(117, 18);
+			this->label_date_de_livraison->TabIndex = 43;
+			this->label_date_de_livraison->Text = L"Date de livraison";
+			this->label_date_de_livraison->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_date_de_commande
+			// 
+			this->label_date_de_commande->AutoSize = true;
+			this->label_date_de_commande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_date_de_commande->Location = System::Drawing::Point(494, 348);
+			this->label_date_de_commande->Name = L"label_date_de_commande";
+			this->label_date_de_commande->Size = System::Drawing::Size(138, 18);
+			this->label_date_de_commande->TabIndex = 44;
+			this->label_date_de_commande->Text = L"Date de commande";
+			this->label_date_de_commande->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_date_de_payement
+			// 
+			this->label_date_de_payement->AutoSize = true;
+			this->label_date_de_payement->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_date_de_payement->Location = System::Drawing::Point(505, 378);
+			this->label_date_de_payement->Name = L"label_date_de_payement";
+			this->label_date_de_payement->Size = System::Drawing::Size(127, 18);
+			this->label_date_de_payement->TabIndex = 45;
+			this->label_date_de_payement->Text = L"Date de payement";
+			this->label_date_de_payement->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_methode_payement
+			// 
+			this->label_methode_payement->AutoSize = true;
+			this->label_methode_payement->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_methode_payement->Location = System::Drawing::Point(478, 405);
+			this->label_methode_payement->Name = L"label_methode_payement";
+			this->label_methode_payement->Size = System::Drawing::Size(154, 18);
+			this->label_methode_payement->TabIndex = 46;
+			this->label_methode_payement->Text = L"Méthode de payement";
+			this->label_methode_payement->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label_numero_service_commercial
+			// 
+			this->label_numero_service_commercial->AutoSize = true;
+			this->label_numero_service_commercial->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_numero_service_commercial->Location = System::Drawing::Point(417, 432);
+			this->label_numero_service_commercial->Name = L"label_numero_service_commercial";
+			this->label_numero_service_commercial->Size = System::Drawing::Size(215, 18);
+			this->label_numero_service_commercial->TabIndex = 47;
+			this->label_numero_service_commercial->Text = L"Numéro du service commercial";
+			this->label_numero_service_commercial->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// input_reference
+			// 
+			this->input_reference->Location = System::Drawing::Point(638, 266);
+			this->input_reference->Name = L"input_reference";
+			this->input_reference->ReadOnly = true;
+			this->input_reference->Size = System::Drawing::Size(141, 22);
+			this->input_reference->TabIndex = 48;
+			// 
+			// input_add_livraison
+			// 
+			this->input_add_livraison->Location = System::Drawing::Point(638, 294);
+			this->input_add_livraison->Name = L"input_add_livraison";
+			this->input_add_livraison->ReadOnly = true;
+			this->input_add_livraison->Size = System::Drawing::Size(141, 22);
+			this->input_add_livraison->TabIndex = 49;
+			// 
+			// date_de_commande
+			// 
+			this->date_de_commande->Location = System::Drawing::Point(638, 348);
+			this->date_de_commande->Name = L"date_de_commande";
+			this->date_de_commande->Size = System::Drawing::Size(279, 22);
+			this->date_de_commande->TabIndex = 50;
+			// 
+			// date_de_payement
+			// 
+			this->date_de_payement->Location = System::Drawing::Point(638, 378);
+			this->date_de_payement->Name = L"date_de_payement";
+			this->date_de_payement->Size = System::Drawing::Size(279, 22);
+			this->date_de_payement->TabIndex = 51;
+			// 
+			// date_de_livraison
+			// 
+			this->date_de_livraison->Location = System::Drawing::Point(638, 322);
+			this->date_de_livraison->Name = L"date_de_livraison";
+			this->date_de_livraison->Size = System::Drawing::Size(279, 22);
+			this->date_de_livraison->TabIndex = 52;
+			// 
+			// input_methode_payement
+			// 
+			this->input_methode_payement->Location = System::Drawing::Point(638, 407);
+			this->input_methode_payement->Name = L"input_methode_payement";
+			this->input_methode_payement->ReadOnly = true;
+			this->input_methode_payement->Size = System::Drawing::Size(141, 22);
+			this->input_methode_payement->TabIndex = 53;
+			// 
+			// num_serv_commercial
+			// 
+			this->num_serv_commercial->Location = System::Drawing::Point(638, 435);
+			this->num_serv_commercial->Name = L"num_serv_commercial";
+			this->num_serv_commercial->ReadOnly = true;
+			this->num_serv_commercial->Size = System::Drawing::Size(87, 22);
+			this->num_serv_commercial->TabIndex = 54;
+			// 
 			// gestionCommande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->num_serv_commercial);
+			this->Controls->Add(this->input_methode_payement);
+			this->Controls->Add(this->date_de_livraison);
+			this->Controls->Add(this->date_de_payement);
+			this->Controls->Add(this->date_de_commande);
+			this->Controls->Add(this->input_add_livraison);
+			this->Controls->Add(this->input_reference);
+			this->Controls->Add(this->label_numero_service_commercial);
+			this->Controls->Add(this->label_methode_payement);
+			this->Controls->Add(this->label_date_de_payement);
+			this->Controls->Add(this->label_date_de_commande);
+			this->Controls->Add(this->label_date_de_livraison);
+			this->Controls->Add(this->label_adresse_de_livraison);
+			this->Controls->Add(this->label_reference_commande);
+			this->Controls->Add(this->label_commandes_titre);
 			this->Controls->Add(this->label_liste_des_clients);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->labeldetail_commande);
@@ -278,12 +481,13 @@ namespace PLOOF {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
 			this->Name = L"gestionCommande";
-			this->Size = System::Drawing::Size(1253, 743);
+			this->Size = System::Drawing::Size(1314, 594);
 			this->Load += gcnew System::EventHandler(this, &gestionCommande::gestionCommande_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_client))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_serv_commercial))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
