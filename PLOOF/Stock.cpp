@@ -1,5 +1,6 @@
 #include "Stock.h"
 #include "CLDB.h"
+#include <msclr\marshal_cppstd.h>
 
 Stock::Stock()
 {
@@ -17,8 +18,10 @@ Stock::Stock()
 
 
 
-/*Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature, System::Decimal prix_HT, System::String^ designation, System::Decimal stock, System::Decimal reapro, System::Decimal TVA)
+Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature, System::Decimal prix_HT, System::String^ designation, System::Decimal stock, System::Decimal reapro, System::Decimal TVA, System::Decimal id_catalog, System::Decimal id_article)
 {
+	this->id_article = System::Convert::ToInt32(id_article);
+	this->id_catalog = System::Convert::ToInt32(id_catalog);
 	this->name = msclr::interop::marshal_as<std::string>(name);
 	this->quantite = System::Convert::ToInt32(quantite);
 	this->nature = msclr::interop::marshal_as<std::string>(nature);
@@ -27,7 +30,8 @@ Stock::Stock()
 	this->stock = System::Convert::ToInt32(stock);
 	this->seuilReapprovisionnement = System::Convert::ToInt32(reapro);
 	this->tauxTVA = System::Convert::ToSingle(TVA);
-}*/
+}
+
 
 //DB related methods
 void Stock::insert()
@@ -45,15 +49,17 @@ void Stock::update()
 
 void Stock::remove()
 {
-	//delete the article from the catalog table (price, designation, stock, reappro, tva).
-	System::String^ query = "DELETE FROM Catalog WHERE id_catalog = " + this->id_catalog + ";";
+
+
+	//delete the article from the article table (name, nature, id_catalog, quantity).
+	System::String^ query = "DELETE FROM Articles WHERE article_ref = " + this->id_article + ";";
 	CLDB^ db = gcnew CLDB();
 	db->executeQuery(query);
 
-	//delete the article from the article table (name, nature, id_catalog, quantity).
-	//query = "DELETE FROM Articles WHERE id_article = " + this->id_article + ";";
-	//db = gcnew CLDB();
-	//db->executeQuery(query);
+	//delete the article from the catalog table (price, designation, stock, reappro, tva).
+	query = "DELETE FROM Catalog WHERE id_catalog = " + this->id_catalog + ";";
+	db = gcnew CLDB();
+	db->executeQuery(query);
 
 }
 

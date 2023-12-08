@@ -33,8 +33,6 @@ System::Void PLOOF::gestionStock::SelectRow(System::Object^ sender, System::Wind
 	name_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[7]->Value);
 	input_quantite->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[8]->Value);
 	nature_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[9]->Value);
-
-
 }
 
 System::Void PLOOF::gestionStock::refresh_button_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -69,7 +67,8 @@ System::Void PLOOF::gestionStock::delete_article_Click(System::Object^ sender, S
 {
 	//Suppression d'un article
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
-	Stock* stock = new Stock();
+	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text, input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value, input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
 	stock->remove();
+
 	delete stock;
 }
