@@ -43,9 +43,13 @@ System::Void PLOOF::gestionCommande::SelectRowCommande(System::Object^ sender, S
 	int i = e->RowIndex;
 	input_reference->Text = this->dataGridViewListCommande->Rows[i]->Cells[0]->Value->ToString();
 	input_add_livraison->Text = this->dataGridViewListCommande->Rows[i]->Cells[1]->Value->ToString();
-	date_de_livraison->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[2]->Value);
+	System::Windows::Forms::MessageBox::Show(this->dataGridViewListCommande->Rows[i]->Cells[2]->Value->ToString());
+	System::String^ dateToConvert = this->dataGridViewListCommande->Rows[i]->Cells[2]->Value->ToString();
+System::DateTime^ date = System::Convert::ToDateTime(dateToConvert);
+	date_de_livraison->Value = date;
+	/*date_de_livraison->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[2]->Value);
 	date_de_commande->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[3]->Value);
-	date_de_payement->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[4]->Value);
+	date_de_payement->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[4]->Value);*/
 	input_methode_payement->Text = this->dataGridViewListCommande->Rows[i]->Cells[5]->Value->ToString();
 	num_serv_commercial->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[6]->Value);
 }
