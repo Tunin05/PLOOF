@@ -1,6 +1,6 @@
 #pragma once
+#include "Gestion.h"
 #include <string>
-#include <msclr\marshal_cppstd.h>
 
 ref class CLDB;
 

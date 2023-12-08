@@ -110,6 +110,7 @@ namespace PLOOF {
 			this->btn_clear->TabIndex = 39;
 			this->btn_clear->Text = L"Vider les champs";
 			this->btn_clear->UseVisualStyleBackColor = true;
+			this->btn_clear->Click += gcnew System::EventHandler(this, &gestionClient::btn_clear_Click);
 			// 
 			// button6
 			// 
@@ -215,6 +216,7 @@ namespace PLOOF {
 			this->btn_actu->TabIndex = 24;
 			this->btn_actu->Text = L"Actualiser";
 			this->btn_actu->UseVisualStyleBackColor = true;
+			this->btn_actu->Click += gcnew System::EventHandler(this, &gestionClient::btn_actu_Click);
 			// 
 			// label1
 			// 
@@ -254,7 +256,7 @@ namespace PLOOF {
 			this->btn_retour->TabIndex = 21;
 			this->btn_retour->Text = L"< Retour";
 			this->btn_retour->UseVisualStyleBackColor = true;
-			this->btn_retour->Click += gcnew System::EventHandler(this, &gestionClient::button1_Click);
+			this->btn_retour->Click += gcnew System::EventHandler(this, &gestionClient::btn_retour_Click);
 			// 
 			// date_naissance
 			// 
@@ -335,10 +337,18 @@ namespace PLOOF {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void btn_retour_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
-		GC::Collect();
+		GC::Collect();	
+	}
+	private: System::Void btn_clear_Click(System::Object^ sender, System::EventArgs^ e) {
+		numericUpDown1->Value = 0;
+		textBox1->Text = "";
+		textBox2->Text = "";
+		date_commande->Value = DateTime::Now;
+		date_naissance->Value = DateTime::Now;
 	}
 	private: System::Void gestionClient_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void btn_actu_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
