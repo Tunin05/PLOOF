@@ -45,7 +45,15 @@ void Stock::update()
 
 void Stock::remove()
 {
+	//delete the article from the catalog table (price, designation, stock, reappro, tva).
+	System::String^ query = "DELETE FROM Catalog WHERE id_catalog = " + this->id_catalog + ";";
+	CLDB^ db = gcnew CLDB();
+	db->executeQuery(query);
 
+	//delete the article from the article table (name, nature, id_catalog, quantity).
+	//query = "DELETE FROM Articles WHERE id_article = " + this->id_article + ";";
+	//db = gcnew CLDB();
+	//db->executeQuery(query);
 
 }
 

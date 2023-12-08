@@ -37,6 +37,8 @@ void CLDB::executeQuery(System::String^ query) {
 		else
 		{
 			System::Windows::Forms::MessageBox::Show("Echec de l'opération", "Echec", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Error);
+			//afficher les details de l'erreur
+			System::Windows::Forms::MessageBox::Show(command->CommandText, "Erreur", System::Windows::Forms::MessageBoxButtons::OK, System::Windows::Forms::MessageBoxIcon::Error);
 		}
 	}
 	catch (System::Exception^ e)
