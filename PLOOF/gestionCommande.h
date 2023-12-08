@@ -49,6 +49,9 @@ namespace PLOOF {
 	private: System::Windows::Forms::NumericUpDown^ id_client;
 	private: System::Windows::Forms::Label^ label_id_client;
 	private: System::Windows::Forms::DataGridView^ dataGridView_clients;
+	private: System::Windows::Forms::Label^ labeldetail_commande;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::Label^ label_liste_des_clients;
 
 
 
@@ -82,9 +85,13 @@ namespace PLOOF {
 			this->id_client = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_id_client = (gcnew System::Windows::Forms::Label());
 			this->dataGridView_clients = (gcnew System::Windows::Forms::DataGridView());
+			this->labeldetail_commande = (gcnew System::Windows::Forms::Label());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->label_liste_des_clients = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_client))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -102,11 +109,11 @@ namespace PLOOF {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(14, 67);
+			this->dataGridView1->Location = System::Drawing::Point(644, 80);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(884, 267);
+			this->dataGridView1->Size = System::Drawing::Size(589, 267);
 			this->dataGridView1->TabIndex = 2;
 			this->dataGridView1->CellContentDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRow);
 			this->dataGridView1->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRow);
@@ -116,7 +123,7 @@ namespace PLOOF {
 			this->label_liste_commandes->AutoSize = true;
 			this->label_liste_commandes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_liste_commandes->Location = System::Drawing::Point(15, 44);
+			this->label_liste_commandes->Location = System::Drawing::Point(639, 52);
 			this->label_liste_commandes->Name = L"label_liste_commandes";
 			this->label_liste_commandes->Size = System::Drawing::Size(221, 25);
 			this->label_liste_commandes->TabIndex = 3;
@@ -124,7 +131,7 @@ namespace PLOOF {
 			// 
 			// refresh_button
 			// 
-			this->refresh_button->Location = System::Drawing::Point(823, 340);
+			this->refresh_button->Location = System::Drawing::Point(608, 14);
 			this->refresh_button->Name = L"refresh_button";
 			this->refresh_button->Size = System::Drawing::Size(75, 23);
 			this->refresh_button->TabIndex = 4;
@@ -137,7 +144,7 @@ namespace PLOOF {
 			this->label_client->AutoSize = true;
 			this->label_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_client->Location = System::Drawing::Point(717, 394);
+			this->label_client->Location = System::Drawing::Point(470, 52);
 			this->label_client->Name = L"label_client";
 			this->label_client->Size = System::Drawing::Size(104, 26);
 			this->label_client->TabIndex = 11;
@@ -149,7 +156,7 @@ namespace PLOOF {
 			this->label_nom_client->AutoSize = true;
 			this->label_nom_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_nom_client->Location = System::Drawing::Point(691, 580);
+			this->label_nom_client->Location = System::Drawing::Point(426, 81);
 			this->label_nom_client->Name = L"label_nom_client";
 			this->label_nom_client->Size = System::Drawing::Size(41, 18);
 			this->label_nom_client->TabIndex = 27;
@@ -158,7 +165,7 @@ namespace PLOOF {
 			// 
 			// name_client
 			// 
-			this->name_client->Location = System::Drawing::Point(738, 580);
+			this->name_client->Location = System::Drawing::Point(473, 81);
 			this->name_client->Name = L"name_client";
 			this->name_client->ReadOnly = true;
 			this->name_client->Size = System::Drawing::Size(141, 22);
@@ -166,7 +173,7 @@ namespace PLOOF {
 			// 
 			// prenom_client
 			// 
-			this->prenom_client->Location = System::Drawing::Point(738, 608);
+			this->prenom_client->Location = System::Drawing::Point(473, 109);
 			this->prenom_client->Name = L"prenom_client";
 			this->prenom_client->ReadOnly = true;
 			this->prenom_client->Size = System::Drawing::Size(141, 22);
@@ -177,7 +184,7 @@ namespace PLOOF {
 			this->label_prenom_client->AutoSize = true;
 			this->label_prenom_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_prenom_client->Location = System::Drawing::Point(671, 612);
+			this->label_prenom_client->Location = System::Drawing::Point(406, 113);
 			this->label_prenom_client->Name = L"label_prenom_client";
 			this->label_prenom_client->Size = System::Drawing::Size(61, 18);
 			this->label_prenom_client->TabIndex = 30;
@@ -186,10 +193,10 @@ namespace PLOOF {
 			// 
 			// id_client
 			// 
-			this->id_client->Location = System::Drawing::Point(760, 646);
+			this->id_client->Location = System::Drawing::Point(475, 147);
 			this->id_client->Name = L"id_client";
 			this->id_client->ReadOnly = true;
-			this->id_client->Size = System::Drawing::Size(119, 22);
+			this->id_client->Size = System::Drawing::Size(87, 22);
 			this->id_client->TabIndex = 32;
 			// 
 			// label_id_client
@@ -197,7 +204,7 @@ namespace PLOOF {
 			this->label_id_client->AutoSize = true;
 			this->label_id_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_id_client->Location = System::Drawing::Point(671, 646);
+			this->label_id_client->Location = System::Drawing::Point(406, 147);
 			this->label_id_client->Name = L"label_id_client";
 			this->label_id_client->Size = System::Drawing::Size(63, 18);
 			this->label_id_client->TabIndex = 33;
@@ -209,20 +216,55 @@ namespace PLOOF {
 			this->dataGridView_clients->AllowUserToAddRows = false;
 			this->dataGridView_clients->AllowUserToDeleteRows = false;
 			this->dataGridView_clients->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView_clients->Location = System::Drawing::Point(674, 423);
+			this->dataGridView_clients->Location = System::Drawing::Point(19, 81);
 			this->dataGridView_clients->Name = L"dataGridView_clients";
 			this->dataGridView_clients->ReadOnly = true;
 			this->dataGridView_clients->RowHeadersWidth = 51;
 			this->dataGridView_clients->RowTemplate->Height = 24;
-			this->dataGridView_clients->Size = System::Drawing::Size(205, 144);
+			this->dataGridView_clients->Size = System::Drawing::Size(381, 618);
 			this->dataGridView_clients->TabIndex = 36;
 			this->dataGridView_clients->CellContentDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRowClients);
 			this->dataGridView_clients->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRowClients);
+			// 
+			// labeldetail_commande
+			// 
+			this->labeldetail_commande->AutoSize = true;
+			this->labeldetail_commande->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labeldetail_commande->Location = System::Drawing::Point(639, 375);
+			this->labeldetail_commande->Name = L"labeldetail_commande";
+			this->labeldetail_commande->Size = System::Drawing::Size(242, 25);
+			this->labeldetail_commande->TabIndex = 37;
+			this->labeldetail_commande->Text = L"Détails de la commande";
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(644, 403);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->RowTemplate->Height = 24;
+			this->dataGridView2->Size = System::Drawing::Size(589, 267);
+			this->dataGridView2->TabIndex = 38;
+			// 
+			// label_liste_des_clients
+			// 
+			this->label_liste_des_clients->AutoSize = true;
+			this->label_liste_des_clients->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label_liste_des_clients->Location = System::Drawing::Point(14, 52);
+			this->label_liste_des_clients->Name = L"label_liste_des_clients";
+			this->label_liste_des_clients->Size = System::Drawing::Size(209, 31);
+			this->label_liste_des_clients->TabIndex = 39;
+			this->label_liste_des_clients->Text = L"Liste des clients";
 			// 
 			// gestionCommande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->label_liste_des_clients);
+			this->Controls->Add(this->dataGridView2);
+			this->Controls->Add(this->labeldetail_commande);
 			this->Controls->Add(this->dataGridView_clients);
 			this->Controls->Add(this->label_id_client);
 			this->Controls->Add(this->id_client);
@@ -236,11 +278,12 @@ namespace PLOOF {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
 			this->Name = L"gestionCommande";
-			this->Size = System::Drawing::Size(928, 688);
+			this->Size = System::Drawing::Size(1253, 743);
 			this->Load += gcnew System::EventHandler(this, &gestionCommande::gestionCommande_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_client))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
