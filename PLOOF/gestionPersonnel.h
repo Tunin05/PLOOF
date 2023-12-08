@@ -124,8 +124,8 @@ namespace PLOOF {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(571, 240);
 			this->dataGridView1->TabIndex = 2;
-			this->dataGridView1->CellContentDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionPersonnel::SelectRow);
-			this->dataGridView1->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionPersonnel::SelectRow);
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionPersonnel::SelectRow);
+			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionPersonnel::SelectRow);
 			// 
 			// label1
 			// 

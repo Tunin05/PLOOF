@@ -24,9 +24,9 @@ public:
     void remove();
     void select();
     void select(int client_num);
-
-    // Display Methods
     void afficher(System::Windows::Forms::DataGridView^ data);
+    void afficherAdresse(System::Windows::Forms::DataGridView^ data);
+    void rechercher(System::Windows::Forms::DataGridView^ data, System::Decimal client_num, System::String^ name, System::String^ firstname, System::DateTime birthday, System::DateTime first_purchase_date, bool date);
 
     // Getters and Setters
     int getClientNum();
