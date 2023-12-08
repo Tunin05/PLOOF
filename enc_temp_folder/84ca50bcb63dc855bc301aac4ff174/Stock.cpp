@@ -78,6 +78,10 @@ void Stock::select()
 {
 }
 
+void Stock::select(int id)
+{
+
+}
 
 //Form related methods
 void Stock::afficher(System::Windows::Forms::DataGridView^ data)

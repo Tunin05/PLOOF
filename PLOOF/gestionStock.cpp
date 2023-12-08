@@ -60,6 +60,18 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 //Fonction lors du clic sur le bouton "Ajouter un article"
 System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	//Ajout d'un article
+	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
+	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text,
+		input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
+		input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
+	stock->insert();
+	delete stock;
+	clear_button_Click(sender, e);
+	//rafraichir le datagridview
+	delete this->dataGridView1->DataSource;
+	GC::Collect();
+	gestionStock_Load(sender, e);
 
 }
 
@@ -67,8 +79,31 @@ System::Void PLOOF::gestionStock::delete_article_Click(System::Object^ sender, S
 {
 	//Suppression d'un article
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
-	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text, input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value, input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
+	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text,
+		input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
+		input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
 	stock->remove();
-
 	delete stock;
+	clear_button_Click(sender, e);
+	//rafraichir le datagridview
+	delete this->dataGridView1->DataSource;
+	GC::Collect();
+	gestionStock_Load(sender, e);
+}
+
+//Fonction lors du clic sur le bouton "Modifier un article"
+System::Void PLOOF::gestionStock::change_article_button_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
+	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text,
+		input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
+		input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
+	stock->update();
+	delete stock;
+	clear_button_Click(sender, e);
+	//rafraichir le datagridview
+	delete this->dataGridView1->DataSource;
+	GC::Collect();
+	gestionStock_Load(sender, e);
+
 }

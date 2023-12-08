@@ -70,6 +70,7 @@ namespace PLOOF {
 	private: System::Windows::Forms::Label^ label_id_article;
 	private: System::Windows::Forms::NumericUpDown^ id_catalog_input;
 	private: System::Windows::Forms::Label^ label_id_catalog;
+	private: System::Windows::Forms::Button^ change_article_button;
 
 
 
@@ -120,6 +121,7 @@ namespace PLOOF {
 			this->label_id_article = (gcnew System::Windows::Forms::Label());
 			this->id_catalog_input = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label_id_catalog = (gcnew System::Windows::Forms::Label());
+			this->change_article_button = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
@@ -421,10 +423,21 @@ namespace PLOOF {
 			this->label_id_catalog->Text = L"ID Catalogue";
 			this->label_id_catalog->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
+			// change_article_button
+			// 
+			this->change_article_button->Location = System::Drawing::Point(468, 362);
+			this->change_article_button->Name = L"change_article_button";
+			this->change_article_button->Size = System::Drawing::Size(199, 25);
+			this->change_article_button->TabIndex = 33;
+			this->change_article_button->Text = L"Modifier un article";
+			this->change_article_button->UseVisualStyleBackColor = true;
+			this->change_article_button->Click += gcnew System::EventHandler(this, &gestionStock::change_article_button_Click);
+			// 
 			// gestionStock
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->change_article_button);
 			this->Controls->Add(this->label_id_catalog);
 			this->Controls->Add(this->id_catalog_input);
 			this->Controls->Add(this->label_id_article);
@@ -514,5 +527,6 @@ namespace PLOOF {
 
 	private: System::Void Add_an_article_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void delete_article_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void change_article_button_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
