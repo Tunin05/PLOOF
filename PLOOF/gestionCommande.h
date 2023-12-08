@@ -37,7 +37,8 @@ namespace PLOOF {
 		}
 
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dataGridViewListCommande;
+
 	private: System::Windows::Forms::Label^ label_liste_commandes;
 
 	private: System::Windows::Forms::Button^ refresh_button;
@@ -50,7 +51,8 @@ namespace PLOOF {
 	private: System::Windows::Forms::Label^ label_id_client;
 	private: System::Windows::Forms::DataGridView^ dataGridView_clients;
 	private: System::Windows::Forms::Label^ labeldetail_commande;
-	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridView^ dataGridViewDetailsCommande;
+
 	private: System::Windows::Forms::Label^ label_liste_des_clients;
 	private: System::Windows::Forms::Label^ label_commandes_titre;
 	private: System::Windows::Forms::Label^ label_reference_commande;
@@ -97,7 +99,7 @@ namespace PLOOF {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewListCommande = (gcnew System::Windows::Forms::DataGridView());
 			this->label_liste_commandes = (gcnew System::Windows::Forms::Label());
 			this->refresh_button = (gcnew System::Windows::Forms::Button());
 			this->label_client = (gcnew System::Windows::Forms::Label());
@@ -109,7 +111,7 @@ namespace PLOOF {
 			this->label_id_client = (gcnew System::Windows::Forms::Label());
 			this->dataGridView_clients = (gcnew System::Windows::Forms::DataGridView());
 			this->labeldetail_commande = (gcnew System::Windows::Forms::Label());
-			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewDetailsCommande = (gcnew System::Windows::Forms::DataGridView());
 			this->label_liste_des_clients = (gcnew System::Windows::Forms::Label());
 			this->label_commandes_titre = (gcnew System::Windows::Forms::Label());
 			this->label_reference_commande = (gcnew System::Windows::Forms::Label());
@@ -126,10 +128,10 @@ namespace PLOOF {
 			this->date_de_livraison = (gcnew System::Windows::Forms::DateTimePicker());
 			this->input_methode_payement = (gcnew System::Windows::Forms::TextBox());
 			this->num_serv_commercial = (gcnew System::Windows::Forms::NumericUpDown());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewListCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_client))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDetailsCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_serv_commercial))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -145,17 +147,17 @@ namespace PLOOF {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &gestionCommande::button1_Click);
 			// 
-			// dataGridView1
+			// dataGridViewListCommande
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(1051, 63);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(589, 267);
-			this->dataGridView1->TabIndex = 2;
-			this->dataGridView1->CellContentDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRow);
-			this->dataGridView1->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRow);
+			this->dataGridViewListCommande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewListCommande->Location = System::Drawing::Point(1051, 63);
+			this->dataGridViewListCommande->Name = L"dataGridViewListCommande";
+			this->dataGridViewListCommande->RowHeadersWidth = 51;
+			this->dataGridViewListCommande->RowTemplate->Height = 24;
+			this->dataGridViewListCommande->Size = System::Drawing::Size(589, 267);
+			this->dataGridViewListCommande->TabIndex = 2;
+			this->dataGridViewListCommande->CellContentDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRowCommande);
+			this->dataGridViewListCommande->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &gestionCommande::SelectRowCommande);
 			// 
 			// label_liste_commandes
 			// 
@@ -276,15 +278,15 @@ namespace PLOOF {
 			this->labeldetail_commande->TabIndex = 37;
 			this->labeldetail_commande->Text = L"Détails de la commande";
 			// 
-			// dataGridView2
+			// dataGridViewDetailsCommande
 			// 
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(1051, 432);
-			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->RowHeadersWidth = 51;
-			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(589, 267);
-			this->dataGridView2->TabIndex = 38;
+			this->dataGridViewDetailsCommande->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridViewDetailsCommande->Location = System::Drawing::Point(1051, 432);
+			this->dataGridViewDetailsCommande->Name = L"dataGridViewDetailsCommande";
+			this->dataGridViewDetailsCommande->RowHeadersWidth = 51;
+			this->dataGridViewDetailsCommande->RowTemplate->Height = 24;
+			this->dataGridViewDetailsCommande->Size = System::Drawing::Size(589, 267);
+			this->dataGridViewDetailsCommande->TabIndex = 38;
 			// 
 			// label_liste_des_clients
 			// 
@@ -395,7 +397,7 @@ namespace PLOOF {
 			// 
 			// input_reference
 			// 
-			this->input_reference->Location = System::Drawing::Point(638, 266);
+			this->input_reference->Location = System::Drawing::Point(653, 265);
 			this->input_reference->Name = L"input_reference";
 			this->input_reference->ReadOnly = true;
 			this->input_reference->Size = System::Drawing::Size(141, 22);
@@ -403,7 +405,7 @@ namespace PLOOF {
 			// 
 			// input_add_livraison
 			// 
-			this->input_add_livraison->Location = System::Drawing::Point(638, 294);
+			this->input_add_livraison->Location = System::Drawing::Point(653, 293);
 			this->input_add_livraison->Name = L"input_add_livraison";
 			this->input_add_livraison->ReadOnly = true;
 			this->input_add_livraison->Size = System::Drawing::Size(141, 22);
@@ -411,28 +413,28 @@ namespace PLOOF {
 			// 
 			// date_de_commande
 			// 
-			this->date_de_commande->Location = System::Drawing::Point(638, 348);
+			this->date_de_commande->Location = System::Drawing::Point(653, 347);
 			this->date_de_commande->Name = L"date_de_commande";
 			this->date_de_commande->Size = System::Drawing::Size(279, 22);
 			this->date_de_commande->TabIndex = 50;
 			// 
 			// date_de_payement
 			// 
-			this->date_de_payement->Location = System::Drawing::Point(638, 378);
+			this->date_de_payement->Location = System::Drawing::Point(653, 377);
 			this->date_de_payement->Name = L"date_de_payement";
 			this->date_de_payement->Size = System::Drawing::Size(279, 22);
 			this->date_de_payement->TabIndex = 51;
 			// 
 			// date_de_livraison
 			// 
-			this->date_de_livraison->Location = System::Drawing::Point(638, 322);
+			this->date_de_livraison->Location = System::Drawing::Point(653, 321);
 			this->date_de_livraison->Name = L"date_de_livraison";
 			this->date_de_livraison->Size = System::Drawing::Size(279, 22);
 			this->date_de_livraison->TabIndex = 52;
 			// 
 			// input_methode_payement
 			// 
-			this->input_methode_payement->Location = System::Drawing::Point(638, 407);
+			this->input_methode_payement->Location = System::Drawing::Point(653, 406);
 			this->input_methode_payement->Name = L"input_methode_payement";
 			this->input_methode_payement->ReadOnly = true;
 			this->input_methode_payement->Size = System::Drawing::Size(141, 22);
@@ -440,7 +442,7 @@ namespace PLOOF {
 			// 
 			// num_serv_commercial
 			// 
-			this->num_serv_commercial->Location = System::Drawing::Point(638, 435);
+			this->num_serv_commercial->Location = System::Drawing::Point(653, 434);
 			this->num_serv_commercial->Name = L"num_serv_commercial";
 			this->num_serv_commercial->ReadOnly = true;
 			this->num_serv_commercial->Size = System::Drawing::Size(87, 22);
@@ -466,7 +468,7 @@ namespace PLOOF {
 			this->Controls->Add(this->label_reference_commande);
 			this->Controls->Add(this->label_commandes_titre);
 			this->Controls->Add(this->label_liste_des_clients);
-			this->Controls->Add(this->dataGridView2);
+			this->Controls->Add(this->dataGridViewDetailsCommande);
 			this->Controls->Add(this->labeldetail_commande);
 			this->Controls->Add(this->dataGridView_clients);
 			this->Controls->Add(this->label_id_client);
@@ -478,15 +480,15 @@ namespace PLOOF {
 			this->Controls->Add(this->label_client);
 			this->Controls->Add(this->refresh_button);
 			this->Controls->Add(this->label_liste_commandes);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dataGridViewListCommande);
 			this->Controls->Add(this->button1);
 			this->Name = L"gestionCommande";
-			this->Size = System::Drawing::Size(1314, 594);
+			this->Size = System::Drawing::Size(1643, 743);
 			this->Load += gcnew System::EventHandler(this, &gestionCommande::gestionCommande_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewListCommande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_client))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDetailsCommande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->num_serv_commercial))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -500,9 +502,10 @@ namespace PLOOF {
 	}
 	private: System::Void SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 	private: System::Void SelectRowClients(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
+	private: System::Void SelectRowCommande(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e);
 		   //chargement de la page
 	private: System::Void gestionCommande_Load(System::Object^ sender, System::EventArgs^ e);
 		   //Actualisation du tableau
 	private: System::Void refresh_button_Click(System::Object^ sender, System::EventArgs^ e);
-};
+	};
 }

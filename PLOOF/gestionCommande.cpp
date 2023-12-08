@@ -32,8 +32,20 @@ System::Void PLOOF::gestionCommande::SelectRowClients(System::Object^ sender, Sy
 	id_client->Value = System::Convert::ToInt32(this->dataGridView_clients->Rows[i]->Cells[0]->Value);
 
 	//Affichage des commandes
-	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
+	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridViewListCommande;
 	Commande^ commande = gcnew Commande();
 	commande->afficherCommandeClient(dataGrid, System::Convert::ToInt32(id_client->Value));
 	delete commande;
+}
+
+System::Void PLOOF::gestionCommande::SelectRowCommande(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
+{
+	int i = e->RowIndex;
+	input_reference->Text = this->dataGridViewListCommande->Rows[i]->Cells[0]->Value->ToString();
+	input_add_livraison->Text = this->dataGridViewListCommande->Rows[i]->Cells[1]->Value->ToString();
+	date_de_livraison->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[2]->Value);
+	date_de_commande->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[3]->Value);
+	date_de_payement->Value = System::Convert::ToDateTime(this->dataGridViewListCommande->Rows[i]->Cells[4]->Value);
+	input_methode_payement->Text = this->dataGridViewListCommande->Rows[i]->Cells[5]->Value->ToString();
+	num_serv_commercial->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[6]->Value);
 }
