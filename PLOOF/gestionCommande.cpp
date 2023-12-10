@@ -43,9 +43,9 @@ System::Void PLOOF::gestionCommande::SelectRowCommande(System::Object^ sender, S
 	int i = e->RowIndex;
 	input_reference->Text = this->dataGridViewListCommande->Rows[i]->Cells[0]->Value->ToString();
 	input_add_livraison->Text = this->dataGridViewListCommande->Rows[i]->Cells[1]->Value->ToString();
-	date_de_livraison->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[3]->Value);
+	date_de_livraison->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[2]->Value);
 	date_de_commande->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[3]->Value);
-	date_de_payement->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[4]->Value);
-	input_methode_payement->Text = this->dataGridViewListCommande->Rows[i]->Cells[5]->Value->ToString();
-	//num_serv_commercial->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[6]->Value);
+	date_de_payement->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[5]->Value);
+	input_methode_payement->Text = this->dataGridViewListCommande->Rows[i]->Cells[6]->Value->ToString();
+	num_serv_commercial->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[7]->Value);
 }
