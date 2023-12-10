@@ -2,28 +2,27 @@
 #include "Gestion.h"
 #include <string>
 
-public ref class Commande
-{
+class Commande : public Gestion {
 private:
 	//Partie clients
-	System::Decimal client_num; //id du client (stocké dans la table Client) (Clé primaire)
-	System::String^ name;
-	System::String^ firstname;
+	int client_num; //id du client (stocké dans la table Client) (Clé primaire)
+	std::string name;
+	std::string firstname;
 	//Partie commandes
-	System::String^ order_ref; //référence de la commande (Clé primaire)
-	System::Decimal delivery_adress_id; //id de l'adresse de livraison (stockée dans la table Adress)
-	System::String^ delivery_date; //date de livraison
-	System::String^ order_date; //date de commande
-	System::Decimal billing_adress; //id de l'adresse de facturation (stockée dans la table Adress)
-	System::String^ payment_date; //date de paiement
-	System::String^ payment_method; //méthode de paiement
-	System::Decimal sale_serv_num; //numéro du service commercial (Générer un random)
+	std::string order_ref; //référence de la commande (Clé primaire)
+	int delivery_adress_id; //id de l'adresse de livraison (stockée dans la table Adress)
+	std::string delivery_date; //date de livraison
+	std::string order_date; //date de commande
+	int billing_adress; //id de l'adresse de facturation (stockée dans la table Adress)
+	std::string payment_date; //date de paiement
+	std::string payment_method; //méthode de paiement
+	int sale_serv_num; //numéro du service commercial (Générer un random)
 	//Partie containers de commandes
-	System::Decimal article_ref; //référence de l'article (stocké dans la table Article) (Clé primaire)
+	int article_ref; //référence de l'article (stocké dans la table Article) (Clé primaire)
 	//order_ref; //référence de la commande (Clé primaire)
-	System::Decimal prix_ET; //prix hors taxe
-	System::Decimal VAT; //prix toutes taxes comprises
-	System::Decimal quantity; //quantité
+	float prix_ET; //prix hors taxe
+	float VAT; //prix toutes taxes comprises
+	int quantity; //quantité
 
 public:
 	Commande();

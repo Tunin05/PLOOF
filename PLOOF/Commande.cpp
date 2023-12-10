@@ -1,7 +1,6 @@
 #include "Commande.h"
 #include "CLDB.h"
 #include <msclr\marshal_cppstd.h>
-#include "Gestion.h"
 
 Commande::Commande()
 {
@@ -47,21 +46,22 @@ Commande::Commande()
 
 Commande::Commande(System::Decimal client_num, System::String^ name, System::String^ firstname, System::String^ order_ref, System::Decimal delivery_adress_id, System::String^ delivery_date, System::String^ order_date, System::Decimal billing_adress, System::String^ payment_date, System::String^ payment_method, System::Decimal sale_serv_num, System::Decimal article_ref, System::Decimal prix_ET, System::Decimal VAT, System::Decimal quantity)
 {
-	this->client_num = client_num;
-	this->name = name;
+	this->client_num = (int)client_num;
+	this->name = System::Convert::ToString(name);
 	this->firstname = firstname;
 	this->order_ref = order_ref;
-	this->delivery_adress_id = delivery_adress_id;
+	this->delivery_adress_id = (int)delivery_adress_id;
 	this->delivery_date = delivery_date;
 	this->order_date = order_date;
-	this->billing_adress = billing_adress;
+	this->billing_adress = (int)billing_adress;
 	this->payment_date = payment_date;
 	this->payment_method = payment_method;
-	this->sale_serv_num = sale_serv_num;
-	this->article_ref = article_ref;
-	this->prix_ET = prix_ET;
-	this->VAT = VAT;
-	this->quantity = quantity;
+	this->sale_serv_num = (int)sale_serv_num;
+	this->article_ref = (int)article_ref;
+	this->prix_ET = (float)prix_ET;
+	this->VAT = (float)VAT;
+	this->quantity = (int)quantity;
+
 }
 
 
