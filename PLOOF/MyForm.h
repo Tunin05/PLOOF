@@ -1,5 +1,6 @@
 #pragma once
 #include "gestionPersonnel.h"
+#include "gestionClient.h"
 #include "gestionStock.h"
 
 namespace PLOOF {
@@ -96,6 +97,7 @@ namespace PLOOF {
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Gestion des clients";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -128,7 +130,7 @@ namespace PLOOF {
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
-			this->ClientSize = System::Drawing::Size(588, 511);
+			this->ClientSize = System::Drawing::Size(595, 511);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -137,6 +139,7 @@ namespace PLOOF {
 			this->Controls->Add(this->logo);
 			this->Name = L"MyForm";
 			this->Text = L"PLOOF";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logo))->EndInit();
 			this->ResumeLayout(false);
 
@@ -151,6 +154,14 @@ namespace PLOOF {
 		FgestionPersonnel->Size = this->ClientSize;
 		FgestionPersonnel->Show();
 	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		gestionClient^ FgestionClient = gcnew gestionClient();
+		this->Controls->Add(FgestionClient);
+		FgestionClient->BringToFront();
+		FgestionClient->Location = Point(0, 0);
+		FgestionClient->Size = this->ClientSize;
+		FgestionClient->Show();
+	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		gestionStock^ FgestionStock = gcnew gestionStock();
 		this->Controls->Add(FgestionStock);
@@ -160,5 +171,7 @@ namespace PLOOF {
 		FgestionStock->Show();
 	}
 
-	};
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }

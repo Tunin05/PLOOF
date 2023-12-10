@@ -120,8 +120,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="adresse.cpp" />
     <ClCompile Include="CLDB.cpp" />
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="Gestion.cpp" />
+    <ClCompile Include="gestionClient.cpp" />
     <ClCompile Include="gestionStock.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="gestionPersonnel.cpp" />
@@ -129,8 +132,13 @@
     <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="adresse.h" />
     <ClInclude Include="CLDB.h" />
+    <ClInclude Include="Client.h" />
     <ClInclude Include="Gestion.h" />
+    <ClInclude Include="gestionClient.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="gestionStock.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -144,6 +152,9 @@
     <ClInclude Include="Stock.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="gestionClient.resx">
+      <DependentUpon>gestionClient.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gestionStock.resx">
       <DependentUpon>gestionStock.h</DependentUpon>
     </EmbeddedResource>
