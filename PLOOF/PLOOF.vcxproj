@@ -120,7 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="adresse.cpp" />
+    <ClCompile Include="addresse.cpp" />
     <ClCompile Include="CLDB.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Gestion.cpp" />
@@ -132,7 +132,7 @@
     <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="adresse.h" />
+    <ClInclude Include="addresse.h" />
     <ClInclude Include="CLDB.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Gestion.h" />

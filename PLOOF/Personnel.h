@@ -19,8 +19,8 @@ public:
     void remove() override;
     void select() override;
     void select(int id);
-    void afficher(System::Windows::Forms::DataGridView^ data);
-    void rechercher(System::Windows::Forms::DataGridView^ data, System::Decimal id, System::String^ name, System::String^ firstname, System::String^ address, System::Decimal superior);
+    void show(System::Windows::Forms::DataGridView^ data);
+    void find(System::Windows::Forms::DataGridView^ data, System::Decimal id, System::String^ name, System::String^ firstname, System::String^ address, System::Decimal superior);
 
     int getId() const;
     void setId(int id);

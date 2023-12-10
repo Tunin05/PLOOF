@@ -14,23 +14,22 @@ System::Void PLOOF::gestionClient::btn_retourListe_Click(System::Object^ sender,
 
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Client^ client = gcnew Client();
-	client->afficher(dataGrid);
-	delete client;
+	client->show(dataGrid);
 }
 
 System::Void PLOOF::gestionClient::gestionClient_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	System::Windows::Forms::DataGridView^  dataGrid = this->dataGridView1;
 	Client^ client = gcnew Client();
-	client->afficher(dataGrid);
-	delete client;
+	client->show(dataGrid);
 }
 
 System::Void PLOOF::gestionClient::btn_actu_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	System::Windows::Forms::DataGridView^  dataGrid = this->dataGridView1;
 	Client^ client = gcnew Client();
-	client->afficher(dataGrid);
+	client->show(dataGrid);
+	GC::Collect();
 }
 
 System::Void PLOOF::gestionClient::SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
@@ -47,7 +46,7 @@ System::Void PLOOF::gestionClient::btn_recherche_Click(System::Object^ sender, S
 {
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Client^ client = gcnew Client();
-	client->rechercher(dataGrid, num_client->Value, nom_client->Text, prenom_client->Text, date_naissance->Value, date_commande->Value, date_bool->Checked);
+	client->find(dataGrid, num_client->Value, nom_client->Text, prenom_client->Text, date_naissance->Value, date_commande->Value, date_bool->Checked);
 	delete client;
 }
 
@@ -76,7 +75,7 @@ System::Void PLOOF::gestionClient::adr_client_Click(System::Object^ sender, Syst
 		btn_retour->Click -= gcnew System::EventHandler(this, &gestionClient::btn_retour_Click);
 		btn_retour->Click += gcnew System::EventHandler(this, &gestionClient::btn_retourListe_Click);
 
-		label1->Text = "Liste des adresses de " + nom_client->Text + " " + prenom_client->Text;
+		label1->Text = "Liste des addresses de " + nom_client->Text + " " + prenom_client->Text;
 
         panel1->Visible = false;
 		panel2->Visible = true;
@@ -84,7 +83,7 @@ System::Void PLOOF::gestionClient::adr_client_Click(System::Object^ sender, Syst
 		System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 		Client^ client = gcnew Client();
 		client->setClientNum(Convert::ToInt32(num_client->Value));
-		client->afficherAdresse(dataGrid);
+		client->showAddresse(dataGrid);
 		delete client;
 	}
 	else

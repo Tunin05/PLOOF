@@ -6,7 +6,7 @@ System::Void PLOOF::gestionPersonnel::gestionPersonnel_Load(System::Object^ send
 {
 	System::Windows::Forms::DataGridView^  dataGrid = this->dataGridView1;
 	Personnel* perso = new Personnel();
-	perso->afficher(dataGrid);
+	perso->show(dataGrid);
 }
 
 System::Void PLOOF::gestionPersonnel::button2_Click(System::Object^ sender, System::EventArgs^ e)
@@ -30,7 +30,7 @@ System::Void PLOOF::gestionPersonnel::button6_Click(System::Object^ sender, Syst
 {
 	System::Windows::Forms::DataGridView^  dataGrid = this->dataGridView1;
 	Personnel* perso = new Personnel();
-	perso->rechercher(dataGrid, numericUpDown1->Value, textBox2->Text, textBox1->Text, textBox4->Text, numericUpDown2->Value);
+	perso->find(dataGrid, numericUpDown1->Value, textBox2->Text, textBox1->Text, textBox4->Text, numericUpDown2->Value);
 	delete perso;
 }
 

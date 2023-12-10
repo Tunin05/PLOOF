@@ -71,7 +71,7 @@ void Client::select(int client_num)
     this->first_purchase_date = System::Convert::ToDateTime(data->Tables[0]->Rows[0]->ItemArray[4]->ToString());
 }
 
-void Client::afficher(System::Windows::Forms::DataGridView^ data)
+void Client::show(System::Windows::Forms::DataGridView^ data)
 {
     System::String^ query = "SELECT * FROM Clients;";
     CLDB^ db = gcnew CLDB();
@@ -79,15 +79,15 @@ void Client::afficher(System::Windows::Forms::DataGridView^ data)
     data->DataSource = dataset->Tables[0];
 }
 
-void Client::afficherAdresse(System::Windows::Forms::DataGridView^ data)
+void Client::showAddresse(System::Windows::Forms::DataGridView^ data)
 {
-    System::String^ query = "SELECT * FROM Adress WHERE client_num = " + this->client_num + ";";
+    System::String^ query = "SELECT * FROM address WHERE client_num = " + this->client_num + ";";
 	CLDB^ db = gcnew CLDB();
 	System::Data::DataSet^ dataset = db->getDataSet(query);
 	data->DataSource = dataset->Tables[0];
 }
 
-void Client::rechercher(System::Windows::Forms::DataGridView^ data, System::Decimal client_num, System::String^ name, System::String^ firstname, System::DateTime birthday, System::DateTime first_purchase_date, bool date)
+void Client::find(System::Windows::Forms::DataGridView^ data, System::Decimal client_num, System::String^ name, System::String^ firstname, System::DateTime birthday, System::DateTime first_purchase_date, bool date)
 {
     System::String^ query = "SELECT * FROM Clients WHERE 1 = 1";
     if (client_num != 0)

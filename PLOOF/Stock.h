@@ -8,46 +8,41 @@ private:
 	int id_article;
 	int id_catalog;
 	std::string name;
-	int quantite;
+	int quantity;
 	std::string nature;
-	float prixHT;
+	float priceHT;
 	std::string designation;
 	int stock;
 	int seuilReapprovisionnement;
-	float tauxTVA;
+	float VAT;
 
 
 public:
 	Stock();
-	//Stock possède name (string), quantite (int), nature (string),
-	//prix_HT (float), designation (string), 
-	//stock (int), reapro (int), TVA (int)
-	Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature,
-		System::Decimal prix_HT, System::String^ designation,
-		System::Decimal stock, System::Decimal reapro, System::Decimal TVA,
-		System::Decimal id_catalog, System::Decimal id_article);
+	Stock::Stock(System::String^ name, System::Decimal quantity, System::String^ nature,
+	System::Decimal price_HT, System::String^ designation,
+	System::Decimal stock, System::Decimal reapro, System::Decimal VAT,
+	System::Decimal id_catalog, System::Decimal id_article);
 
-	//DB related methods
 	void insert() override;
 	void update() override;
 	void remove() override;
 	void select() override;
-	//Form related methods
-	void afficher(System::Windows::Forms::DataGridView^ data);
 
-	// Getter functions
-	float getPrixHT();
+	void show(System::Windows::Forms::DataGridView^ data);
+
+	float getPriceHT();
 	std::string getDesignation();
 	int getQuantite();
-	int getSeuilReapprovisionnement();
-	float getTauxTVA();
+	int getReplenishmentThreshold();
+	float getTauxVAT();
 	std::string getNature();
 
 	// Setter functions
-	void setPrixHT(float prixHT);
+	void setPriceHT(float priceHT);
 	void setDesignation(const std::string& designation);
-	void setQuantite(int quantite);
+	void setQuantite(int quantity);
 	void setSeuilReapprovisionnement(int seuilReapprovisionnement);
-	void setTauxTVA(float tauxTVA);
+	void setTauxVAT(float VAT);
 	void setNature(const std::string& nature);
 };

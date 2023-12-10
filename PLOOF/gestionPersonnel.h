@@ -237,7 +237,7 @@ namespace PLOOF {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(76, 20);
 			this->label6->TabIndex = 14;
-			this->label6->Text = L"Adresse :";
+			this->label6->Text = L"addresse :";
 			// 
 			// button3
 			// 
@@ -275,7 +275,7 @@ namespace PLOOF {
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(411, 29);
 			this->button6->TabIndex = 18;
-			this->button6->Text = L"Rechercher";
+			this->button6->Text = L"find";
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &gestionPersonnel::button6_Click);
 			// 

@@ -7,29 +7,29 @@ Stock::Stock()
 	this->id_article = 0;
 	this->id_catalog = 0;
 	this->name = "";
-	this->quantite = 0;
+	this->quantity = 0;
 	this->nature = "";
-	this->prixHT = 0;
+	this->priceHT = 0;
 	this->designation = "";
 	this->stock = 0;
 	this->seuilReapprovisionnement = 0;
-	this->tauxTVA = 0;
+	this->VAT = 0;
 }
 
 
 
-Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nature, System::Decimal prix_HT, System::String^ designation, System::Decimal stock, System::Decimal reapro, System::Decimal TVA, System::Decimal id_catalog, System::Decimal id_article)
+Stock::Stock(System::String^ name, System::Decimal quantity, System::String^ nature, System::Decimal price_HT, System::String^ designation, System::Decimal stock, System::Decimal reapro, System::Decimal VAT, System::Decimal id_catalog, System::Decimal id_article)
 {
 	this->id_article = System::Convert::ToInt32(id_article);
 	this->id_catalog = System::Convert::ToInt32(id_catalog);
 	this->name = msclr::interop::marshal_as<std::string>(name);
-	this->quantite = System::Convert::ToInt32(quantite);
+	this->quantity = System::Convert::ToInt32(quantity);
 	this->nature = msclr::interop::marshal_as<std::string>(nature);
-	this->prixHT = System::Convert::ToSingle(prix_HT);
+	this->priceHT = System::Convert::ToSingle(price_HT);
 	this->designation = msclr::interop::marshal_as<std::string>(designation);
 	this->stock = System::Convert::ToInt32(stock);
 	this->seuilReapprovisionnement = System::Convert::ToInt32(reapro);
-	this->tauxTVA = System::Convert::ToSingle(TVA);
+	this->VAT = System::Convert::ToSingle(VAT);
 }
 
 
@@ -37,12 +37,12 @@ Stock::Stock(System::String^ name, System::Decimal quantite, System::String^ nat
 void Stock::insert()
 {
 	//We first need to insert the article in the catalog table (price, designation, stock, reappro, tva).
-	System::String^ query = "INSERT INTO Catalog (price_ET, designation, stock, reorder_threshold, VAT) VALUES (" + this->prixHT + ", '" + gcnew System::String(this->designation.c_str()) + "', " + this->quantite + ", " + this->seuilReapprovisionnement + ", " + this->tauxTVA + ");";
+	System::String^ query = "INSERT INTO Catalog (price_ET, designation, stock, reorder_threshold, VAT) VALUES (" + this->priceHT + ", '" + gcnew System::String(this->designation.c_str()) + "', " + this->quantity + ", " + this->seuilReapprovisionnement + ", " + this->VAT + ");";
 	CLDB^ db = gcnew CLDB();
 	db->executeQuery(query);
 
 	//We then need to insert the article in the article table (name, nature, id_catalog, quantity).
-	query = "INSERT INTO Articles (name, nature, id_catalog, quantity) VALUES ('" + gcnew System::String(this->name.c_str()) + "', '" + gcnew System::String(this->nature.c_str()) + "', (SELECT MAX(id_catalog) FROM Catalog), " + this->quantite + ");";
+	query = "INSERT INTO Articles (name, nature, id_catalog, quantity) VALUES ('" + gcnew System::String(this->name.c_str()) + "', '" + gcnew System::String(this->nature.c_str()) + "', (SELECT MAX(id_catalog) FROM Catalog), " + this->quantity + ");";
 	db = gcnew CLDB();
 	db->executeQuery(query);
 }
@@ -50,12 +50,12 @@ void Stock::insert()
 void Stock::update()
 {
 	//We first need to update the article in the catalog table (price, designation, stock, reappro, tva).
-	System::String^ query = "UPDATE Catalog SET price_ET = " + this->prixHT + ", designation = '" + gcnew System::String(this->designation.c_str()) + "', stock = " + this->quantite + ", reorder_threshold = " + this->seuilReapprovisionnement + ", VAT = " + this->tauxTVA + " WHERE id_catalog = " + this->id_catalog + ";";
+	System::String^ query = "UPDATE Catalog SET price_ET = " + this->priceHT + ", designation = '" + gcnew System::String(this->designation.c_str()) + "', stock = " + this->quantity + ", reorder_threshold = " + this->seuilReapprovisionnement + ", VAT = " + this->VAT + " WHERE id_catalog = " + this->id_catalog + ";";
 	CLDB^ db = gcnew CLDB();
 	db->executeQuery(query);
 
 	//We then need to update the article in the article table (name, nature, id_catalog, quantity).
-	query = "UPDATE Articles SET name = '" + gcnew System::String(this->name.c_str()) + "', nature = '" + gcnew System::String(this->nature.c_str()) + "', id_catalog = " + this->id_catalog + ", quantity = " + this->quantite + " WHERE article_ref = " + this->id_article + ";";
+	query = "UPDATE Articles SET name = '" + gcnew System::String(this->name.c_str()) + "', nature = '" + gcnew System::String(this->nature.c_str()) + "', id_catalog = " + this->id_catalog + ", quantity = " + this->quantity + " WHERE article_ref = " + this->id_article + ";";
 	db = gcnew CLDB();
 	db->executeQuery(query);
 }
@@ -80,7 +80,7 @@ void Stock::select()
 
 
 //Form related methods
-void Stock::afficher(System::Windows::Forms::DataGridView^ data)
+void Stock::show(System::Windows::Forms::DataGridView^ data)
 {
 	System::String^ query = "SELECT C.*, A.article_ref, A.name, A.quantity, A.nature FROM PLOOF.dbo.Catalog C INNER JOIN PLOOF.dbo.Articles A ON C.id_catalog = A.id_catalog;";
 	CLDB^ db = gcnew CLDB();
@@ -89,9 +89,9 @@ void Stock::afficher(System::Windows::Forms::DataGridView^ data)
 }
 
 // Getter functions
-float Stock::getPrixHT()
+float Stock::getPriceHT()
 {
-	return this->prixHT;
+	return this->priceHT;
 }
 
 std::string Stock::getDesignation()
@@ -101,17 +101,17 @@ std::string Stock::getDesignation()
 
 int Stock::getQuantite()
 {
-	return this->quantite;
+	return this->quantity;
 }
 
-int Stock::getSeuilReapprovisionnement()
+int Stock::getReplenishmentThreshold()
 {
 	return this->seuilReapprovisionnement;
 }
 
-float Stock::getTauxTVA()
+float Stock::getTauxVAT()
 {
-	return this->tauxTVA;
+	return this->VAT;
 }
 
 std::string Stock::getNature()
@@ -121,9 +121,9 @@ std::string Stock::getNature()
 
 // Setter functions
 
-void Stock::setPrixHT(float prixHT)
+void Stock::setPriceHT(float priceHT)
 {
-	this->prixHT = prixHT;
+	this->priceHT = priceHT;
 }
 
 void Stock::setDesignation(const std::string& designation)
@@ -131,9 +131,9 @@ void Stock::setDesignation(const std::string& designation)
 	this->designation = designation;
 }
 
-void Stock::setQuantite(int quantite)
+void Stock::setQuantite(int quantity)
 {
-	this->quantite = quantite;
+	this->quantity = quantity;
 }
 
 void Stock::setSeuilReapprovisionnement(int seuilReapprovisionnement)
@@ -141,9 +141,9 @@ void Stock::setSeuilReapprovisionnement(int seuilReapprovisionnement)
 	this->seuilReapprovisionnement = seuilReapprovisionnement;
 }
 
-void Stock::setTauxTVA(float tauxTVA)
+void Stock::setTauxVAT(float VAT)
 {
-	this->tauxTVA = tauxTVA;
+	this->VAT = VAT;
 }
 
 void Stock::setNature(const std::string& nature)

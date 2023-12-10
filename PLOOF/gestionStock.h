@@ -48,19 +48,19 @@ namespace PLOOF {
 	private: System::Windows::Forms::TextBox^ nature_article;
 	private: System::Windows::Forms::Label^ label_article;
 	private: System::Windows::Forms::Label^ label_catalog;
-	private: System::Windows::Forms::NumericUpDown^ input_prix_HT;
+	private: System::Windows::Forms::NumericUpDown^ input_price_HT;
 
-	private: System::Windows::Forms::Label^ label_prix_HT;
+	private: System::Windows::Forms::Label^ label_price_HT;
 	private: System::Windows::Forms::TextBox^ designation;
 	private: System::Windows::Forms::Label^ label_Stock;
 	private: System::Windows::Forms::NumericUpDown^ input_Stock;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::NumericUpDown^ input_reapro;
-	private: System::Windows::Forms::NumericUpDown^ input_TVA;
-	private: System::Windows::Forms::Label^ label_TVA;
+	private: System::Windows::Forms::NumericUpDown^ input_VAT;
+	private: System::Windows::Forms::Label^ label_VAT;
 
-	private: System::Windows::Forms::NumericUpDown^ input_quantite;
-	private: System::Windows::Forms::Label^ label_quantite;
+	private: System::Windows::Forms::NumericUpDown^ input_quantity;
+	private: System::Windows::Forms::Label^ label_quantity;
 	private: System::Windows::Forms::Button^ clear_button;
 	private: System::Windows::Forms::Button^ delete_article;
 	private: System::Windows::Forms::Label^ label_nom_article;
@@ -101,17 +101,17 @@ namespace PLOOF {
 			this->nature_article = (gcnew System::Windows::Forms::TextBox());
 			this->label_article = (gcnew System::Windows::Forms::Label());
 			this->label_catalog = (gcnew System::Windows::Forms::Label());
-			this->input_prix_HT = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label_prix_HT = (gcnew System::Windows::Forms::Label());
+			this->input_price_HT = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_price_HT = (gcnew System::Windows::Forms::Label());
 			this->designation = (gcnew System::Windows::Forms::TextBox());
 			this->label_Stock = (gcnew System::Windows::Forms::Label());
 			this->input_Stock = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->input_reapro = (gcnew System::Windows::Forms::NumericUpDown());
-			this->input_TVA = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label_TVA = (gcnew System::Windows::Forms::Label());
-			this->input_quantite = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label_quantite = (gcnew System::Windows::Forms::Label());
+			this->input_VAT = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_VAT = (gcnew System::Windows::Forms::Label());
+			this->input_quantity = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label_quantity = (gcnew System::Windows::Forms::Label());
 			this->clear_button = (gcnew System::Windows::Forms::Button());
 			this->delete_article = (gcnew System::Windows::Forms::Button());
 			this->label_nom_article = (gcnew System::Windows::Forms::Label());
@@ -123,11 +123,11 @@ namespace PLOOF {
 			this->label_id_catalog = (gcnew System::Windows::Forms::Label());
 			this->change_article_button = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_price_HT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_VAT))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantity))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_article_input))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_catalog_input))->BeginInit();
 			this->SuspendLayout();
@@ -225,24 +225,24 @@ namespace PLOOF {
 			this->label_catalog->Text = L"CATALOGUE";
 			this->label_catalog->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// input_prix_HT
+			// input_price_HT
 			// 
-			this->input_prix_HT->Location = System::Drawing::Point(732, 487);
-			this->input_prix_HT->Name = L"input_prix_HT";
-			this->input_prix_HT->Size = System::Drawing::Size(120, 22);
-			this->input_prix_HT->TabIndex = 12;
+			this->input_price_HT->Location = System::Drawing::Point(732, 487);
+			this->input_price_HT->Name = L"input_price_HT";
+			this->input_price_HT->Size = System::Drawing::Size(120, 22);
+			this->input_price_HT->TabIndex = 12;
 			// 
-			// label_prix_HT
+			// label_price_HT
 			// 
-			this->label_prix_HT->AutoSize = true;
-			this->label_prix_HT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_price_HT->AutoSize = true;
+			this->label_price_HT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_prix_HT->Location = System::Drawing::Point(669, 488);
-			this->label_prix_HT->Name = L"label_prix_HT";
-			this->label_prix_HT->Size = System::Drawing::Size(57, 18);
-			this->label_prix_HT->TabIndex = 13;
-			this->label_prix_HT->Text = L"Prix HT";
-			this->label_prix_HT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label_price_HT->Location = System::Drawing::Point(669, 488);
+			this->label_price_HT->Name = L"label_price_HT";
+			this->label_price_HT->Size = System::Drawing::Size(57, 18);
+			this->label_price_HT->TabIndex = 13;
+			this->label_price_HT->Text = L"Price HT";
+			this->label_price_HT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// designation
 			// 
@@ -289,43 +289,43 @@ namespace PLOOF {
 			this->input_reapro->Size = System::Drawing::Size(120, 22);
 			this->input_reapro->TabIndex = 18;
 			// 
-			// input_TVA
+			// input_VAT
 			// 
-			this->input_TVA->Location = System::Drawing::Point(733, 626);
-			this->input_TVA->Name = L"input_TVA";
-			this->input_TVA->Size = System::Drawing::Size(120, 22);
-			this->input_TVA->TabIndex = 19;
+			this->input_VAT->Location = System::Drawing::Point(733, 626);
+			this->input_VAT->Name = L"input_VAT";
+			this->input_VAT->Size = System::Drawing::Size(120, 22);
+			this->input_VAT->TabIndex = 19;
 			// 
-			// label_TVA
+			// label_VAT
 			// 
-			this->label_TVA->AutoSize = true;
-			this->label_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_VAT->AutoSize = true;
+			this->label_VAT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_TVA->Location = System::Drawing::Point(679, 626);
-			this->label_TVA->Name = L"label_TVA";
-			this->label_TVA->Size = System::Drawing::Size(35, 18);
-			this->label_TVA->TabIndex = 20;
-			this->label_TVA->Text = L"TVA";
-			this->label_TVA->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label_VAT->Location = System::Drawing::Point(679, 626);
+			this->label_VAT->Name = L"label_VAT";
+			this->label_VAT->Size = System::Drawing::Size(35, 18);
+			this->label_VAT->TabIndex = 20;
+			this->label_VAT->Text = L"VAT";
+			this->label_VAT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// input_quantite
+			// input_quantity
 			// 
-			this->input_quantite->Location = System::Drawing::Point(305, 512);
-			this->input_quantite->Name = L"input_quantite";
-			this->input_quantite->Size = System::Drawing::Size(159, 22);
-			this->input_quantite->TabIndex = 22;
+			this->input_quantity->Location = System::Drawing::Point(305, 512);
+			this->input_quantity->Name = L"input_quantity";
+			this->input_quantity->Size = System::Drawing::Size(159, 22);
+			this->input_quantity->TabIndex = 22;
 			// 
-			// label_quantite
+			// label_quantity
 			// 
-			this->label_quantite->AutoSize = true;
-			this->label_quantite->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_quantity->AutoSize = true;
+			this->label_quantity->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label_quantite->Location = System::Drawing::Point(236, 516);
-			this->label_quantite->Name = L"label_quantite";
-			this->label_quantite->Size = System::Drawing::Size(63, 18);
-			this->label_quantite->TabIndex = 23;
-			this->label_quantite->Text = L"Quantite";
-			this->label_quantite->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label_quantity->Location = System::Drawing::Point(236, 516);
+			this->label_quantity->Name = L"label_quantity";
+			this->label_quantity->Size = System::Drawing::Size(63, 18);
+			this->label_quantity->TabIndex = 23;
+			this->label_quantity->Text = L"Quantite";
+			this->label_quantity->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// clear_button
 			// 
@@ -447,17 +447,17 @@ namespace PLOOF {
 			this->Controls->Add(this->label_nom_article);
 			this->Controls->Add(this->delete_article);
 			this->Controls->Add(this->clear_button);
-			this->Controls->Add(this->label_quantite);
-			this->Controls->Add(this->input_quantite);
-			this->Controls->Add(this->label_TVA);
-			this->Controls->Add(this->input_TVA);
+			this->Controls->Add(this->label_quantity);
+			this->Controls->Add(this->input_quantity);
+			this->Controls->Add(this->label_VAT);
+			this->Controls->Add(this->input_VAT);
 			this->Controls->Add(this->input_reapro);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->input_Stock);
 			this->Controls->Add(this->label_Stock);
 			this->Controls->Add(this->designation);
-			this->Controls->Add(this->label_prix_HT);
-			this->Controls->Add(this->input_prix_HT);
+			this->Controls->Add(this->label_price_HT);
+			this->Controls->Add(this->input_price_HT);
 			this->Controls->Add(this->label_catalog);
 			this->Controls->Add(this->label_article);
 			this->Controls->Add(this->nature_article);
@@ -471,11 +471,11 @@ namespace PLOOF {
 			this->Size = System::Drawing::Size(928, 744);
 			this->Load += gcnew System::EventHandler(this, &gestionStock::gestionStock_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_prix_HT))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_price_HT))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_Stock))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_reapro))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_TVA))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantite))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_VAT))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->input_quantity))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_article_input))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_catalog_input))->EndInit();
 			this->ResumeLayout(false);
@@ -499,20 +499,20 @@ namespace PLOOF {
 			this->label_Designation_article->Visible = isVisible;
 			this->id_article_input->Visible = isVisible;
 			this->name_article->Visible = isVisible;
-			this->input_quantite->Visible = isVisible;
-			this->label_quantite->Visible = isVisible;
+			this->input_quantity->Visible = isVisible;
+			this->label_quantity->Visible = isVisible;
 			this->nature_article->Visible = isVisible;
 			this->label_article->Visible = isVisible;
 			this->label_catalog->Visible = isVisible;
-			this->label_prix_HT->Visible = isVisible;
-			this->input_prix_HT->Visible = isVisible;
+			this->label_price_HT->Visible = isVisible;
+			this->input_price_HT->Visible = isVisible;
 			this->designation->Visible = isVisible;
 			this->label_Stock->Visible = isVisible;
 			this->input_Stock->Visible = isVisible;
 			this->label2->Visible = isVisible;
 			this->input_reapro->Visible = isVisible;
-			this->input_TVA->Visible = isVisible;
-			this->label_TVA->Visible = isVisible;
+			this->input_VAT->Visible = isVisible;
+			this->label_VAT->Visible = isVisible;
 		}
 
 		//Affichage du formulaire

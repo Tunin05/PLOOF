@@ -15,7 +15,7 @@ System::Void PLOOF::gestionStock::gestionStock_Load(System::Object^ sender, Syst
 	//Affichage du stock
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
 	Stock* stock = new Stock();
-	stock->afficher(dataGrid);
+	stock->show(dataGrid);
 	delete stock;
 }
 
@@ -24,14 +24,14 @@ System::Void PLOOF::gestionStock::SelectRow(System::Object^ sender, System::Wind
 {
 	int i = e->RowIndex;
 	id_catalog_input->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value);
-	input_prix_HT->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[1]->Value);
+	input_price_HT->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[1]->Value);
 	designation->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[2]->Value);
 	input_Stock->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[3]->Value);
 	input_reapro->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[4]->Value);
-	input_TVA->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[5]->Value);
+	input_VAT->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[5]->Value);
 	id_article_input->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[6]->Value);
 	name_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[7]->Value);
-	input_quantite->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[8]->Value);
+	input_quantity->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[8]->Value);
 	nature_article->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[9]->Value);
 }
 
@@ -47,13 +47,13 @@ System::Void PLOOF::gestionStock::clear_button_Click(System::Object^ sender, Sys
 	this->id_article_input->Text = "0";
 	this->name_article->Text = "";
 	this->id_catalog_input->Text = "0";
-	this->input_quantite->Text = "0";
+	this->input_quantity->Text = "0";
 	this->nature_article->Text = "";
-	this->input_prix_HT->Text = "0";
+	this->input_price_HT->Text = "0";
 	this->designation->Text = "";
 	this->input_Stock->Text = "0";
 	this->input_reapro->Text = "0";
-	this->input_TVA->Text = "0";
+	this->input_VAT->Text = "0";
 
 }
 
@@ -62,9 +62,9 @@ System::Void PLOOF::gestionStock::Add_an_article_Click(System::Object^ sender, S
 {
 	//Ajout d'un article
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
-	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text,
-		input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
-		input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
+	Stock* stock = new Stock(name_article->Text, input_quantity->Value, nature_article->Text,
+		input_price_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
+		input_VAT->Value, id_catalog_input->Value, id_article_input->Value);
 	stock->insert();
 	delete stock;
 	clear_button_Click(sender, e);
@@ -79,9 +79,9 @@ System::Void PLOOF::gestionStock::delete_article_Click(System::Object^ sender, S
 {
 	//Suppression d'un article
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
-	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text,
-		input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
-		input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
+	Stock* stock = new Stock(name_article->Text, input_quantity->Value, nature_article->Text,
+		input_price_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
+		input_VAT->Value, id_catalog_input->Value, id_article_input->Value);
 	stock->remove();
 	delete stock;
 	clear_button_Click(sender, e);
@@ -95,9 +95,9 @@ System::Void PLOOF::gestionStock::delete_article_Click(System::Object^ sender, S
 System::Void PLOOF::gestionStock::change_article_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridView1;
-	Stock* stock = new Stock(name_article->Text, input_quantite->Value, nature_article->Text,
-		input_prix_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
-		input_TVA->Value, id_catalog_input->Value, id_article_input->Value);
+	Stock* stock = new Stock(name_article->Text, input_quantity->Value, nature_article->Text,
+		input_price_HT->Value, designation->Text, input_Stock->Value, input_reapro->Value,
+		input_VAT->Value, id_catalog_input->Value, id_article_input->Value);
 	stock->update();
 	delete stock;
 	clear_button_Click(sender, e);

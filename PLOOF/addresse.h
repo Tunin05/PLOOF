@@ -1,7 +1,7 @@
 #pragma once
 #include "Client.h"
 
-ref class adresse :
+ref class addresse :
     public Client
 {
 };
