@@ -94,5 +94,10 @@ System::Void PLOOF::gestionClient::adr_client_Click(System::Object^ sender, Syst
 
 System::Void PLOOF::gestionClient::creer_adr_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	MessageBox::Show("Fonctionnalité non implémentée");
+}
 
+System::Void PLOOF::gestionClient::suppr_adr_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	MessageBox::Show("Fonctionnalité non implémentée... Necesite commande");
 }

@@ -226,7 +226,7 @@ namespace PLOOF {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->ImeMode = System::Windows::Forms::ImeMode::Off;
 			this->dataGridView1->Location = System::Drawing::Point(17, 82);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->MultiSelect = false;
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
@@ -242,7 +242,7 @@ namespace PLOOF {
 			this->btn_retour->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btn_retour->Location = System::Drawing::Point(3, 4);
-			this->btn_retour->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_retour->Margin = System::Windows::Forms::Padding(4);
 			this->btn_retour->Name = L"btn_retour";
 			this->btn_retour->Size = System::Drawing::Size(212, 47);
 			this->btn_retour->TabIndex = 21;
@@ -254,7 +254,7 @@ namespace PLOOF {
 			// 
 			this->date_bool->AutoSize = true;
 			this->date_bool->Location = System::Drawing::Point(337, 146);
-			this->date_bool->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->date_bool->Margin = System::Windows::Forms::Padding(4);
 			this->date_bool->Name = L"date_bool";
 			this->date_bool->Size = System::Drawing::Size(236, 20);
 			this->date_bool->TabIndex = 63;
@@ -288,7 +288,7 @@ namespace PLOOF {
 			// adr_client
 			// 
 			this->adr_client->Location = System::Drawing::Point(380, 78);
-			this->adr_client->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->adr_client->Margin = System::Windows::Forms::Padding(4);
 			this->adr_client->Name = L"adr_client";
 			this->adr_client->Size = System::Drawing::Size(233, 46);
 			this->adr_client->TabIndex = 60;
@@ -299,7 +299,7 @@ namespace PLOOF {
 			// date_commande
 			// 
 			this->date_commande->Location = System::Drawing::Point(427, 5);
-			this->date_commande->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->date_commande->Margin = System::Windows::Forms::Padding(4);
 			this->date_commande->Name = L"date_commande";
 			this->date_commande->Size = System::Drawing::Size(236, 22);
 			this->date_commande->TabIndex = 59;
@@ -307,7 +307,7 @@ namespace PLOOF {
 			// date_naissance
 			// 
 			this->date_naissance->Location = System::Drawing::Point(541, 46);
-			this->date_naissance->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->date_naissance->Margin = System::Windows::Forms::Padding(4);
 			this->date_naissance->Name = L"date_naissance";
 			this->date_naissance->Size = System::Drawing::Size(236, 22);
 			this->date_naissance->TabIndex = 58;
@@ -315,7 +315,7 @@ namespace PLOOF {
 			// btn_clear
 			// 
 			this->btn_clear->Location = System::Drawing::Point(679, 107);
-			this->btn_clear->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_clear->Margin = System::Windows::Forms::Padding(4);
 			this->btn_clear->Name = L"btn_clear";
 			this->btn_clear->Size = System::Drawing::Size(100, 96);
 			this->btn_clear->TabIndex = 57;
@@ -326,7 +326,7 @@ namespace PLOOF {
 			// btn_recherche
 			// 
 			this->btn_recherche->Location = System::Drawing::Point(53, 138);
-			this->btn_recherche->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_recherche->Margin = System::Windows::Forms::Padding(4);
 			this->btn_recherche->Name = L"btn_recherche";
 			this->btn_recherche->Size = System::Drawing::Size(276, 36);
 			this->btn_recherche->TabIndex = 56;
@@ -337,7 +337,7 @@ namespace PLOOF {
 			// btn_suppr
 			// 
 			this->btn_suppr->Location = System::Drawing::Point(423, 181);
-			this->btn_suppr->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_suppr->Margin = System::Windows::Forms::Padding(4);
 			this->btn_suppr->Name = L"btn_suppr";
 			this->btn_suppr->Size = System::Drawing::Size(191, 33);
 			this->btn_suppr->TabIndex = 55;
@@ -347,7 +347,7 @@ namespace PLOOF {
 			// btn_modif
 			// 
 			this->btn_modif->Location = System::Drawing::Point(224, 181);
-			this->btn_modif->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_modif->Margin = System::Windows::Forms::Padding(4);
 			this->btn_modif->Name = L"btn_modif";
 			this->btn_modif->Size = System::Drawing::Size(191, 33);
 			this->btn_modif->TabIndex = 54;
@@ -358,7 +358,7 @@ namespace PLOOF {
 			// btn_creer
 			// 
 			this->btn_creer->Location = System::Drawing::Point(25, 181);
-			this->btn_creer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_creer->Margin = System::Windows::Forms::Padding(4);
 			this->btn_creer->Name = L"btn_creer";
 			this->btn_creer->Size = System::Drawing::Size(191, 33);
 			this->btn_creer->TabIndex = 53;
@@ -407,7 +407,7 @@ namespace PLOOF {
 			this->nom_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->nom_client->Location = System::Drawing::Point(121, 81);
-			this->nom_client->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->nom_client->Margin = System::Windows::Forms::Padding(4);
 			this->nom_client->Name = L"nom_client";
 			this->nom_client->Size = System::Drawing::Size(207, 30);
 			this->nom_client->TabIndex = 49;
@@ -417,7 +417,7 @@ namespace PLOOF {
 			this->num_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->num_client->Location = System::Drawing::Point(135, 1);
-			this->num_client->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->num_client->Margin = System::Windows::Forms::Padding(4);
 			this->num_client->Name = L"num_client";
 			this->num_client->Size = System::Drawing::Size(69, 30);
 			this->num_client->TabIndex = 48;
@@ -427,7 +427,7 @@ namespace PLOOF {
 			this->prenom_client->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->prenom_client->Location = System::Drawing::Point(121, 42);
-			this->prenom_client->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->prenom_client->Margin = System::Windows::Forms::Padding(4);
 			this->prenom_client->Name = L"prenom_client";
 			this->prenom_client->Size = System::Drawing::Size(207, 30);
 			this->prenom_client->TabIndex = 47;
@@ -435,7 +435,7 @@ namespace PLOOF {
 			// btn_actu
 			// 
 			this->btn_actu->Location = System::Drawing::Point(679, 1);
-			this->btn_actu->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btn_actu->Margin = System::Windows::Forms::Padding(4);
 			this->btn_actu->Name = L"btn_actu";
 			this->btn_actu->Size = System::Drawing::Size(100, 28);
 			this->btn_actu->TabIndex = 46;
@@ -464,7 +464,7 @@ namespace PLOOF {
 			this->panel1->Controls->Add(this->prenom_client);
 			this->panel1->Controls->Add(this->btn_actu);
 			this->panel1->Location = System::Drawing::Point(4, 385);
-			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel1->Margin = System::Windows::Forms::Padding(4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(791, 238);
 			this->panel1->TabIndex = 64;
@@ -493,7 +493,7 @@ namespace PLOOF {
 			this->panel2->Controls->Add(this->textBox2);
 			this->panel2->Controls->Add(this->textBox1);
 			this->panel2->Location = System::Drawing::Point(5, 383);
-			this->panel2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel2->Margin = System::Windows::Forms::Padding(4);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(789, 240);
 			this->panel2->TabIndex = 65;
@@ -582,7 +582,7 @@ namespace PLOOF {
 			// button6
 			// 
 			this->button6->Location = System::Drawing::Point(685, 4);
-			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button6->Margin = System::Windows::Forms::Padding(4);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(100, 28);
 			this->button6->TabIndex = 64;
@@ -592,7 +592,7 @@ namespace PLOOF {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(685, 89);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 96);
 			this->button1->TabIndex = 68;
@@ -602,17 +602,18 @@ namespace PLOOF {
 			// suppr_adr
 			// 
 			this->suppr_adr->Location = System::Drawing::Point(421, 172);
-			this->suppr_adr->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->suppr_adr->Margin = System::Windows::Forms::Padding(4);
 			this->suppr_adr->Name = L"suppr_adr";
 			this->suppr_adr->Size = System::Drawing::Size(191, 33);
 			this->suppr_adr->TabIndex = 66;
 			this->suppr_adr->Text = L"Supprimer";
 			this->suppr_adr->UseVisualStyleBackColor = true;
+			this->suppr_adr->Click += gcnew System::EventHandler(this, &gestionClient::suppr_adr_Click);
 			// 
 			// modi_adr
 			// 
 			this->modi_adr->Location = System::Drawing::Point(223, 172);
-			this->modi_adr->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->modi_adr->Margin = System::Windows::Forms::Padding(4);
 			this->modi_adr->Name = L"modi_adr";
 			this->modi_adr->Size = System::Drawing::Size(191, 33);
 			this->modi_adr->TabIndex = 65;
@@ -622,7 +623,7 @@ namespace PLOOF {
 			// creer_adr
 			// 
 			this->creer_adr->Location = System::Drawing::Point(24, 172);
-			this->creer_adr->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->creer_adr->Margin = System::Windows::Forms::Padding(4);
 			this->creer_adr->Name = L"creer_adr";
 			this->creer_adr->Size = System::Drawing::Size(191, 33);
 			this->creer_adr->TabIndex = 64;
@@ -633,7 +634,7 @@ namespace PLOOF {
 			// numericUpDown2
 			// 
 			this->numericUpDown2->Location = System::Drawing::Point(453, 16);
-			this->numericUpDown2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numericUpDown2->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDown2->Name = L"numericUpDown2";
 			this->numericUpDown2->Size = System::Drawing::Size(79, 22);
 			this->numericUpDown2->TabIndex = 7;
@@ -641,7 +642,7 @@ namespace PLOOF {
 			// numericUpDown1
 			// 
 			this->numericUpDown1->Location = System::Drawing::Point(136, 16);
-			this->numericUpDown1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(79, 22);
 			this->numericUpDown1->TabIndex = 6;
@@ -649,7 +650,7 @@ namespace PLOOF {
 			// textBox6
 			// 
 			this->textBox6->Location = System::Drawing::Point(136, 112);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(161, 22);
 			this->textBox6->TabIndex = 5;
@@ -657,7 +658,7 @@ namespace PLOOF {
 			// textBox5
 			// 
 			this->textBox5->Location = System::Drawing::Point(453, 48);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(157, 22);
 			this->textBox5->TabIndex = 4;
@@ -665,7 +666,7 @@ namespace PLOOF {
 			// textBox4
 			// 
 			this->textBox4->Location = System::Drawing::Point(453, 80);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(157, 22);
 			this->textBox4->TabIndex = 3;
@@ -673,7 +674,7 @@ namespace PLOOF {
 			// textBox3
 			// 
 			this->textBox3->Location = System::Drawing::Point(453, 112);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(157, 22);
 			this->textBox3->TabIndex = 2;
@@ -681,7 +682,7 @@ namespace PLOOF {
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(136, 80);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(161, 22);
 			this->textBox2->TabIndex = 1;
@@ -689,7 +690,7 @@ namespace PLOOF {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(136, 48);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(161, 22);
 			this->textBox1->TabIndex = 0;
@@ -703,7 +704,7 @@ namespace PLOOF {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->btn_retour);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"gestionClient";
 			this->Size = System::Drawing::Size(808, 626);
 			this->Load += gcnew System::EventHandler(this, &gestionClient::gestionClient_Load);
@@ -739,7 +740,7 @@ namespace PLOOF {
 	private: System::Void btn_creer_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void btn_modif_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void adr_client_Click(System::Object^ sender, System::EventArgs^ e);
-
 	private: System::Void creer_adr_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void suppr_adr_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
