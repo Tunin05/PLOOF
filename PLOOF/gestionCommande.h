@@ -94,6 +94,11 @@ namespace PLOOF {
 	private: System::Windows::Forms::NumericUpDown^ article_id_input;
 	private: System::Windows::Forms::NumericUpDown^ net_price_input;
 	private: System::Windows::Forms::NumericUpDown^ vat_input;
+	private: System::Windows::Forms::Button^ button_modify_entire_order;
+	private: System::Windows::Forms::Button^ button_delete_entire_order;
+
+
+
 
 
 
@@ -162,6 +167,8 @@ namespace PLOOF {
 			this->article_id_input = (gcnew System::Windows::Forms::NumericUpDown());
 			this->net_price_input = (gcnew System::Windows::Forms::NumericUpDown());
 			this->vat_input = (gcnew System::Windows::Forms::NumericUpDown());
+			this->button_modify_entire_order = (gcnew System::Windows::Forms::Button());
+			this->button_delete_entire_order = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewListCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->id_client))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->BeginInit();
@@ -245,6 +252,7 @@ namespace PLOOF {
 			// 
 			this->name_client->Location = System::Drawing::Point(662, 78);
 			this->name_client->Name = L"name_client";
+			this->name_client->ReadOnly = true;
 			this->name_client->Size = System::Drawing::Size(141, 22);
 			this->name_client->TabIndex = 28;
 			// 
@@ -252,6 +260,7 @@ namespace PLOOF {
 			// 
 			this->firstname_client->Location = System::Drawing::Point(662, 106);
 			this->firstname_client->Name = L"firstname_client";
+			this->firstname_client->ReadOnly = true;
 			this->firstname_client->Size = System::Drawing::Size(141, 22);
 			this->firstname_client->TabIndex = 29;
 			// 
@@ -271,6 +280,7 @@ namespace PLOOF {
 			// 
 			this->id_client->Location = System::Drawing::Point(664, 144);
 			this->id_client->Name = L"id_client";
+			this->id_client->ReadOnly = true;
 			this->id_client->Size = System::Drawing::Size(87, 22);
 			this->id_client->TabIndex = 32;
 			// 
@@ -547,10 +557,32 @@ namespace PLOOF {
 			this->vat_input->Size = System::Drawing::Size(87, 22);
 			this->vat_input->TabIndex = 61;
 			// 
+			// button_modify_entire_order
+			// 
+			this->button_modify_entire_order->Location = System::Drawing::Point(516, 669);
+			this->button_modify_entire_order->Name = L"button_modify_entire_order";
+			this->button_modify_entire_order->Size = System::Drawing::Size(178, 30);
+			this->button_modify_entire_order->TabIndex = 62;
+			this->button_modify_entire_order->Text = L"Modify entire order";
+			this->button_modify_entire_order->UseVisualStyleBackColor = true;
+			this->button_modify_entire_order->Click += gcnew System::EventHandler(this, &gestionCommande::button_modify_entire_order_Click);
+			// 
+			// button_delete_entire_order
+			// 
+			this->button_delete_entire_order->Location = System::Drawing::Point(742, 669);
+			this->button_delete_entire_order->Name = L"button_delete_entire_order";
+			this->button_delete_entire_order->Size = System::Drawing::Size(178, 30);
+			this->button_delete_entire_order->TabIndex = 63;
+			this->button_delete_entire_order->Text = L"Delete entire order";
+			this->button_delete_entire_order->UseVisualStyleBackColor = true;
+			this->button_delete_entire_order->Click += gcnew System::EventHandler(this, &gestionCommande::button_delete_entire_order_Click);
+			// 
 			// gestionCommande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->button_delete_entire_order);
+			this->Controls->Add(this->button_modify_entire_order);
 			this->Controls->Add(this->vat_input);
 			this->Controls->Add(this->net_price_input);
 			this->Controls->Add(this->article_id_input);
@@ -616,5 +648,7 @@ namespace PLOOF {
 	private: System::Void gestionCommande_Load(System::Object^ sender, System::EventArgs^ e);
 		   //Actualisation du tableau
 	private: System::Void refresh_button_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button_modify_entire_order_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void button_delete_entire_order_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

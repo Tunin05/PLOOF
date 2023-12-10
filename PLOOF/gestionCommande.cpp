@@ -19,6 +19,16 @@ System::Void PLOOF::gestionCommande::refresh_button_Click(System::Object^ sender
 {
 }
 
+System::Void PLOOF::gestionCommande::button_modify_entire_order_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	return System::Void();
+}
+
+System::Void PLOOF::gestionCommande::button_delete_entire_order_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	return System::Void();
+}
+
 
 System::Void PLOOF::gestionCommande::SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
 {
@@ -28,7 +38,7 @@ System::Void PLOOF::gestionCommande::SelectRowClients(System::Object^ sender, Sy
 {
 	int i = e->RowIndex;
 	name_client->Text = this->dataGridView_clients->Rows[i]->Cells[1]->Value->ToString();
-	prenom_client->Text = this->dataGridView_clients->Rows[i]->Cells[2]->Value->ToString();
+	name_client->Text = this->dataGridView_clients->Rows[i]->Cells[2]->Value->ToString();
 	id_client->Value = System::Convert::ToInt32(this->dataGridView_clients->Rows[i]->Cells[0]->Value);
 
 	//Affichage des commandes
@@ -42,12 +52,12 @@ System::Void PLOOF::gestionCommande::SelectRowCommande(System::Object^ sender, S
 {
 	int i = e->RowIndex;
 	input_reference->Text = this->dataGridViewListCommande->Rows[i]->Cells[0]->Value->ToString();
-	input_add_livraison->Text = this->dataGridViewListCommande->Rows[i]->Cells[1]->Value->ToString();
-	date_de_livraison->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[2]->Value);
-	date_de_commande->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[3]->Value);
-	date_de_payement->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[5]->Value);
-	input_methode_payement->Text = this->dataGridViewListCommande->Rows[i]->Cells[6]->Value->ToString();
-	num_serv_commercial->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[7]->Value);
+	delivery_address_input->Text = this->dataGridViewListCommande->Rows[i]->Cells[1]->Value->ToString();
+	delivery_date_input->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[2]->Value);
+	order_date_input->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[3]->Value);
+	payment_date_input->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[5]->Value);
+	payment_date_input->Text = this->dataGridViewListCommande->Rows[i]->Cells[6]->Value->ToString();
+	customer_service_number_input->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[7]->Value);
 
 	//Affichage du detail de la commande
 	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridViewDetailsCommande;
