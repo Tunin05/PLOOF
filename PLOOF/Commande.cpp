@@ -19,3 +19,11 @@ void Commande::afficherCommandeClient(System::Windows::Forms::DataGridView^ data
 	data->DataSource = dataset->Tables[0];
 }
 
+void Commande::afficherDetailCommande(System::Windows::Forms::DataGridView^ data, System::String^ order_ref)
+{
+	System::String^ query = "SELECT * FROM Order_Containers WHERE order_ref = '" + order_ref + "'";
+	CLDB^ db = gcnew CLDB();
+	System::Data::DataSet^ dataset = db->getDataSet(query);
+	data->DataSource = dataset->Tables[0];
+}
+

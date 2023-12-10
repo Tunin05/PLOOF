@@ -48,4 +48,10 @@ System::Void PLOOF::gestionCommande::SelectRowCommande(System::Object^ sender, S
 	date_de_payement->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[5]->Value);
 	input_methode_payement->Text = this->dataGridViewListCommande->Rows[i]->Cells[6]->Value->ToString();
 	num_serv_commercial->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[7]->Value);
+
+	//Affichage du detail de la commande
+	System::Windows::Forms::DataGridView^ dataGrid = this->dataGridViewDetailsCommande;
+	Commande^ commande = gcnew Commande();
+	commande->afficherDetailCommande(dataGrid, input_reference->Text);
+	delete commande;
 }

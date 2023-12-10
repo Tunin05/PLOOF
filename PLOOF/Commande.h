@@ -29,5 +29,6 @@ public:
 	~Commande();
 
 	void afficherCommandeClient(System::Windows::Forms::DataGridView^ data, int client_num);
+	void afficherDetailCommande(System::Windows::Forms::DataGridView^ data, System::String^ order_ref);
 };
 
