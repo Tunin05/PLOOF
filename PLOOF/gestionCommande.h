@@ -87,13 +87,13 @@ namespace PLOOF {
 
 
 
-	private: System::Windows::Forms::Label^ label_id_article;
-	private: System::Windows::Forms::Label^ labelOrder_details_title;
-	private: System::Windows::Forms::Label^ label_Price_ET;
-	private: System::Windows::Forms::Label^ label_VAT;
-	private: System::Windows::Forms::NumericUpDown^ article_id_input;
-	private: System::Windows::Forms::NumericUpDown^ net_price_input;
-	private: System::Windows::Forms::NumericUpDown^ vat_input;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^ button_modify_entire_order;
 	private: System::Windows::Forms::Button^ button_delete_entire_order;
 
@@ -160,13 +160,6 @@ namespace PLOOF {
 			this->delivery_date_input = (gcnew System::Windows::Forms::DateTimePicker());
 			this->payment_method_input = (gcnew System::Windows::Forms::TextBox());
 			this->customer_service_number_input = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label_id_article = (gcnew System::Windows::Forms::Label());
-			this->labelOrder_details_title = (gcnew System::Windows::Forms::Label());
-			this->label_Price_ET = (gcnew System::Windows::Forms::Label());
-			this->label_VAT = (gcnew System::Windows::Forms::Label());
-			this->article_id_input = (gcnew System::Windows::Forms::NumericUpDown());
-			this->net_price_input = (gcnew System::Windows::Forms::NumericUpDown());
-			this->vat_input = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button_modify_entire_order = (gcnew System::Windows::Forms::Button());
 			this->button_delete_entire_order = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewListCommande))->BeginInit();
@@ -174,9 +167,6 @@ namespace PLOOF {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDetailsCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->customer_service_number_input))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->article_id_input))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->net_price_input))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vat_input))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -488,78 +478,9 @@ namespace PLOOF {
 			this->customer_service_number_input->Size = System::Drawing::Size(87, 22);
 			this->customer_service_number_input->TabIndex = 54;
 			// 
-			// label_id_article
-			// 
-			this->label_id_article->AutoSize = true;
-			this->label_id_article->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label_id_article->Location = System::Drawing::Point(566, 549);
-			this->label_id_article->Name = L"label_id_article";
-			this->label_id_article->Size = System::Drawing::Size(66, 18);
-			this->label_id_article->TabIndex = 55;
-			this->label_id_article->Text = L"ID Article";
-			this->label_id_article->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// labelOrder_details_title
-			// 
-			this->labelOrder_details_title->AutoSize = true;
-			this->labelOrder_details_title->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelOrder_details_title->Location = System::Drawing::Point(613, 509);
-			this->labelOrder_details_title->Name = L"labelOrder_details_title";
-			this->labelOrder_details_title->Size = System::Drawing::Size(189, 26);
-			this->labelOrder_details_title->TabIndex = 56;
-			this->labelOrder_details_title->Text = L"ORDER DETAILS";
-			this->labelOrder_details_title->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// label_Price_ET
-			// 
-			this->label_Price_ET->AutoSize = true;
-			this->label_Price_ET->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label_Price_ET->Location = System::Drawing::Point(566, 576);
-			this->label_Price_ET->Name = L"label_Price_ET";
-			this->label_Price_ET->Size = System::Drawing::Size(65, 18);
-			this->label_Price_ET->TabIndex = 57;
-			this->label_Price_ET->Text = L"Price ET";
-			this->label_Price_ET->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// label_VAT
-			// 
-			this->label_VAT->AutoSize = true;
-			this->label_VAT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label_VAT->Location = System::Drawing::Point(595, 607);
-			this->label_VAT->Name = L"label_VAT";
-			this->label_VAT->Size = System::Drawing::Size(35, 18);
-			this->label_VAT->TabIndex = 58;
-			this->label_VAT->Text = L"VAT";
-			this->label_VAT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// article_id_input
-			// 
-			this->article_id_input->Location = System::Drawing::Point(638, 549);
-			this->article_id_input->Name = L"article_id_input";
-			this->article_id_input->Size = System::Drawing::Size(87, 22);
-			this->article_id_input->TabIndex = 59;
-			// 
-			// net_price_input
-			// 
-			this->net_price_input->Location = System::Drawing::Point(637, 577);
-			this->net_price_input->Name = L"net_price_input";
-			this->net_price_input->Size = System::Drawing::Size(87, 22);
-			this->net_price_input->TabIndex = 60;
-			// 
-			// vat_input
-			// 
-			this->vat_input->Location = System::Drawing::Point(636, 603);
-			this->vat_input->Name = L"vat_input";
-			this->vat_input->Size = System::Drawing::Size(87, 22);
-			this->vat_input->TabIndex = 61;
-			// 
 			// button_modify_entire_order
 			// 
-			this->button_modify_entire_order->Location = System::Drawing::Point(516, 669);
+			this->button_modify_entire_order->Location = System::Drawing::Point(512, 548);
 			this->button_modify_entire_order->Name = L"button_modify_entire_order";
 			this->button_modify_entire_order->Size = System::Drawing::Size(178, 30);
 			this->button_modify_entire_order->TabIndex = 62;
@@ -569,7 +490,7 @@ namespace PLOOF {
 			// 
 			// button_delete_entire_order
 			// 
-			this->button_delete_entire_order->Location = System::Drawing::Point(742, 669);
+			this->button_delete_entire_order->Location = System::Drawing::Point(723, 548);
 			this->button_delete_entire_order->Name = L"button_delete_entire_order";
 			this->button_delete_entire_order->Size = System::Drawing::Size(178, 30);
 			this->button_delete_entire_order->TabIndex = 63;
@@ -583,13 +504,6 @@ namespace PLOOF {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->button_delete_entire_order);
 			this->Controls->Add(this->button_modify_entire_order);
-			this->Controls->Add(this->vat_input);
-			this->Controls->Add(this->net_price_input);
-			this->Controls->Add(this->article_id_input);
-			this->Controls->Add(this->label_VAT);
-			this->Controls->Add(this->label_Price_ET);
-			this->Controls->Add(this->labelOrder_details_title);
-			this->Controls->Add(this->label_id_article);
 			this->Controls->Add(this->customer_service_number_input);
 			this->Controls->Add(this->payment_method_input);
 			this->Controls->Add(this->delivery_date_input);
@@ -628,9 +542,6 @@ namespace PLOOF {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_clients))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewDetailsCommande))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->customer_service_number_input))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->article_id_input))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->net_price_input))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->vat_input))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

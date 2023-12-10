@@ -38,7 +38,7 @@ System::Void PLOOF::gestionCommande::SelectRowClients(System::Object^ sender, Sy
 {
 	int i = e->RowIndex;
 	name_client->Text = this->dataGridView_clients->Rows[i]->Cells[1]->Value->ToString();
-	name_client->Text = this->dataGridView_clients->Rows[i]->Cells[2]->Value->ToString();
+	firstname_client->Text = this->dataGridView_clients->Rows[i]->Cells[2]->Value->ToString();
 	id_client->Value = System::Convert::ToInt32(this->dataGridView_clients->Rows[i]->Cells[0]->Value);
 
 	//Affichage des commandes
