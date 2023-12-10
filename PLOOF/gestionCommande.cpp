@@ -56,7 +56,7 @@ System::Void PLOOF::gestionCommande::SelectRowCommande(System::Object^ sender, S
 	delivery_date_input->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[2]->Value);
 	order_date_input->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[3]->Value);
 	payment_date_input->Value = Convert::ToDateTime(dataGridViewListCommande->Rows[i]->Cells[5]->Value);
-	payment_date_input->Text = this->dataGridViewListCommande->Rows[i]->Cells[6]->Value->ToString();
+	payment_method_input->Text = this->dataGridViewListCommande->Rows[i]->Cells[6]->Value->ToString();
 	customer_service_number_input->Value = System::Convert::ToInt32(this->dataGridViewListCommande->Rows[i]->Cells[7]->Value);
 
 	//Affichage du detail de la commande
