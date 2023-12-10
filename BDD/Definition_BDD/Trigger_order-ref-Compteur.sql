@@ -1,0 +1,3 @@
+CREATE SEQUENCE OrderRefSequence
+    START WITH 1
+    INCREMENT BY 1;
