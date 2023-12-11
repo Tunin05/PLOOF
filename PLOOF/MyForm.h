@@ -2,6 +2,7 @@
 #include "gestionPersonnel.h"
 #include "gestionClient.h"
 #include "gestionStock.h"
+#include "gestionCommand.h"
 
 namespace PLOOF {
 
@@ -62,6 +63,7 @@ namespace PLOOF {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->logo = (gcnew System::Windows::Forms::PictureBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -73,15 +75,16 @@ namespace PLOOF {
 			// 
 			// logo
 			// 
-			this->logo->Location = System::Drawing::Point(213, 26);
+			this->logo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"logo.Image")));
+			this->logo->Location = System::Drawing::Point(12, 12);
 			this->logo->Name = L"logo";
-			this->logo->Size = System::Drawing::Size(379, 158);
+			this->logo->Size = System::Drawing::Size(788, 215);
 			this->logo->TabIndex = 0;
 			this->logo->TabStop = false;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(296, 200);
+			this->button1->Location = System::Drawing::Point(291, 233);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(213, 52);
 			this->button1->TabIndex = 1;
@@ -91,7 +94,7 @@ namespace PLOOF {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(296, 258);
+			this->button2->Location = System::Drawing::Point(291, 291);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(213, 52);
 			this->button2->TabIndex = 2;
@@ -101,16 +104,17 @@ namespace PLOOF {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(296, 316);
+			this->button3->Location = System::Drawing::Point(291, 349);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(213, 52);
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"Gestion des commandes";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(296, 374);
+			this->button4->Location = System::Drawing::Point(291, 407);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(213, 52);
 			this->button4->TabIndex = 4;
@@ -120,17 +124,18 @@ namespace PLOOF {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(296, 432);
+			this->button5->Location = System::Drawing::Point(291, 465);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(213, 52);
 			this->button5->TabIndex = 5;
 			this->button5->Text = L"Gestion des statistiques";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
-			this->ClientSize = System::Drawing::Size(812, 511);
+			this->ClientSize = System::Drawing::Size(812, 531);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -172,6 +177,17 @@ namespace PLOOF {
 	}
 
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	gestionCommand^ FgestionCommand = gcnew gestionCommand();
+	this->Controls->Add(FgestionCommand);
+	FgestionCommand->BringToFront();
+	FgestionCommand->Location = Point(0, 0);
+	FgestionCommand->Size = this->ClientSize;
+	FgestionCommand->Show();
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Fonctionnalité non implémentée", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
 }
 };
 }
