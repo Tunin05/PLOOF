@@ -19,10 +19,22 @@ System::Void PLOOF::gestionPersonnel::button2_Click(System::Object^ sender, Syst
 System::Void PLOOF::gestionPersonnel::SelectRow(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e)
 {
 	int i = e->RowIndex;
+	if (Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value == nullptr || Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value) == 0))
+	{
+		numericUpDown1->Value = 0;
+	}
+	else {
 	numericUpDown1->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[0]->Value);
+	}
 	textBox1->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[1]->Value);
 	textBox2->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[2]->Value);
-	numericUpDown2->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[3]->Value);
+	if (Convert::ToInt32(dataGridView1->Rows[i]->Cells[3]->Value == nullptr || Convert::ToInt32(dataGridView1->Rows[i]->Cells[3]->Value) == 0))
+	{
+		numericUpDown2->Value = 0;
+	}
+	else {
+		numericUpDown2->Value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[3]->Value);
+	}
 	textBox4->Text = Convert::ToString(dataGridView1->Rows[i]->Cells[4]->Value);
 }
 

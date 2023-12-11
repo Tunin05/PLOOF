@@ -176,18 +176,18 @@ namespace PLOOF {
 		FgestionStock->Show();
 	}
 
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	gestionCommand^ FgestionCommand = gcnew gestionCommand();
-	this->Controls->Add(FgestionCommand);
-	FgestionCommand->BringToFront();
-	FgestionCommand->Location = Point(0, 0);
-	FgestionCommand->Size = this->ClientSize;
-	FgestionCommand->Show();
-}
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	MessageBox::Show("Fonctionnalité non implémentée", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-}
-};
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		gestionCommande^ FgestionCommande = gcnew gestionCommande();
+		this->Controls->Add(FgestionCommande);
+		FgestionCommande->BringToFront();
+		FgestionCommande->Location = Point(0, 0);
+		FgestionCommande->Size = this->ClientSize;
+		FgestionCommande->Show();
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show("Fonctionnalité non implémentée", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	};
 }
