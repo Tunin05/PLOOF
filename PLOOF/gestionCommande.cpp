@@ -17,31 +17,17 @@ System::Void PLOOF::gestionCommande::gestionCommande_Load(System::Object^ sender
 
 System::Void PLOOF::gestionCommande::refresh_button_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	System::Windows::Forms::MessageBox::Show("Cette fonctionnalité n'est pas encore disponible", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
 }
 
 System::Void PLOOF::gestionCommande::button_modify_entire_order_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	if (id_client->Value == 0)
-	{
-		System::Windows::Forms::MessageBox::Show("Veuillez selectionner un client");
-		return System::Void();
-	}
-	if (input_reference->Text == "")
-	{
-		System::Windows::Forms::MessageBox::Show("Veuillez selectionner une commande");
-		return System::Void();
-	}
-
-
-	//Modification de la commande
-	System::Windows::Forms::MessageBox::Show("Nom : " + name_client->Text + "\nPrénom : " + firstname_client->Text + "\nID : " + id_client->Value);
-	Commande^ commande = gcnew Commande(id_client->Value, input_reference->Text, delivery_address_input->Text, delivery_date_input->Value, order_date_input->Value, payment_date_input->Value, payment_method_input->Text, customer_service_number_input->Value);
-
+	System::Windows::Forms::MessageBox::Show("Cette fonctionnalité n'est pas encore disponible", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
 }
 
 System::Void PLOOF::gestionCommande::button_delete_entire_order_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	return System::Void();
+	System::Windows::Forms::MessageBox::Show("Cette fonctionnalité n'est pas encore disponible", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
 }
 
 
